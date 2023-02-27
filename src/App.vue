@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
+import LandingPage from "./components/LandingPage.vue";
 </script>
 
 <template>
-
+    <LandingPage></LandingPage>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
