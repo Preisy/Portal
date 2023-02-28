@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps({
-    href: String
-})
+    href: String,
+});
 </script>
 
 <template>
@@ -12,17 +12,18 @@ const props = defineProps({
 
 <style scoped lang="scss">
 $base-gradient: linear-gradient(180deg, #feda82 0%, #fec338 100%);
-$click-gradient: linear-gradient(180deg, #F4DEA6 0%, #FBCE63 100%);
-$shadow-color: #DA9D22;
+$click-gradient: linear-gradient(180deg, #f4dea6 0%, #fbce63 100%);
+$shadow-color: #da9d22;
 $base-shadow: 0px 3px 0px 0px $shadow-color;
 $height: 60px;
 
-.button{
+.button {
     box-sizing: border-box;
-    padding: $height/2 40px;
+    padding: calc($height / 2) 40px;
+    text-align: center;
     height: $height;
     width: max-content;
-    
+
     border-radius: 14px;
     box-shadow: $base-shadow;
     background: $base-gradient;
@@ -36,11 +37,11 @@ $height: 60px;
     line-height: 0;
 }
 
-.button:hover{
+.button:hover {
     box-shadow: $base-shadow, 0px 0px 20px 0px #ffcb52;
 }
 
-.button:active{
+.button:active {
     background: $click-gradient;
     box-shadow: $base-shadow;
 }
