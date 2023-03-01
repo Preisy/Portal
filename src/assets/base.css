@@ -8,12 +8,16 @@
     --font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+    font-family: var(--font-family);
+}
+
 html {
-    overflow: hidden;
     width: 100%;
 }
 
 body {
-    overflow: hidden;
     width: 100%;
 }
+
+
