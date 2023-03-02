@@ -8,7 +8,7 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
       <div class="homepage-items">
         <div class="slogans">
           <h1 class="main-slogan">
-            Установим лучший натяжной потолок в Москве
+            Установим лучший натяжной потолок <span class="another-color">в Москве</span>
           </h1>
           <p class="add-slogan">
             Используем только качественные, проверенные <br> временем материалы. Сотрудничаем с лучшими <br>
@@ -37,16 +37,18 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 
 .homepage-items {
   display: flex;
-}
-
-.slogans {
-  flex: 1 0;
-
-  h1 { //bruh
-    font-family: 'Montserrat';
+  align-items: center;
+  .another-color {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 49px;
+    color: #FFFFFF;
+  }
+  h1 { 
     font-style: italic;
     font-weight: 800;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 49px;
     background: linear-gradient(86.98deg, #FEDA82 22.54%, #FEC338 105.96%);
     -webkit-background-clip: text;
@@ -54,17 +56,20 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
     margin-right: 61px;
     margin-bottom: 28px;
   }
-
-  p { // bruuuuh
-    font-family: 'Montserrat';
+  p { 
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 1.5rem;
     line-height: 28px;
     color: #FFFFFF;
   }
-
 }
+
+.slogans {
+  flex: 1 0;
+}
+
+
 
 .calc {
   width: 440px;
@@ -77,5 +82,4 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
   bottom: 0;
   left: 0;
 }
-
 </style>
