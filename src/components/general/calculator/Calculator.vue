@@ -1,26 +1,24 @@
 <script setup lang="ts">
-import Button from "./Button.vue";
 import PrettyRange from "./PrettyRange.vue";
+import Button from "@/components/general/Button.vue";
+import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
 </script>
 
 <template>
     <div class="calculator-holder">
         <div class="head">
-            <span>Рассчет стоимости</span>
-            <img src="../../assets/images/calculator/calculator.png" alt="" />
+            <span>Расчет стоимости</span>
+            <img src="@/assets/images/calculator/calculator.png" alt="" />
         </div>
         <div class="settings">
             <div class="setting-line">
-                <span class="description">Площадь потолка</span>
+                <span class="description">Imperatively</span>
                 <PrettyRange :min="0" :max="200"></PrettyRange>
             </div>
+
             <div class="setting-line">
-                <span class="description">Площадь потолка</span>
-                <PrettyRange :min="0" :max="10"></PrettyRange>
-            </div>
-            <div class="setting-line">
-                <span class="description">Площадь потолка</span>
-                <PrettyRange :min="0" :max="10"></PrettyRange>
+              <span class="description">Declarative</span>
+              <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
             </div>
         </div>
         <div class="result">
