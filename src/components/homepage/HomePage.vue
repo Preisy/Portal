@@ -4,9 +4,7 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 
 <template>
   <div class="homepage-wrapper" id="homepage">
-    <div class="shadow-block">
-        <div class="shadow"></div>
-      </div>
+    <div class="shadow"></div>
     <div class="structure">
       <div class="homepage-items">
         <div class="slogans">
@@ -20,9 +18,7 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
         </div>
         <div class="calc"></div>
       </div>
-      <div class="guarantee-block">
-        <GuaranteeBlock/>
-      </div>
+      <GuaranteeBlock />
     </div>
   </div>
 </template>
@@ -31,47 +27,28 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 .homepage-wrapper {
   background: url(../../assets/images/homepage/background.png) no-repeat;
   background-size: cover;
+  position: relative;
 
   .structure {
     padding-top: 11.375rem;
     position: relative;
   }
 }
-.shadow-block {
-  position: relative;
-}
+
 .shadow {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 17.56em;
-  top: 41rem;
+  height: 200px;
   background: linear-gradient(180deg, rgba(27, 27, 27, 0) 27%, #151515 57%);
 }
+
 .homepage-items {
   display: flex;
   align-items: center;
-  .another-color {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 3.5rem;
-    line-height: 4rem;
-    -webkit-background-clip: text;
-    background-color: #FFFFFF;
-  }
-  h1 { 
-    font-style: italic;
-    font-weight: 800;
-    font-size: 3.5rem;
-    line-height: 4rem;
-    background: linear-gradient(86.98deg, #FEDA82 22.54%, #FEC338 105.96%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-right: 4rem;
-    margin-bottom: 1.75rem;
-  }
-  p { 
+
+  p {
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;

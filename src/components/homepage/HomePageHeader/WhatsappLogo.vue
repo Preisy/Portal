@@ -7,7 +7,7 @@
 </template>
 
 <style scoped lang="scss">
-  .whatsapp-logo {
-    user-select: none;
-  }
+.whatsapp-logo {
+  user-select: none;
+}
 </style>

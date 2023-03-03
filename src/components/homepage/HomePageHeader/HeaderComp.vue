@@ -13,13 +13,13 @@ import HeaderLogo from './HeaderLogo.vue'
           <p class="place">Натяжные потолки<br>в Москве</p>
         </div>
         <div class="right-items">
+          <p class="time">
+            Пн-Вс. 8:00–22:00
+          </p>
           <div class="whatsapp">
             <WhatsappLogo></WhatsappLogo>
             <button class="contact">Написать в WhatsApp</button>
           </div>
-          <p class="time">
-            Пн-Вс. 8:00–22:00
-          </p>
         </div>
       </div>
     </div>
@@ -37,10 +37,12 @@ header {
     padding-bottom: 3rem;
   }
 }
+
 .header-items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
   p {
     font-family: 'Montserrat';
     font-style: normal;
@@ -50,18 +52,21 @@ header {
     color: #FFFFFF;
   }
 }
-.place {
-  float: left;
-  margin-top: 0.7rem;
+
+.left-items {
+  display: flex;
+  align-items: center;
 }
+
+.right-items {
+  display: flex;
+  align-items: center;
+}
+
 .time {
-  margin-top: 0.9rem;
   margin-right: 3.5rem;
-  float: right;
 }
-.whatsapp {
-  float: right;
-}
+
 .contact {
   background: none;
   border: none;
@@ -72,5 +77,4 @@ header {
   line-height: 1rem;
   text-decoration: underline;
   color: #FFFFFF;
-}
-</style>
+}</style>

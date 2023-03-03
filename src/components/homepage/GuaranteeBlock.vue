@@ -52,4 +52,5 @@ import HomePageTape from './HomePageTape.vue';
 .tape {
   width: 20rem;
   height: 10rem;
-}</style>
+}
+</style>

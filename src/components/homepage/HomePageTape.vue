@@ -9,7 +9,7 @@
 </template>
 
 <style scoped lang="scss">
-  .tape {
-    user-select: none;
-  }
+.tape {
+  user-select: none;
+}
 </style>

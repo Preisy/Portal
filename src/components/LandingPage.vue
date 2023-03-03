@@ -6,10 +6,8 @@ import HeaderComp from './homepage/HomePageHeader/HeaderComp.vue';
 </script>
 
 <template>
-<HeaderComp></HeaderComp>
-<HomePageVue></HomePageVue>
+    <HeaderComp></HeaderComp>
+    <HomePageVue></HomePageVue>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
