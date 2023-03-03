@@ -1,7 +1,16 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
+
 import PrettyRange from "./PrettyRange.vue";
 import Button from "@/components/general/Button.vue";
 import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
+import type { Nullable } from "@/types/Types";
+
+const inputEl = ref<Nullable<HTMLInputElement>>();
+const inputVal = ref("");
+watch(inputVal, (newVal, oldVal)=>{
+    inputVal.value = inputVal.value.replace(/\D/, "");
+})
 </script>
 
 <template>
@@ -12,13 +21,16 @@ import CalculatorRangeDeclarative from "@/components/general/calculator/Calculat
         </div>
         <div class="settings">
             <div class="setting-line">
-                <span class="description">Imperatively</span>
-                <PrettyRange :min="0" :max="200"></PrettyRange>
+                <span class="description">Площадь потолка</span>
+                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
             </div>
-
             <div class="setting-line">
-              <span class="description">Declarative</span>
-              <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
+                <span class="description">Количество углов</span>
+                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
+            </div>
+            <div class="setting-line">
+                <span class="description">Количество светильников</span>
+                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
             </div>
         </div>
         <div class="result">
@@ -27,7 +39,7 @@ import CalculatorRangeDeclarative from "@/components/general/calculator/Calculat
         </div>
         <div class="contact">
             <!-- TODO: pattern-matching для инпута -->
-            <input placeholder="Ваш номер телефона" type="tel" />
+            <input v-model="inputVal" ref="inputEl" placeholder="Ваш номер телефона" type="tel" />
         </div>
         <Button class="button" href="#">отправить заявку</Button>
     </div>
@@ -35,40 +47,38 @@ import CalculatorRangeDeclarative from "@/components/general/calculator/Calculat
 
 <style scoped lang="scss">
 $calculator-width: 440px;
-$calculator-height: 520px;
 .calculator-holder {
     background: var(--color-white);
     width: $calculator-width;
-    height: $calculator-height;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    border-radius: 14px;
+    border-radius: 0.9rem;
 
     padding: 0px calc($calculator-width / 10);
 }
 
 .head {
-    $head-height: 60px;
+    $head-height: 4rem;
     position: relative;
     width: 100%;
 
     span {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: $head-height;
         vertical-align: middle;
     }
     img {
         $rotation-matrix: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
-        $size: 80px * 1.41;
+        $size: 5rem * 1.41;
 
         position: absolute;
-        width: 112.8px;
-        height: 112.8px;
+        width: $size;
+        height: $size;
         transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
         top: -50%;
     }
@@ -80,11 +90,11 @@ $calculator-height: 520px;
     z-index: 1;
 
     .setting-line {
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
     }
     .description {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
@@ -93,21 +103,24 @@ $calculator-height: 520px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     span {
         font-weight: 600;
     }
+    .description{
+        font-size: 1.25rem
+    }
     .result-value {
         position: relative;
 
-        font-size: 28px;
+        font-size: 1.75rem;
         margin-left: auto;
         margin-right: auto;
 
         &::after {
             content: "₽";
-            font-size: 20px;
+            font-size: 1.25rem;
         }
         // @todo:
         // &::before{
@@ -119,17 +132,19 @@ $calculator-height: 520px;
 
 .contact {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     input {
-        height: 60px;
+        height: 3.6rem;
         width: 100%;
 
         background: #f6f6f6;
         border: 1px solid #e5e5e5;
-        border-radius: 13px;
+        border-radius: 0.9rem;
+        box-sizing: border-box;
+        padding: 1rem;
 
-        font-size: 18px;
+        font-size: 1rem;
         &::placeholder {
             font-weight: 400;
 
@@ -140,5 +155,6 @@ $calculator-height: 520px;
 
 .button {
     width: 100%;
+    margin-bottom: 2.5rem;
 }
 </style>

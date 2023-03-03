@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 const props = defineProps({
+    // Сделать must-have пропсы
     min: Number,
     max: Number,
 });
 
+// TODO: quazar посмотреть либу
+// TODO: пересмотреть названия
 const root = ref<HTMLElement | null>(null);
 const currentValueEl = ref<HTMLElement | null>(null);
 const valueBordersStart = ref<HTMLElement | null>(null);
@@ -16,6 +19,7 @@ const max = props.max ? props.max : 10;
 const currentValueReactive = ref((min + max) / 2);
 
 // При монтаже считываем элементы
+// TODO: убрать, навесить ref на элементы
 onMounted(() => {
     currentValueEl.value = root.value?.querySelector(
         ".current-value"
@@ -62,15 +66,10 @@ function update(val: number): void {
 function moveCurrentValue(val: number) {
     const start = valueBordersStart.value?.getBoundingClientRect().left;
     const end = valueBordersEnd.value?.getBoundingClientRect().left;
-    // const inputWidth = inputRangeEl.value?.getBoundingClientRect().width;
-    // const currentWidth = currentValueEl.value?.getBoundingClientRect().width;
     if (!start) return;
     if (!end) return;
-    // if (!inputWidth) return;
-    // if (!currentWidth) return;
 
     const newPos = ((end - start) * val) / max;
-    // const newPos = (inputWidth * val) / max - currentWidth / 2 + 3;
 
     if (currentValueEl.value) currentValueEl.value.style.left = `${newPos}px`;
 }
@@ -92,6 +91,7 @@ function gradientRedraw(val: number): string {
             :value="currentValueReactive"
             @input="rangeEventHolder"
             @change="rangeEventHolder" />
+        <!-- TODO: Убрать change -->
         <div class="value-borders">
             <span class="min">{{ min }}</span>
             <span class="max">{{ max }}</span>
