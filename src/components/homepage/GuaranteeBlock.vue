@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HomePageTape from './HomePageTape.vue';
+
 </script>
 
 <template>
@@ -10,8 +12,7 @@
       </p>
     </div>
     <div class="guarante-tape-block">
-      <img src="../../assets/images/homepage/red_tape.png" alt="zxc" class="tape">
-      <p class="tape-text"></p>
+      <HomePageTape></HomePageTape>
     </div>
   </div>
 </template>
@@ -25,15 +26,14 @@
   width: 11.5rem;
   border-radius: 6px;
   background-color: #FFFFFF;
-  padding: 12px 8px 34px 8px;
-  margin-left: 28px;
+  padding: 1rem 0.5rem 2.5rem 0.5rem;
 
   p {
     color: #FFFFFF;
     text-align: center;
     font-style: normal;
     font-weight: 500;
-    font-size: 11.1166px;
+    font-size: 0.7rem;
     line-height: 130%;
     color: #373737;
   }
@@ -45,19 +45,11 @@
 
 .guarante-tape-block {
   position: absolute;
-  top: 70%;
-
-  span {
-    display: inline-block;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15.2344px;
-    line-height: 19px;
-    color: #FFDCDC;
-  }
+  left: -33%;
+  top: 33%;
 }
 
 .tape {
-  width: 15rem;
-  height: 4.5rem;
+  width: 20rem;
+  height: 10rem;
 }</style>

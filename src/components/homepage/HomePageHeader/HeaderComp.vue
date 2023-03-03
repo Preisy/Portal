@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import WhatsappLogo from './WhatsappLogo.vue';
+import HeaderLogo from './HeaderLogo.vue'
 
 </script>
 
@@ -7,17 +9,17 @@
     <div class="structure">
       <div class="header-items">
         <div class="left-items">
-          <div class="logo">logo</div>
+          <HeaderLogo></HeaderLogo>
           <p class="place">Натяжные потолки<br>в Москве</p>
         </div>
         <div class="right-items">
+          <div class="whatsapp">
+            <WhatsappLogo></WhatsappLogo>
+            <button class="contact">Написать в WhatsApp</button>
+          </div>
           <p class="time">
             Пн-Вс. 8:00–22:00
           </p>
-          <div class="whatsapp">
-            <img src="../../assets/images/general/whatsapp.svg" alt="zzz" class="whatsapp-logo">
-            <button class="contact">Написать в WhatsApp</button>
-          </div>
         </div>
       </div>
     </div>
@@ -26,14 +28,13 @@
 
 <style scoped lang="scss">
 header {
-  //padding-top: 45px;
   position: fixed;
   width: 100%;
   z-index: 5;
 
   .structure {
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 .header-items {
@@ -45,26 +46,21 @@ header {
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
-    line-height: 15px;
+    line-height: 1rem;
     color: #FFFFFF;
   }
 }
-.left-items {
-  display: flex;
-  align-items: center;
-}
-.right-items {
-  display: flex;
-  align-items: center;
-}
-.logo {
-  padding: 21px 54px;
-  background: rgba(217, 217, 217, 0.2);
-  border-radius: 26px;
-  margin-right: 32px;
+.place {
+  float: left;
+  margin-top: 0.7rem;
 }
 .time {
-  margin-right: 56px;
+  margin-top: 0.9rem;
+  margin-right: 3.5rem;
+  float: right;
+}
+.whatsapp {
+  float: right;
 }
 .contact {
   background: none;
@@ -73,7 +69,7 @@ header {
   font-style: normal;
   font-weight: 500;
   font-size: 0.8rem;
-  line-height: 15px;
+  line-height: 1rem;
   text-decoration: underline;
   color: #FFFFFF;
 }
