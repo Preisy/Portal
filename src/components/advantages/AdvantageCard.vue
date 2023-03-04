@@ -26,7 +26,7 @@ defineProps({
     --transition: transform ease-in-out 0.125s;
     width: 340px;
     box-sizing: border-box;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 3.5rem;
     border-radius: 1.4rem;
     background: #2b2b2b;
     color: #fff;
@@ -41,7 +41,10 @@ defineProps({
     }
 
     .img-wrapper {
-        margin: 0.5rem auto;
+        margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.9rem;
         img {
             height: 7rem;
             transition: var(--transition);
@@ -50,7 +53,7 @@ defineProps({
     .short-desc {
         font-size: 1.125rem;
         font-weight: 600;
-        margin-bottom: 0.9rem;
+        margin-bottom: 1.1rem;
 
         white-space: nowrap;
     }
