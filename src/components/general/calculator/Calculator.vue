@@ -26,11 +26,11 @@ watch(inputVal, (newVal, oldVal)=>{
             </div>
             <div class="setting-line">
                 <span class="description">Количество углов</span>
-                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
+                <CalculatorRangeDeclarative :min="0" :max="10" :scale="10"></CalculatorRangeDeclarative>
             </div>
             <div class="setting-line">
                 <span class="description">Количество светильников</span>
-                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
+                <CalculatorRangeDeclarative :min="0" :max="10" :scale="10"></CalculatorRangeDeclarative>
             </div>
         </div>
         <div class="result">

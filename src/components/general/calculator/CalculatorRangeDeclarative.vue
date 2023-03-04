@@ -1,27 +1,35 @@
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed, ref, watch} from "vue";
 import type {Nullable} from "@/types/Types";
 
 const props = defineProps({
-  min: Number,
-  max: Number,
+  min: {
+    type: Number,
+    default: 0
+  },
+  max: {
+    type: Number,
+    default: 10
+  },
+  scale: {
+    type: Number,
+    default: 1
+  }
 });
 
 const inputRangeEl = ref<Nullable<HTMLElement>>();
 const minEl = ref<Nullable<HTMLElement>>();
 const maxEl = ref<Nullable<HTMLElement>>();
-const min = props.min ? props.min : 0;
-const max = props.max ? props.max : 10;
-const currentValueReactive = ref((min + max) / 2);
+const currentValueReactive = ref((props.min + props.max) / 2);
 
 let offset = computed(() => {
   if (!minEl.value || !maxEl.value) return 0;
   const width = maxEl.value?.getBoundingClientRect().left - minEl.value?.getBoundingClientRect().left;
-  const newPos = (width / (max - min) * currentValueReactive.value);
+  const newPos = (width / (props.max - props.min) * currentValueReactive.value / props.scale);
   return Math.round(newPos * 10) / 10;
 })
 let gradient = computed(() => {
-  const percentage = (currentValueReactive.value / max) * 100;
+  const percentage = (currentValueReactive.value / props.max / props.scale) * 100;
   return `background: linear-gradient(90deg, #fec640 ${percentage}%, #d9d9d9 ${percentage}%)`;
 })
 </script>
@@ -32,7 +40,7 @@ let gradient = computed(() => {
            class="pretty-range"
            type="range"
            :min="min"
-           :max="max"
+           :max="max*scale"
            v-model="currentValueReactive"
            :style="gradient"/>
     <div class="value-borders">
@@ -40,7 +48,7 @@ let gradient = computed(() => {
       <span class="max" ref="maxEl">{{ max }}</span>
       <span ref="currentValueEl"
             class="current-value"
-            :style="`left: ${offset}px`">{{ currentValueReactive }}</span>
+            :style="`left: ${offset}px`">{{ Math.round(currentValueReactive / scale) }}</span>
     </div>
   </div>
 </template>
