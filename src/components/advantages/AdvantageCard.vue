@@ -2,15 +2,15 @@
 defineProps({
     imgSrc: {
         type: String,
-        required: true
+        required: true,
     },
-})
+});
 </script>
 
 <template>
     <div class="advantage-card">
         <div class="img-wrapper">
-            <img :src="imgSrc" alt="">
+            <img :src="imgSrc" alt="" />
         </div>
         <div class="short-desc">
             <p><slot name="short"></slot></p>
@@ -23,31 +23,38 @@ defineProps({
 
 <style scoped lang="scss">
 .advantage-card {
+    --transition: transform ease-in-out 0.125s;
     width: 340px;
-    
     box-sizing: border-box;
     padding: 1.2rem 3rem;
     border-radius: 1.4rem;
-
-    background: #2B2B2B;
+    background: #2b2b2b;
     color: #fff;
-    
     text-align: center;
+    transition: var(--transition);
 
-
-    .img-wrapper{
+    &:hover{
+        transform: scale(1.05);
         img{
-            height: 8rem;
+            transform: translateY(-5px) scale(1.1);
         }
     }
-    .short-desc{
+
+    .img-wrapper {
+        margin: 0.5rem auto;
+        img {
+            height: 7rem;
+            transition: var(--transition);
+        }
+    }
+    .short-desc {
         font-size: 1.125rem;
         font-weight: 600;
         margin-bottom: 0.9rem;
 
         white-space: nowrap;
     }
-    .long-desc{
+    .long-desc {
         font-size: 1rem;
     }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AdvantageCard from "./AdvantageCard.vue";
 import flat from "@/assets/images/advantages_page/flat.png";
-import helmet from "@/assets/images/advantages_page/helmet.png";
+import helmet from "@/assets/images/advantages_page/helmet2.png";
 import lens from "@/assets/images/advantages_page/lens.png";
 import man from "@/assets/images/advantages_page/man.png";
 import money from "@/assets/images/advantages_page/money.png";
@@ -12,10 +12,9 @@ import sofa from "@/assets/images/advantages_page/sofa.png";
     <div class="advantages-page">
         <div class="structure">
             <div class="description">
-                <h1> Почему натяжной потолок <span class="yellow-highlight"> лучший </span>? </h1>
+                <h2> Почему натяжной потолок <span class="yellow-highlight"> лучший </span>? </h2>
             </div>
             <div class="advantages-cards">
-                <div class="flex-row">
                     <AdvantageCard :img-src="flat">
                         <template #short>Не крадет пространство</template>
                         <template #long>В отличие от Гипсокартона или ДСП-потолков,натяжным потолкам требуется совсем немного пространства.</template>
@@ -28,8 +27,6 @@ import sofa from "@/assets/images/advantages_page/sofa.png";
                         <template #short>Не впитывает запахи</template>
                         <template #long>А значит, вы можете курить тайком от мужа или от родных:)</template>
                     </AdvantageCard>
-                </div> <!-- .flex-row -->
-                <div class="flex-row">
                     <AdvantageCard :img-src="lens">
                         <template #short>Любые эксперименты</template>
                         <template #long>Может быть любых форм и цветов, многоуровневый, текстурный… Какой только пожелаете!</template>
@@ -42,7 +39,6 @@ import sofa from "@/assets/images/advantages_page/sofa.png";
                         <template #short>Идеально ровный</template>
                         <template #long>Потолок не нужно ровнять, выносить тонны мусора и чихать от побелки. Идеально ровный потолок. Всегда!</template>
                     </AdvantageCard>
-                </div> <!-- .flex-row -->
             </div> <!-- .advantages-cards -->
         </div><!-- .structure -->
     </div><!-- .advantages-page -->
@@ -56,16 +52,23 @@ import sofa from "@/assets/images/advantages_page/sofa.png";
     padding-top: 2rem;
     padding-bottom: 4rem;
 
-    .flex-row {
-        display: flex;
-        gap: 4.5rem;
+    .advantages-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         justify-content: center;
+        column-gap: 0.5rem;
+        row-gap: 2rem;
+
+        width: 85%;
+
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 2rem;
+        justify-items: center;
     }
 
     .description {
-        font-size: 2.5rem;
-        font-weight: 700;
         color: #fff;
         margin-bottom: 2.4rem;
         .yellow-highlight {
