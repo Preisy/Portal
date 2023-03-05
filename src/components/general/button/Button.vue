@@ -16,11 +16,11 @@ $click-gradient: linear-gradient(180deg, #f4dea6 0%, #fbce63 100%);
 $text-shadow: 0px 1px 0px rgba(254, 225, 154, 0.7);
 $shadow-color: #da9d22;
 $base-shadow: 0px 3px 0px 0px $shadow-color;
-$height: 60px;
+$height: 3.75rem;
 
 .button {
     box-sizing: border-box;
-    padding: calc($height / 2) 40px;
+    padding: $height / 2 3.25rem;
     text-align: center;
     height: $height;
     width: max-content;
@@ -30,7 +30,7 @@ $height: 60px;
     background: $base-gradient;
 
     color: var(--color-grey-text);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     text-shadow: $text-shadow;

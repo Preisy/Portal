@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 
 import PrettyRange from "./PrettyRange.vue";
-import Button from "@/components/general/Button.vue";
+import Button from "@/components/general/button/Button.vue";
 import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
 import type { Nullable } from "@/types/Types";
 
@@ -58,7 +58,7 @@ $calculator-width: 440px;
 
     border-radius: 0.9rem;
 
-    padding: 0px calc($calculator-width / 10);
+    padding: 0px $calculator-width / 10;
 }
 
 .head {
