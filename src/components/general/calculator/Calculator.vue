@@ -5,12 +5,18 @@ import PrettyRange from "./PrettyRange.vue";
 import Button from "@/components/general/button/Button.vue";
 import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
 import type { Nullable } from "@/types/Types";
+import QuasarRange from "./QuasarRange.vue";
 
 const inputEl = ref<Nullable<HTMLInputElement>>();
 const inputVal = ref("");
-watch(inputVal, (newVal, oldVal)=>{
+watch(inputVal, (newVal, oldVal) => {
     inputVal.value = inputVal.value.replace(/\D/, "");
-})
+});
+
+const ceilVal = ref(0);
+watch(ceilVal, (newVal, oldVal) => {
+    console.log(newVal);
+});
 </script>
 
 <template>
@@ -22,15 +28,17 @@ watch(inputVal, (newVal, oldVal)=>{
         <div class="settings">
             <div class="setting-line">
                 <span class="description">Площадь потолка</span>
-                <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative>
+                <!-- <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative> -->
+                <QuasarRange
+                    v-model="ceilVal"
+                    :min="0"
+                    :max="200"></QuasarRange>
             </div>
             <div class="setting-line">
                 <span class="description">Количество углов</span>
-                <CalculatorRangeDeclarative :min="0" :max="10" :scale="10"></CalculatorRangeDeclarative>
             </div>
             <div class="setting-line">
                 <span class="description">Количество светильников</span>
-                <CalculatorRangeDeclarative :min="0" :max="10" :scale="10"></CalculatorRangeDeclarative>
             </div>
         </div>
         <div class="result">
@@ -39,7 +47,15 @@ watch(inputVal, (newVal, oldVal)=>{
         </div>
         <div class="contact">
             <!-- TODO: pattern-matching для инпута -->
-            <input v-model="inputVal" ref="inputEl" placeholder="Ваш номер телефона" type="tel" />
+            <input
+                v-model="inputVal"
+                ref="inputEl"
+                placeholder="Ваш номер телефона"
+                type="tel" />
+            <img
+                class="phone"
+                src="@/assets/images/calculator/phone.svg"
+                alt="" />
         </div>
         <Button class="button" href="#">отправить заявку</Button>
     </div>
@@ -108,13 +124,14 @@ $calculator-width: 440px;
     span {
         font-weight: 600;
     }
-    .description{
-        font-size: 1.25rem
+    .description {
+        font-size: 1.25rem;
     }
     .result-value {
         position: relative;
 
         font-size: 1.75rem;
+        font-size: 600;
         margin-left: auto;
         margin-right: auto;
 
@@ -122,17 +139,24 @@ $calculator-width: 440px;
             content: "₽";
             font-size: 1.25rem;
         }
-        // @todo:
-        // &::before{
-        //     content: url("../../assets/images/calculator/result_highlight.svg");
-        //     position: absolute;
-        // }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 9.5rem;
+            height: 4.5rem;
+            left: -1.5rem;
+            top: -0.2rem;
+            background: url(/src/assets/images/calculator/result_highlight.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
 }
 
 .contact {
     width: 100%;
     margin-bottom: 1.25rem;
+    position: relative;
 
     input {
         height: 3.6rem;
@@ -143,13 +167,21 @@ $calculator-width: 440px;
         border-radius: 0.9rem;
         box-sizing: border-box;
         padding: 1rem;
+        padding-left: 2.5rem;
 
         font-size: 1rem;
+
         &::placeholder {
             font-weight: 400;
-
             color: #ababab;
         }
+    }
+    .phone {
+        --height: 1.25rem;
+        position: absolute;
+        left: 0.5rem;
+        height: var(--height);
+        top: calc(50% - var(--height) / 2);
     }
 }
 

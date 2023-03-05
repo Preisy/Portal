@@ -1,8 +1,10 @@
 @import './reset.css';
 @import './base.css';
+@import './quasar-custom-colors.css';
 
 .structure {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
+
