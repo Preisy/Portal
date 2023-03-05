@@ -11,6 +11,7 @@ defineProps({
     <div class="advantage-card">
         <div class="img-wrapper">
             <img :src="imgSrc" alt="" />
+            <div class="img-shadow"></div>
         </div>
         <div class="short-desc">
             <p><slot name="short"></slot></p>
@@ -23,8 +24,10 @@ defineProps({
 
 <style scoped lang="scss">
 .advantage-card {
-    --transition: transform ease-in-out 0.125s;
-    width: 340px;
+    --transition: transform ease-in-out 0.2s;
+    --img-height: 7rem;
+
+    width: 23rem;
     box-sizing: border-box;
     padding: 1.2rem 3.5rem;
     border-radius: 1.4rem;
@@ -33,21 +36,38 @@ defineProps({
     text-align: center;
     transition: var(--transition);
 
-    &:hover{
+    &:hover {
         transform: scale(1.05);
-        img{
-            transform: translateY(-5px) scale(1.1);
+        img {
+            transform: translateY(-5px);
         }
     }
 
     .img-wrapper {
         margin-top: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.9rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.9rem;
+        position: relative;
         img {
-            height: 7rem;
+            height: var(--img-height);
             transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        .img-shadow {
+            position: absolute;
+            height: var(--img-height);
+            width: 70%;
+            border-radius: 100%;
+            background: #181818;
+            opacity: 0.28;
+            filter: blur(6px);
+            top: 2rem;
+            left: 12%;
+            transform: rotateX(60deg);
+
+            // Как правильно сделать тень?
         }
     }
     .short-desc {
@@ -59,6 +79,7 @@ defineProps({
     }
     .long-desc {
         font-size: 1rem;
+        line-height: 1.1rem;
     }
 }
 </style>
