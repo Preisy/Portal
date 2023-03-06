@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import HowWorkCard from "./HowWorkCard.vue";
+import BgAttachImg from "../BgAttachImg/BgAttachImg.vue";
 
 import smile_guy from "@/assets/images/how_we_works/smile_guy.png";
 import ruler from "@/assets/images/how_we_works/ruler.png";
 import flat from "@/assets/images/how_we_works/flat.png";
+import tapee from "@/assets/images/how_we_works/tapee.png";
+
 </script>
 
 <template>
@@ -26,10 +29,7 @@ import flat from "@/assets/images/how_we_works/flat.png";
                 </HowWorkCard>
             </div>
         </div>
-        <img
-            class="tapee"
-            src="@/assets/images/how_we_works/tapee.png"
-            alt="" />
+        <BgAttachImg class="tapee" :img_src="tapee"></BgAttachImg>
         <!-- <img src="@/assets/images/how_we_works/background.png" alt="" class="background"> -->
     </div>
 </template>
@@ -42,8 +42,12 @@ import flat from "@/assets/images/how_we_works/flat.png";
     padding-bottom: 3rem;
 
     background: url(/src/assets/images/how_we_works/background.png) no-repeat,
-        linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
+    linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
 
+    .structure {
+        position: relative;
+        z-index: 1;
+    }
     .description {
         margin-bottom: 5.5rem;
     }
@@ -64,8 +68,6 @@ import flat from "@/assets/images/how_we_works/flat.png";
     top: -6.6%;
     right: 0.7rem;
     height: 470px;
-    opacity: 0.95;
-    filter: blur(3.5px);
     transform: rotateZ(0deg);
 }
 </style>

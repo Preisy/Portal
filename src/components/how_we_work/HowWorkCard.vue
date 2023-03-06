@@ -43,6 +43,9 @@ defineProps({
         border: 2px solid #feda82;
         outline: var(--outline-size) solid #fff;
         background: #fff;
+
+        font-size: 1.75rem;
+        font-weight: 600;
     }
     .card-body {
         height: 100%;
