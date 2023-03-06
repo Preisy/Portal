@@ -119,7 +119,7 @@ function delta_change(num: number) {
             </div>
             <!-- .advantages-cards -->
         </div>
-        <Clouds style="display: none"></Clouds>
+        <Clouds class="clouds"></Clouds>
         <!-- .structure -->
     </div>
     <!-- .advantages-page -->
@@ -181,6 +181,10 @@ function delta_change(num: number) {
     }
 
     @media (max-width: 400px) {
+        .clouds {
+            display: none;
+        }
+
         .advantages-cards {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
