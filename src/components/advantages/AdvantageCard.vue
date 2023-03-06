@@ -3,7 +3,7 @@ defineProps({
     imgSrc: {
         type: String,
         required: true,
-    },
+    }
 });
 </script>
 
@@ -80,6 +80,23 @@ defineProps({
     .long-desc {
         font-size: 1rem;
         line-height: 1.1rem;
+    }
+
+    @media (max-width: 400px) {
+        --img-height: 5rem;
+
+        min-width: 15rem;
+        width: 100%;
+        padding: 0.2rem 3.5rem;
+        grid-column: 1/1;
+        grid-row: 1/1;
+
+        .short-desc {
+            font-size: 0.875rem;
+        }
+        .long-desc {
+            font-size: 0.75rem;
+        }
     }
 }
 </style>

@@ -1,16 +1,37 @@
 <script setup lang="ts">
+import { computed, onMounted, ref } from "vue";
 import AdvantageCard from "./AdvantageCard.vue";
+import Clouds from "../cloud/Clouds.vue";
+import Button from "../button/Button.vue";
+
+import type { Nullable } from "@/types/types";
+
 import flat from "@/assets/images/advantages_page/flat.png";
 import helmet from "@/assets/images/advantages_page/helmet2.png";
 import lens from "@/assets/images/advantages_page/lens.png";
 import man from "@/assets/images/advantages_page/man.png";
 import money from "@/assets/images/advantages_page/money.png";
 import sofa from "@/assets/images/advantages_page/sofa.png";
-import Clouds from "../cloud/Clouds.vue";
+
+const root = ref<Nullable<HTMLElement>>();
+const delta = ref(0);
+const style_index = (index: number) => {
+    const cards = root.value?.querySelectorAll(".card");
+    const max = cards?.length;
+    if (!max) return 0;
+
+    const result = (index + Math.abs(delta.value)) % max;
+    return `z-index:${result}`;
+};
+
+function delta_change(num: number) {
+    console.log(num, delta.value);
+    delta.value += num;
+}
 </script>
 
 <template>
-    <div class="advantages-page">
+    <div ref="root" class="advantages-page">
         <div class="structure">
             <div class="description">
                 <h2>
@@ -18,55 +39,87 @@ import Clouds from "../cloud/Clouds.vue";
                     <span class="yellow-highlight"> лучший </span> ?
                 </h2>
             </div>
-            <div class="advantages-cards">
-                <AdvantageCard :img-src="flat">
-                    <template #short>Не крадет пространство</template>
-                    <template #long
-                        >В отличие от Гипсокартона или ДСП-потолков,натяжным
-                        потолкам требуется совсем немного
-                        пространства.</template
-                    >
-                </AdvantageCard>
-                <AdvantageCard :img-src="money">
-                    <template #short>Экономит деньги</template>
-                    <template #long
-                        >Гораздо экономичнее установки любых других видов
-                        потолка.</template
-                    >
-                </AdvantageCard>
-                <AdvantageCard :img-src="man">
-                    <template #short>Не впитывает запахи</template>
-                    <template #long
-                        >А значит, вы можете курить тайком от мужа или от
-                        родных:)</template
-                    >
-                </AdvantageCard>
-                <AdvantageCard :img-src="lens">
-                    <template #short>Любые эксперименты</template>
-                    <template #long
-                        >Может быть любых форм и цветов, многоуровневый,
-                        текстурный… Какой только пожелаете!</template
-                    >
-                </AdvantageCard>
-                <AdvantageCard :img-src="sofa">
-                    <template #short>Эстетично выглядит</template>
-                    <template #long
-                        >Конечно, со временем желтеют все потолки, но натяжной —
-                        самый стойкий!</template
-                    >
-                </AdvantageCard>
-                <AdvantageCard :img-src="helmet">
-                    <template #short>Идеально ровный</template>
-                    <template #long
-                        >Потолок не нужно ровнять, выносить тонны мусора и
-                        чихать от побелки. Идеально ровный потолок.
-                        Всегда!</template
-                    >
-                </AdvantageCard>
+            <div class="cards-holder">
+                <div class="advantages-cards">
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(0)"
+                        :img-src="flat">
+                        <template #short>Не крадет пространство</template>
+                        <template #long
+                            >В отличие от Гипсокартона или ДСП-потолков,натяжным
+                            потолкам требуется совсем немного
+                            пространства.</template
+                        >
+                    </AdvantageCard>
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(1)"
+                        :img-src="money">
+                        <template #short>Экономит деньги</template>
+                        <template #long
+                            >Гораздо экономичнее установки любых других видов
+                            потолка.</template
+                        >
+                    </AdvantageCard>
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(2)"
+                        :img-src="man">
+                        <template #short>Не впитывает запахи</template>
+                        <template #long
+                            >А значит, вы можете курить тайком от мужа или от
+                            родных:)</template
+                        >
+                    </AdvantageCard>
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(3)"
+                        :img-src="lens">
+                        <template #short>Любые эксперименты</template>
+                        <template #long
+                            >Может быть любых форм и цветов, многоуровневый,
+                            текстурный… Какой только пожелаете!</template
+                        >
+                    </AdvantageCard>
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(4)"
+                        :img-src="sofa">
+                        <template #short>Эстетично выглядит</template>
+                        <template #long
+                            >Конечно, со временем желтеют все потолки, но
+                            натяжной — самый стойкий!</template
+                        >
+                    </AdvantageCard>
+                    <AdvantageCard
+                        class="card"
+                        :style="style_index(5)"
+                        :img-src="helmet">
+                        <template #short>Идеально ровный</template>
+                        <template #long
+                            >Потолок не нужно ровнять, выносить тонны мусора и
+                            чихать от побелки. Идеально ровный потолок.
+                            Всегда!</template
+                        >
+                    </AdvantageCard>
+                </div>
+                <div class="adaptive-controls">
+                    <Button @click="delta_change(-1)" class="button left">
+                        <img
+                            src="@/assets/images/advantages_page/left_arrow.svg"
+                            alt="←" />
+                    </Button>
+                    <Button @click="delta_change(1)" class="button right">
+                        <img
+                            src="@/assets/images/advantages_page/left_arrow.svg"
+                            alt="→" />
+                    </Button>
+                </div>
             </div>
             <!-- .advantages-cards -->
         </div>
-        <Clouds></Clouds>
+        <Clouds style="display: none"></Clouds>
         <!-- .structure -->
     </div>
     <!-- .advantages-page -->
@@ -88,6 +141,19 @@ import Clouds from "../cloud/Clouds.vue";
         padding-bottom: 4rem;
     }
 
+    .description {
+        color: #fff;
+        margin-bottom: 2.4rem;
+        .yellow-highlight {
+            background: linear-gradient(45deg, #feda82 0, #fec338 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            font-style: italic;
+        }
+    }
+
     .advantages-cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -104,18 +170,62 @@ import Clouds from "../cloud/Clouds.vue";
         justify-items: center;
     }
 
-    .description {
-        color: #fff;
-        margin-bottom: 2.4rem;
-        .yellow-highlight {
-            background: linear-gradient(45deg, #feda82 0, #fec338 100%);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            font-style: italic;
-        }
+    .adaptive-controls {
+        display: none;
     }
 
+    .cards-holder {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 400px) {
+        .advantages-cards {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            width: auto;
+        }
+        .description {
+            h2 {
+                font-size: 1.125rem;
+            }
+        }
+        .adaptive-controls {
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 110%;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+
+            .button {
+                --size: 2rem;
+                --padding: 0.5rem;
+                border-radius: 100%;
+                padding: 0;
+                width: var(--size);
+                height: var(--size);
+                img {
+                    // margin-left: calc(-1 * var(--padding));
+                    margin-top: calc(0.5 * var(--padding));
+                    width: calc(var(--size) - var(--padding));
+                    height: calc(var(--size) - var(--padding));
+                    user-select: none;
+                }
+                &.right {
+                    img {
+                        transform: rotateZ(180deg);
+                    }
+                }
+                // TODO: можно добавить в Button prop "volume: boolean", отключающий объемность
+                box-shadow: none;
+            }
+        }
+    }
 }
 </style>

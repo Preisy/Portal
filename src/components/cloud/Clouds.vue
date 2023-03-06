@@ -12,8 +12,6 @@
                 src="@/assets/images/clouds/right_clouds.png" />
             <div class="middle-clouds middle cloud" />
             <div class="middle-clouds middle cloud" />
-            <div class="middle-clouds middle cloud" />
-            <div class="middle-clouds middle cloud" />
         </div>
     </div>
 </template>
