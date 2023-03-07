@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import HomePageVue from './homepage/HomePage.vue';
+import SliderBlock from './slider/SliderBlock.vue';
+
+
 
 
 </script>
 
 <template>
-<HomePageVue></HomePageVue>
+  <SliderBlock></SliderBlock>
 </template>
 
 <style scoped lang="scss">
