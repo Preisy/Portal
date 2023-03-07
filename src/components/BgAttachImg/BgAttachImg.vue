@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { computed } from "@vue/reactivity";
-defineProps({
+const props = defineProps({
     img_src: { type: String, required: true },
+    ref_element: {
+        type: HTMLElement,
+        default: document.body
+    }
 });
 
 const currentScroll = ref(window.scrollY);
@@ -12,7 +16,7 @@ const parallax = computed(() => {
 });
 
 window.addEventListener("scroll", () => {
-    currentScroll.value = window.scrollY;
+    currentScroll.value = window.scrollY - props.ref_element?.offsetTop;
 });
 </script>
 

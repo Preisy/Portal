@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import HowWorkCard from "./HowWorkCard.vue";
 import BgAttachImg from "../BgAttachImg/BgAttachImg.vue";
 
@@ -10,6 +12,7 @@ import tapee from "@/assets/images/how_we_works/tapee.png";
 </script>
 
 <template>
+    <div ref="test" class="test"></div>
     <div class="how-we-do-it">
         <div class="structure">
             <div class="description">
