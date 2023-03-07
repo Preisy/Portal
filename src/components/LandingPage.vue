@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import HomePageVue from './homepage/HomePage.vue';
+import HomePage from './homepage/HomePage.vue';
+import ReviewsPage from './reviews/ReviewsPage.vue';
 
 
 </script>
 
 <template>
-<HomePageVue></HomePageVue>
+<HomePage></HomePage>
+<ReviewsPage></ReviewsPage>
 </template>
 
 <style scoped lang="scss">
