@@ -47,7 +47,7 @@ $height: 3.75rem;
 .button:active {
     background: $click-gradient;
     box-shadow: $base-shadow;
-    transform: translateY(5px);
+    transform: translateY(2px);
 }
 
 a.button {

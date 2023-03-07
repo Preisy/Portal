@@ -14,9 +14,9 @@ watch(inputVal, (newVal, oldVal) => {
 });
 
 const ceilVal = ref(0);
-watch(ceilVal, (newVal, oldVal) => {
-    console.log(newVal);
-});
+const cornerVal = ref(0);
+const lightVal = ref(0);
+
 </script>
 
 <template>
@@ -36,14 +36,25 @@ watch(ceilVal, (newVal, oldVal) => {
             </div>
             <div class="setting-line">
                 <span class="description">Количество углов</span>
+                <QuasarRange
+                    v-model="cornerVal"
+                    :min="0"
+                    :max="10"></QuasarRange>
             </div>
             <div class="setting-line">
                 <span class="description">Количество светильников</span>
+                <QuasarRange
+                    v-model="lightVal"
+                    :min="0"
+                    :max="10"></QuasarRange>
             </div>
         </div>
         <div class="result">
             <span class="description">Цена для вас</span>
-            <span class="result-value">12345</span>
+            <span class="result-value">
+                12345
+                <div class="highlight" />
+            </span>
         </div>
         <div class="contact">
             <!-- TODO: pattern-matching для инпута -->
@@ -97,6 +108,7 @@ $calculator-width: 440px;
         height: $size;
         transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
         top: -50%;
+        user-select: none;
     }
 }
 
@@ -106,7 +118,7 @@ $calculator-width: 440px;
     z-index: 1;
 
     .setting-line {
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.8rem;
     }
     .description {
         font-weight: 600;
@@ -129,9 +141,10 @@ $calculator-width: 440px;
     }
     .result-value {
         position: relative;
+        z-index: 1;
 
         font-size: 1.75rem;
-        font-size: 600;
+        font-weight: 600;
         margin-left: auto;
         margin-right: auto;
 
@@ -139,13 +152,16 @@ $calculator-width: 440px;
             content: "₽";
             font-size: 1.25rem;
         }
-        &::before {
-            content: "";
+
+        .highlight{
             position: absolute;
             width: 9.5rem;
             height: 4.5rem;
             left: -1.5rem;
             top: -0.2rem;
+
+            z-index: -1;
+
             background: url(/src/assets/images/calculator/result_highlight.svg);
             background-size: contain;
             background-repeat: no-repeat;
