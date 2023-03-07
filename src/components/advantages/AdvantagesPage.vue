@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import AdvantageCard from "./AdvantageCard.vue";
 import Clouds from "../cloud/Clouds.vue";
 import Button from "../button/Button.vue";
@@ -12,22 +12,19 @@ import lens from "@/assets/images/advantages_page/lens.png";
 import man from "@/assets/images/advantages_page/man.png";
 import money from "@/assets/images/advantages_page/money.png";
 import sofa from "@/assets/images/advantages_page/sofa.png";
+import Slider from "./Slider.vue";
 
 const root = ref<Nullable<HTMLElement>>();
-const delta = ref(0);
+
+const current = ref(0);
 const style_index = (index: number) => {
     const cards = root.value?.querySelectorAll(".card");
     const max = cards?.length;
     if (!max) return 0;
 
-    const result = (index + Math.abs(delta.value)) % max;
+    const result = (index + Math.abs(current.value)) % max;
     return `z-index:${result}`;
 };
-
-function delta_change(num: number) {
-    console.log(num, delta.value);
-    delta.value += num;
-}
 </script>
 
 <template>
@@ -40,82 +37,93 @@ function delta_change(num: number) {
                 </h2>
             </div>
             <div class="cards-holder">
-                <div class="advantages-cards">
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(0)"
-                        :img-src="flat">
-                        <template #short>Не крадет пространство</template>
-                        <template #long
-                            >В отличие от Гипсокартона или ДСП-потолков,натяжным
-                            потолкам требуется совсем немного
-                            пространства.</template
-                        >
-                    </AdvantageCard>
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(1)"
-                        :img-src="money">
-                        <template #short>Экономит деньги</template>
-                        <template #long
-                            >Гораздо экономичнее установки любых других видов
-                            потолка.</template
-                        >
-                    </AdvantageCard>
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(2)"
-                        :img-src="man">
-                        <template #short>Не впитывает запахи</template>
-                        <template #long
-                            >А значит, вы можете курить тайком от мужа или от
-                            родных:)</template
-                        >
-                    </AdvantageCard>
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(3)"
-                        :img-src="lens">
-                        <template #short>Любые эксперименты</template>
-                        <template #long
-                            >Может быть любых форм и цветов, многоуровневый,
-                            текстурный… Какой только пожелаете!</template
-                        >
-                    </AdvantageCard>
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(4)"
-                        :img-src="sofa">
-                        <template #short>Эстетично выглядит</template>
-                        <template #long
-                            >Конечно, со временем желтеют все потолки, но
-                            натяжной — самый стойкий!</template
-                        >
-                    </AdvantageCard>
-                    <AdvantageCard
-                        class="card"
-                        :style="style_index(5)"
-                        :img-src="helmet">
-                        <template #short>Идеально ровный</template>
-                        <template #long
-                            >Потолок не нужно ровнять, выносить тонны мусора и
-                            чихать от побелки. Идеально ровный потолок.
-                            Всегда!</template
-                        >
-                    </AdvantageCard>
-                </div>
-                <div class="adaptive-controls">
-                    <Button @click="delta_change(-1)" class="button left">
-                        <img
-                            src="@/assets/images/advantages_page/left_arrow.svg"
-                            alt="←" />
-                    </Button>
-                    <Button @click="delta_change(1)" class="button right">
-                        <img
-                            src="@/assets/images/advantages_page/left_arrow.svg"
-                            alt="→" />
-                    </Button>
-                </div>
+                <Slider :position="current">
+                    <div class="advantages-cards">
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(0)"
+                            :img-src="flat">
+                            <template #short>Не крадет пространство</template>
+                            <template #long
+                                >В отличие от Гипсокартона или
+                                ДСП-потолков,натяжным потолкам требуется совсем
+                                немного пространства.</template
+                            >
+                        </AdvantageCard>
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(1)"
+                            :img-src="money">
+                            <template #short>Экономит деньги</template>
+                            <template #long
+                                >Гораздо экономичнее установки любых других
+                                видов потолка.</template
+                            >
+                        </AdvantageCard>
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(2)"
+                            :img-src="man">
+                            <template #short>Не впитывает запахи</template>
+                            <template #long
+                                >А значит, вы можете курить тайком от мужа или
+                                от родных:)</template
+                            >
+                        </AdvantageCard>
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(3)"
+                            :img-src="lens">
+                            <template #short>Любые эксперименты</template>
+                            <template #long
+                                >Может быть любых форм и цветов, многоуровневый,
+                                текстурный… Какой только пожелаете!</template
+                            >
+                        </AdvantageCard>
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(4)"
+                            :img-src="sofa">
+                            <template #short>Эстетично выглядит</template>
+                            <template #long
+                                >Конечно, со временем желтеют все потолки, но
+                                натяжной — самый стойкий!</template
+                            >
+                        </AdvantageCard>
+                        <AdvantageCard
+                            class="card"
+                            :style="style_index(5)"
+                            :img-src="helmet">
+                            <template #short>Идеально ровный</template>
+                            <template #long
+                                >Потолок не нужно ровнять, выносить тонны мусора
+                                и чихать от побелки. Идеально ровный потолок.
+                                Всегда!</template
+                            >
+                        </AdvantageCard>
+                    </div>
+
+                    <template #slider-controls>
+                        <div class="adaptive-controls">
+                            <Button
+                                v-model="current"
+                                :delta="-1"
+                                class="button left">
+                                <img
+                                    src="@/assets/images/advantages_page/left_arrow.svg"
+                                    alt="←" />
+                            </Button>
+                            <Button
+                                v-model="current"
+                                :delta="1"
+                                class="button right">
+                                <img
+                                    src="@/assets/images/advantages_page/left_arrow.svg"
+                                    alt="→" />
+                            </Button>
+                        </div>
+                    </template>
+                </Slider>
             </div>
             <!-- .advantages-cards -->
         </div>

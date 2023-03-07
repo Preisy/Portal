@@ -1,11 +1,30 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { computed } from "@vue/reactivity";
+
 const props = defineProps({
     href: String,
+    volumetric: {
+        type: Boolean,
+        default: true,
+    },
+    delta: { type: Number, default: 0 },
+    modelValue: Number,
 });
+
+const emit = defineEmits(["update:modelValue"]);
+const val = ref(props.modelValue);
+function click() {
+    ///Todo: find better way to check
+    if (val.value === undefined) return;
+
+    val.value += props.delta;
+    emit("update:modelValue", val.value);
+}
 </script>
 
 <template>
-    <a :href="props.href ?? '#'" class="button">
+    <a @click="click" :href="props.href ?? '#'" class="button">
         <slot />
     </a>
 </template>
