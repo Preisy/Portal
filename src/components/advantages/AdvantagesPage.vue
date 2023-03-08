@@ -142,8 +142,6 @@ const style_index = (index: number) => {
 
     background: linear-gradient(180deg, #141414 0%, #212121 100%);
 
-    overflow-x: hidden;
-
     .structure {
         padding-top: 3.5rem;
         padding-bottom: 4rem;

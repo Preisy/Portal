@@ -11,6 +11,10 @@
     font-size: 16px;
 }
 
+:root {
+    font-family: var(--font-family);
+}
+
 html {
     width: 100%;
 }
@@ -18,3 +22,5 @@ html {
 body {
     width: 100%;
 }
+
+
