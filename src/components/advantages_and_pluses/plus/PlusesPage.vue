@@ -28,7 +28,7 @@ const style_index = (index: number) => {
 </script>
 
 <template>
-    <div ref="root" class="advantages-page">
+    <div ref="root" class="pluses-page">
         <div class="structure">
             <div class="description">
                 <h2>
@@ -37,7 +37,7 @@ const style_index = (index: number) => {
                 </h2>
             </div>
             <div class="cards-holder">
-                <div class="advantages-cards">
+                <div class="cards">
                     <Card
                         class="card white"
                         :style="style_index(0)"
@@ -122,7 +122,7 @@ const style_index = (index: number) => {
 </template>
 
 <style scoped lang="scss">
-.advantages-page {
+.pluses-page {
     position: relative;
 
     width: 100%;
@@ -157,7 +157,7 @@ const style_index = (index: number) => {
         width: fit-content;
         margin: 0 auto;
 
-        .advantages-cards {
+        .cards {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
@@ -172,14 +172,18 @@ const style_index = (index: number) => {
             margin-bottom: 2rem;
             justify-items: center;
 
-            .white{
-                background: #E3E3E3;
+            .white {
+                background: #e3e3e3;
                 color: #515151;
             }
         }
     }
 
     .clouds {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1rem;
         transform: rotateZ(180deg);
         filter: contrast(0.855);
     }
@@ -189,7 +193,7 @@ const style_index = (index: number) => {
             display: none;
         }
 
-        .advantages-cards {
+        .cards {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
             width: auto;
