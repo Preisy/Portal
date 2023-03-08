@@ -6,6 +6,9 @@
 
     --color-grey-text: #373737;
     --font-family: 'Montserrat', sans-serif;
+
+    font-family: var(--font-family);
+    font-size: 16px;
 }
 
 :root {

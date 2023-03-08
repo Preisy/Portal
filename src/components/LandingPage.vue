@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import HomePageVue from './homepage/HomePage.vue';
+import AdvantagesPage from './advantages/AdvantagesPage.vue';
+import HomePage from './homepage/HomePage.vue';
 import HeaderComp from './headerComp/HeaderComp.vue'
 
 
@@ -7,8 +8,9 @@ import HeaderComp from './headerComp/HeaderComp.vue'
 </script>
 
 <template>
-    <HeaderComp></HeaderComp>
-    <HomePageVue></HomePageVue>
+<HeaderComp></HeaderComp>
+<HomePage></HomePage>
+<AdvantagesPage></AdvantagesPage>
 </template>
 
 <style scoped lang="scss"></style>

@@ -22,6 +22,7 @@ import HomePageTape from './HomePageTape.vue';
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
 }
 .guarantee-text-block {
   width: 11.5rem;

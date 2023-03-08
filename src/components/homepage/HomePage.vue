@@ -49,6 +49,22 @@ import Discount from './Discount.vue'
   display: flex;
   align-items: center;
 
+  .main-slogan{
+    font-style: italic;
+    line-height: 2.9rem;
+    background: linear-gradient(86.98deg, #FEDA82 22.54%, #FEC338 105.96%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 4rem;
+    margin-bottom: 1.75rem;
+    .another-color {
+      font-style: normal;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-color: #FFFFFF;
+    }
+  }
   .add-slogan {
     font-style: normal;
     font-weight: 500;
