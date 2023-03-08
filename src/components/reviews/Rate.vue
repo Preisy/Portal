@@ -13,7 +13,7 @@ defineProps({
             <img
                 v-for="index in rate"
                 :key="index"
-                src="@/assets/images/plus_page/star.svg" />
+                src="@/assets/images/reviews/star.svg" />
         </div>
     </div>
 </template>
@@ -23,6 +23,7 @@ defineProps({
     img {
         height: 1rem;
         margin-right: 0.2rem;
+        user-select: none;
     }
 }
 </style>

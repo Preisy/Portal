@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import ReviewCard from "./ReviewCard.vue";
 
-import img_1 from "@/assets/images/plus_page/1.png";
-import img_2 from "@/assets/images/plus_page/2.png";
-import img_3 from "@/assets/images/plus_page/3.png";
-import img_4 from "@/assets/images/plus_page/4.png";
+import example_img from "@/assets/images/reviews/review_example.png";
 </script>
 
 <template>
@@ -14,36 +11,40 @@ import img_4 from "@/assets/images/plus_page/4.png";
                 <h3><span class="highlighted">Отзывы</span> клиентов</h3>
             </div>
             <div class="reviews-wrapper">
-                <ReviewCard :img_src="img_1" creator="Михаил Барышников">
-                    Повседневная практика показывает, что сложившаяся структура
-                    организации в значительной степени обуславливает создание
-                    соответствующий условий активизации. Задача организации,
-                    вособенности же консультация с широким активом требуют
-                    отнасанализа соответствующий условий активизации.
+                <ReviewCard
+                    class="review"
+                    :img_src="example_img"
+                    header="Натяжной потолок в гостиной">
+                    Наши натяжные потолки отличаются замечательным качеством и
+                    долговечностью. Этот потолок установлен в гостиной и делает
+                    ее уютной и нежной.
                 </ReviewCard>
 
-                <ReviewCard :img_src="img_2" creator="Юрий Степанов">
-                    Повседневная практика показывает, что сложившаяся структура
-                    организации в значительной степени обуславливает создание
-                    соответствующий условий активизации. Задача организации,
-                    вособенности же консультация с широким активом требуют
-                    отнасанализа соответствующий условий активизации.
+                <ReviewCard
+                    class="review"
+                    :img_src="example_img"
+                    header="Натяжной потолок в гостиной">
+                    Наши натяжные потолки отличаются замечательным качеством и
+                    долговечностью. Этот потолок установлен в гостиной и делает
+                    ее уютной и нежной.
                 </ReviewCard>
 
-                <ReviewCard :img_src="img_3" creator="Дмитрий Казанцев">
-                    Повседневная практика показывает, что сложившаяся структура
-                    организации в значительной степени обуславливает создание
-                    соответствующий условий активизации. Задача организации,
-                    вособенности же консультация с широким активом требуют
-                    отнасанализа соответствующий условий активизации.
+                <ReviewCard
+                    class="review"
+                    :img_src="example_img"
+                    header="Натяжной потолок в гостиной">
+                    Наши натяжные потолки отличаются замечательным качеством и
+                    долговечностью. Этот потолок установлен в гостиной и делает
+                    ее уютной и нежной.
                 </ReviewCard>
 
-                <ReviewCard :img_src="img_4" creator="Роман Петров">
-                    Повседневная практика показывает, что сложившаяся структура
-                    организации в значительной степени обуславливает создание
-                    соответствующий условий активизации. Задача организации,
-                    вособенности же консультация с широким активом требуют
-                    отнасанализа соответствующий условий активизации.
+                <ReviewCard
+                    class="review"
+                    :img_src="example_img"
+                    header="Натяжной потолок в гостиной">
+                    Наши натяжные потолки отличаются замечательным качеством и
+                    долговечностью. Этот потолок установлен в гостиной и делает
+                    ее уютной и нежной.
                 </ReviewCard>
             </div>
         </div>
@@ -55,8 +56,8 @@ import img_4 from "@/assets/images/plus_page/4.png";
     background: #1c1c1c;
     text-align: center;
 
-    .structure{
-        width: 62.5%;
+    .structure {
+        width: 80%;
         padding-top: 6rem;
         padding-bottom: 6rem;
     }
@@ -74,6 +75,23 @@ import img_4 from "@/assets/images/plus_page/4.png";
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+
+            &::selection {
+                -webkit-text-fill-color: #fff;
+            }
+        }
+    }
+
+    .reviews-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 2rem; //min gap. main gap made by justify
+        justify-content: space-between;
+        justify-items: center;
+
+        .review {
+            width: 33rem;
         }
     }
 }
