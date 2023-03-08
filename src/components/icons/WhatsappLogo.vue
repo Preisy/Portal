@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <img src="../../../assets/images/general/whatsapp.svg" alt="zzz" class="whatsapp-logo">
+  <img src="../../assets/images/general/whatsapp.svg" alt="zzz" class="whatsapp-logo">
 </template>
 
 <style scoped lang="scss">

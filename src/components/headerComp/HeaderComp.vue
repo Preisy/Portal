@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import WhatsappLogo from './WhatsappLogo.vue';
-import HeaderLogo from './HeaderLogo.vue'
-
+import PortalLogo from '../icons/PortalLogo.vue';
+import WhatsappLogo from '../icons/WhatsappLogo.vue';
 </script>
 
 <template>
@@ -9,8 +8,7 @@ import HeaderLogo from './HeaderLogo.vue'
     <div class="structure">
       <div class="header-items">
         <div class="left-items">
-          <HeaderLogo></HeaderLogo>
-          <p class="place">Натяжные потолки<br>в Москве</p>
+          <PortalLogo></PortalLogo>
         </div>
         <div class="right-items">
           <p class="time">
@@ -18,7 +16,10 @@ import HeaderLogo from './HeaderLogo.vue'
           </p>
           <div class="whatsapp">
             <WhatsappLogo></WhatsappLogo>
-            <button class="contact">Написать в WhatsApp</button>
+            <div class="contacts">
+              <p class="number">8 (960) 687-76-87</p>
+              <button class="contact">Написать в WhatsApp</button>
+            </div>
           </div>
         </div>
       </div>
@@ -33,7 +34,7 @@ header {
   z-index: 5;
 
   .structure {
-    padding-top: 3rem;
+    padding-top: 2.6rem;
     padding-bottom: 3rem;
   }
 }
@@ -44,7 +45,6 @@ header {
   flex-wrap: wrap;
 
   p {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
@@ -62,19 +62,28 @@ header {
   display: flex;
   align-items: center;
 }
+.whatsapp {
+  margin-right: 5.6rem;
+}
 
 .time {
   margin-right: 3.5rem;
 }
-
+.contacts {
+  float: right;
+}
+.number {
+  text-align: center;
+}
 .contact {
   background: none;
   border: none;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 0.8rem;
   line-height: 1rem;
   text-decoration: underline;
   color: #FFFFFF;
-}</style>
+  margin-left: 1rem;
+}
+</style>

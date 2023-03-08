@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
+import Discount from './Discount.vue'
 </script>
 
 <template>
@@ -9,12 +10,13 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
       <div class="homepage-items">
         <div class="slogans">
           <h1 class="main-slogan">
-            Установим лучший натяжной потолок <span class="another-color">в Москве</span>
+            Установим лучший натяжной потолок <span class="another-color">в Москве и МО</span>
           </h1>
           <p class="add-slogan">
             Используем только качественные, проверенные <br> временем материалы. Сотрудничаем с лучшими <br>
             производителями натяжных потолков.
           </p>
+          <Discount></Discount>
         </div>
         <div class="calc"></div>
       </div>
@@ -30,17 +32,16 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
   position: relative;
 
   .structure {
-    padding-top: 11.375rem;
+    padding-top: 10rem;
     position: relative;
   }
 }
-
 .shadow {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 125px;
   background: linear-gradient(180deg, rgba(27, 27, 27, 0) 27%, #151515 57%);
 }
 
@@ -48,12 +49,13 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
   display: flex;
   align-items: center;
 
-  p {
+  .add-slogan {
     font-style: normal;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     line-height: 1.75rem;
     color: #FFFFFF;
+    margin-bottom: 1rem;
   }
 }
 
@@ -61,17 +63,11 @@ import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
   flex: 1 0;
 }
 
-
-
 .calc {
   width: 440px;
   height: 513px;
   background-color: black;
 }
 
-.guarantee-block {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+
 </style>

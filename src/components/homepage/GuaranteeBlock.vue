@@ -19,9 +19,10 @@ import HomePageTape from './HomePageTape.vue';
 
 <style scoped lang="scss">
 .guarantee-block {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-
 .guarantee-text-block {
   width: 11.5rem;
   border-radius: 6px;
@@ -49,8 +50,5 @@ import HomePageTape from './HomePageTape.vue';
   top: 33%;
 }
 
-.tape {
-  width: 20rem;
-  height: 10rem;
-}
+
 </style>

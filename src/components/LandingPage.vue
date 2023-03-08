@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HomePageVue from './homepage/HomePage.vue';
-import HeaderComp from './homepage/HomePageHeader/HeaderComp.vue';
+import HeaderComp from './headerComp/HeaderComp.vue'
+
 
 
 </script>
