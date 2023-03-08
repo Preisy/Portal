@@ -3,8 +3,6 @@ import AdvantagesPage from './advantages/AdvantagesPage.vue';
 import HomePage from './homepage/HomePage.vue';
 import HeaderComp from './headerComp/HeaderComp.vue'
 
-
-
 </script>
 
 <template>

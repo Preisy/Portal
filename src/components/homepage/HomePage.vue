@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 import Discount from './Discount.vue'
+import Calculator from '../general/calculator/Calculator.vue'
+
 </script>
 
 <template>
@@ -18,7 +20,7 @@ import Discount from './Discount.vue'
           </p>
           <Discount></Discount>
         </div>
-        <div class="calc"></div>
+        <Calculator class="calc"></Calculator>
       </div>
       <GuaranteeBlock />
     </div>
@@ -82,7 +84,6 @@ import Discount from './Discount.vue'
 .calc {
   width: 440px;
   height: 513px;
-  background-color: black;
 }
 
 

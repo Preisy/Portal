@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
 import AdvantageCard from "./AdvantageCard.vue";
-import Clouds from "../cloud/Clouds.vue";
-import Button from "../button/Button.vue";
-
-import type { Nullable } from "@/types/types";
+import Clouds from "../general/cloud/Clouds.vue";
+import Button from "../general/button/Button.vue";
 
 import flat from "@/assets/images/advantages_page/flat.png";
 import helmet from "@/assets/images/advantages_page/helmet2.png";
@@ -14,6 +12,7 @@ import money from "@/assets/images/advantages_page/money.png";
 import sofa from "@/assets/images/advantages_page/sofa.png";
 import Slider from "./Slider.vue";
 
+import type { Nullable } from "@/types/types";
 const root = ref<Nullable<HTMLElement>>();
 
 const current = ref(0);

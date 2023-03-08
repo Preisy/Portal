@@ -25,7 +25,7 @@ import HomePageTape from './HomePageTape.vue';
   z-index: 1;
 }
 .guarantee-text-block {
-  width: 11.5rem;
+  width: 12.5rem;
   border-radius: 6px;
   background-color: #FFFFFF;
   padding: 1rem 0.5rem 2.5rem 0.5rem;
