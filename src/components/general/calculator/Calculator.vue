@@ -4,9 +4,9 @@ import { ref, watch } from "vue";
 import PrettyRange from "./PrettyRange.vue";
 import Button from "@/components/general/button/Button.vue";
 import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
-import type { Nullable } from "@/types/Types";
 import QuasarRange from "./QuasarRange.vue";
 
+import type { Nullable } from "@/types/types";
 const inputEl = ref<Nullable<HTMLInputElement>>();
 const inputVal = ref("");
 watch(inputVal, (newVal, oldVal) => {

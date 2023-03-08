@@ -140,6 +140,7 @@ const style_index = (index: number) => {
     text-align: center;
 
     background: linear-gradient(180deg, #141414 0%, #212121 100%);
+    padding-bottom: 6rem;
 
     .structure {
         padding-top: 3.5rem;
@@ -183,6 +184,10 @@ const style_index = (index: number) => {
         position: relative;
         width: fit-content;
         margin: 0 auto;
+    }
+
+    .clouds {
+        bottom: -1rem;
     }
 
     @media (max-width: 400px) {
