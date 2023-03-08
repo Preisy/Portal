@@ -38,12 +38,10 @@ $animation-amplitude-y: 0.2rem;
 }
 
 .clouds-holder {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -8%;
     height: 16rem;
     overflow: hidden;
+    user-select: none;
+
 
     .clouds {
         position: relative;
