@@ -32,7 +32,7 @@ const style_index = (index: number) => {
             <div class="description">
                 <h2>
                     Почему натяжной потолок
-                    <span class="yellow-highlight"> лучший </span> ?
+                    <span class="yellow-highlight"> идеальное решение </span> ?
                 </h2>
             </div>
             <div class="cards-holder">
@@ -111,13 +111,9 @@ const style_index = (index: number) => {
                             alt="→" />
                     </Button>
                 </div>
-            </div>
-            <!-- .advantages-cards -->
-        </div>
-        <Clouds class="clouds"></Clouds>
-        <!-- .structure -->
-    </div>
-    <!-- .advantages-page -->
+            </div><!-- .advantages-cards -->
+        </div><!-- .structure -->
+    </div><!-- .advantages-page -->
 </template>
 
 <style scoped lang="scss">
@@ -155,7 +151,7 @@ const style_index = (index: number) => {
 
     .cards-holder {
         position: relative;
-        width: fit-content;
+        // width: fit-content;
         margin: 0 auto;
 
         .advantages-cards {
@@ -180,17 +176,7 @@ const style_index = (index: number) => {
         }
     }
 
-    .clouds {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -1rem;
-    }
-
     @media (max-width: 400px) {
-        .clouds {
-            display: none;
-        }
 
         .advantages-cards {
             grid-template-columns: 1fr;

@@ -34,6 +34,7 @@ import Calculator from '../general/calculator/Calculator.vue'
   position: relative;
 
   .structure {
+    width: 63.5%;
     padding-top: 10rem;
     position: relative;
   }

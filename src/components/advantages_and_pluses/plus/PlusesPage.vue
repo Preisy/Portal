@@ -52,6 +52,9 @@ const style_index = (index: number) => {
                         class="card white"
                         :style="style_index(1)"
                         :img-src="question">
+                        <template #shadow>
+                            <div class="common-shadow" />
+                        </template>
                         <template #short>Всегда на связи</template>
                         <template #long>
                             Ответим на любые Ваши вопросы, касающиеся потолков,
@@ -62,6 +65,9 @@ const style_index = (index: number) => {
                         class="card white"
                         :style="style_index(2)"
                         :img-src="like">
+                        <template #shadow>
+                            <div class="common-shadow" />
+                        </template>
                         <template #short>Команда профессионалов</template>
                         <template #long>
                             Наши сотрудники исключительно квалифицированные
@@ -73,6 +79,9 @@ const style_index = (index: number) => {
                         class="card white"
                         :style="style_index(3)"
                         :img-src="ruler">
+                        <template #shadow>
+                            <div class="ruler-shadow" />
+                        </template>
                         <template #short>Все прозрачно и честно</template>
                         <template #long>
                             Замер, консультация и выезд бесплатно. Распишем все
@@ -83,6 +92,9 @@ const style_index = (index: number) => {
                         class="card white"
                         :style="style_index(4)"
                         :img-src="clock">
+                        <template #shadow>
+                            <div class="common-shadow" />
+                        </template>
                         <template #short>Пунктуальность</template>
                         <template #long>
                             Обговоренные сроки всегда соблюдаются.
@@ -92,6 +104,9 @@ const style_index = (index: number) => {
                         class="card white"
                         :style="style_index(5)"
                         :img-src="heart">
+                        <template #shadow>
+                            <div class="common-shadow" />
+                        </template>
                         <template #short>Сервисное обслуживание</template>
                         <template #long>
                             Всегда придем Вам на помощь, если Ваш натяжной
@@ -112,13 +127,9 @@ const style_index = (index: number) => {
                             alt="→" />
                     </Button>
                 </div>
-            </div>
-            <!-- .advantages-cards -->
-        </div>
-        <Clouds class="clouds"></Clouds>
-        <!-- .structure -->
-    </div>
-    <!-- .advantages-page -->
+            </div><!-- .advantages-cards -->
+        </div><!-- .structure -->
+    </div><!-- .advantages-page -->
 </template>
 
 <style scoped lang="scss">
@@ -127,8 +138,6 @@ const style_index = (index: number) => {
 
     width: 100%;
     text-align: center;
-
-    background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
 
     .structure {
         padding-top: 3.5rem;
@@ -154,7 +163,7 @@ const style_index = (index: number) => {
 
     .cards-holder {
         position: relative;
-        width: fit-content;
+        // width: fit-content;
         margin: 0 auto;
 
         .cards {
@@ -178,20 +187,29 @@ const style_index = (index: number) => {
             }
         }
     }
+    .common-shadow {
+        width: 100%;
+        height: 2rem;
+        background: radial-gradient(#181818 0, transparent 50%);
+        opacity: 0.15;
+        filter: blur(6px);
 
-    .clouds {
         position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -16rem;
-        transform: rotateZ(180deg);
-        filter: contrast(0.83);
+        top: 100px;
+    }
+    .ruler-shadow {
+        width: 100%;
+        height: 1.5rem;
+        background: radial-gradient(#181818 0, transparent 50%);
+        opacity: 0.15;
+        filter: blur(6px);
+
+        transform: rotateZ(20deg);
+        position: absolute;
+        top: 80px;
     }
 
     @media (max-width: 400px) {
-        .clouds {
-            display: none;
-        }
 
         .cards {
             grid-template-columns: 1fr;

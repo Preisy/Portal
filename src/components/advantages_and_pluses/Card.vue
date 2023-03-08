@@ -8,10 +8,10 @@ defineProps({
 </script>
 
 <template>
-    <div class="advantage-card">
+    <div class="card-wrapper">
         <div class="img-wrapper">
             <img :src="imgSrc" alt="" />
-            <div class="img-shadow"></div>
+            <slot name="shadow"></slot>
         </div>
         <div class="short-desc">
             <p><slot name="short"></slot></p>
@@ -23,7 +23,7 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
-.advantage-card {
+.card-wrapper {
     --transition: transform ease-in-out 0.2s;
     --img-height: 7rem;
 
@@ -77,7 +77,7 @@ defineProps({
     }
     .long-desc {
         font-size: 1rem;
-        line-height: 1.1rem;
+        line-height: 1.25rem;
     }
 
     @media (max-width: 400px) {

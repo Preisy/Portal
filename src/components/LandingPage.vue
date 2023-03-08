@@ -5,14 +5,19 @@ import HeaderComp from './headerComp/HeaderComp.vue'
 import HowWeWorkPage from './how_we_work/HowWeWorkPage.vue';
 import PlusesPage from './advantages_and_pluses/plus/PlusesPage.vue';
 import ReviewsPage from './reviews/ReviewsPage.vue';
+import WhiteWrapper from './white_pages_wrapper/WhiteWrapper.vue';
 </script>
 
 <template>
 <HeaderComp></HeaderComp>
 <HomePage></HomePage>
 <AdvantagesPage></AdvantagesPage>
-<HowWeWorkPage></HowWeWorkPage>
-<PlusesPage></PlusesPage>
+
+<WhiteWrapper>
+    <HowWeWorkPage></HowWeWorkPage>
+    <PlusesPage></PlusesPage>
+</WhiteWrapper>
+
 <ReviewsPage></ReviewsPage>
 </template>
 

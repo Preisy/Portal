@@ -1,22 +1,30 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { computed } from "@vue/reactivity";
+
 const props = defineProps({
     img_src: { type: String, required: true },
     ref_element: {
         type: HTMLElement,
-        default: document.body
-    }
+        default: document.body,
+    },
+    modifier: { 
+        type: Number,
+        default: 0.25
+    },
 });
 
 const currentScroll = ref(window.scrollY);
 const parallax = computed(() => {
-    const modifier = 0.4;
-    return `transform: translateY(${currentScroll.value * modifier}px)`;
+    if(!props.modifier) return;
+    return `transform: translateY(${currentScroll.value * props.modifier}px)`;
 });
 
 window.addEventListener("scroll", () => {
-    currentScroll.value = window.scrollY - props.ref_element?.offsetTop;
+    currentScroll.value = Math.max(
+        0,
+        window.scrollY - props.ref_element?.scrollHeight
+    );
 });
 </script>
 
@@ -26,6 +34,7 @@ window.addEventListener("scroll", () => {
 
 <style scoped lang="scss">
 .bg_img {
+    transition: all ease-in-out 0.5s;
     opacity: 0.95;
     filter: blur(3.5px);
     user-select: none;

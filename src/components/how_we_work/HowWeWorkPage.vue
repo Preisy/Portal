@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
 import HowWorkCard from "./HowWorkCard.vue";
-import BgAttachImg from "../general/BgAttachImg/BgAttachImg.vue";
 
 import smile_guy from "@/assets/images/how_we_works/smile_guy.png";
 import ruler from "@/assets/images/how_we_works/ruler.png";
 import flat from "@/assets/images/how_we_works/flat.png";
-import tapee from "@/assets/images/how_we_works/tapee.png";
-
 </script>
 
 <template>
@@ -32,7 +27,6 @@ import tapee from "@/assets/images/how_we_works/tapee.png";
                 </HowWorkCard>
             </div>
         </div>
-        <BgAttachImg class="tapee" :img_src="tapee"></BgAttachImg>
         <!-- <img src="@/assets/images/how_we_works/background.png" alt="" class="background"> -->
     </div>
 </template>
@@ -43,9 +37,6 @@ import tapee from "@/assets/images/how_we_works/tapee.png";
     box-sizing: border-box;
     padding-top: 3rem;
     padding-bottom: 3rem;
-
-    background: url(/src/assets/images/how_we_works/background.png) no-repeat,
-    linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
 
     .structure {
         position: relative;
@@ -65,12 +56,5 @@ import tapee from "@/assets/images/how_we_works/tapee.png";
             margin: 0 3rem;
         }
     }
-}
-.tapee {
-    position: absolute;
-    top: -6.6%;
-    right: 0.7rem;
-    height: 470px;
-    transform: rotateZ(0deg);
 }
 </style>
