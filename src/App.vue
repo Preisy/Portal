@@ -3,7 +3,7 @@ import LandingPage from "./components/LandingPage.vue";
 </script>
 
 <template>
-    <LandingPage></LandingPage>
+  <LandingPage></LandingPage>
 </template>
 
 <style scoped lang="scss"></style>

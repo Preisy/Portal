@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import HomePageVue from './homepage/HomePage.vue';
+import HeaderComp from './headerComp/HeaderComp.vue'
+
 
 
 </script>
 
 <template>
-<HomePageVue></HomePageVue>
+    <HeaderComp></HeaderComp>
+    <HomePageVue></HomePageVue>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
