@@ -183,9 +183,9 @@ const style_index = (index: number) => {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -1rem;
+        bottom: -16rem;
         transform: rotateZ(180deg);
-        filter: contrast(0.855);
+        filter: contrast(0.83);
     }
 
     @media (max-width: 400px) {
