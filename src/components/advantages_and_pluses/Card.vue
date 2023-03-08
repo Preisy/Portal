@@ -31,8 +31,6 @@ defineProps({
     box-sizing: border-box;
     padding: 1.2rem 3.5rem;
     border-radius: 1.4rem;
-    background: #2b2b2b;
-    color: #fff;
     text-align: center;
     transition: var(--transition);
 
