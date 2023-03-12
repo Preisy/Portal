@@ -10,17 +10,24 @@ const props = defineProps({
     },
     delta: { type: Number, default: 0 },
     modelValue: Number,
+    redirect: {
+        type: Boolean,
+        default: true
+    }
 });
 
 const emit = defineEmits(["update:modelValue"]);
 const val = ref(props.modelValue);
-function click() {
-    ///Todo: find better way to check
+function click(e: Event) {
+    if(!props.redirect) 
+    e.preventDefault();
+    
     if (val.value === undefined) return;
 
     val.value += props.delta;
     emit("update:modelValue", val.value);
 }
+
 </script>
 
 <template>
@@ -32,14 +39,14 @@ function click() {
 <style scoped lang="scss">
 $base-gradient: linear-gradient(180deg, #feda82 0%, #fec338 100%);
 $click-gradient: linear-gradient(180deg, #f4dea6 0%, #fbce63 100%);
-$text-shadow: 0px 1px 0px rgba(254, 225, 154, 0.7);
+$text-shadow: 0px 0.0625rem 0px rgba(254, 225, 154, 0.7);
 $shadow-color: #da9d22;
-$base-shadow: 0px 3px 0px 0px $shadow-color;
+$base-shadow: 0px 0.1875rem 0px 0px $shadow-color;
 $height: 3.75rem;
 
 .button {
     box-sizing: border-box;
-    padding: $height / 2 3.25rem;
+    padding: calc($height / 2) 3.25rem;
     text-align: center;
     height: $height;
     width: max-content;

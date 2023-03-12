@@ -13,18 +13,33 @@ const bgPivot = ref<HTMLElement>();
 
 <template>
     <div class="white-bg">
-        <slot></slot>
+        <div class="content">
+            <slot> </slot>
+        </div>
         <Clouds class="clouds"></Clouds>
         <Clouds class="clouds upside"></Clouds>
         <div ref="bgPivot" class="bg-attachments">
-            <BgAttachImg class="tapee" :img_src="tapee" :ref_element="bgPivot"></BgAttachImg>
-            <BgAttachImg class="drill" :img_src="drill" :ref_element="bgPivot"></BgAttachImg>
-            <BgAttachImg class="screw" :img_src="screw" :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg
+                class="tapee"
+                :img_src="tapee"
+                :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg
+                class="drill"
+                :img_src="drill"
+                :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg
+                class="screw"
+                :img_src="screw"
+                :ref_element="bgPivot"></BgAttachImg>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+.content{
+    position: relative;
+    z-index: 1;
+}
 .white-bg {
     background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
     position: relative;
@@ -47,24 +62,23 @@ const bgPivot = ref<HTMLElement>();
 .bg-attachments {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
 
     .tapee {
         position: absolute;
-        top: 12%;
+        top: 20rem;
         right: 0.7rem;
-        height: 470px;
+        height: 29rem;
     }
     .drill {
         position: absolute;
-        height: 400px;
-        top: 40%;
+        height: 25rem;
+        top: 45rem;
     }
     .screw {
         position: absolute;
-        height: 400px;
+        height: 25rem;
     }
 }
 

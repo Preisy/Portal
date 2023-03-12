@@ -1,19 +1,24 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="logo">
-    <img src="../../assets/svg/logo-symbol.svg" alt="" class="logo-symbol">
-    <img src="../../assets/svg/logo-text.svg" alt="" class="logo-text">
-  </div>
+    <div class="logo">
+        <img
+            src="../../assets/svg/logo-symbol.svg"
+            alt=""
+            class="logo-symbol" />
+        <img src="../../assets/svg/logo-text.svg" alt="" class="logo-text" />
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .logo {
+.logo {
     user-select: none;
-    .logo-symbol {
-      margin-right: 1rem;
+    height: 4rem;
+    img {
+        height: 100%;
     }
-  }
+    .logo-symbol {
+        margin-right: 1rem;
+    }
+}
 </style>

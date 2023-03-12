@@ -34,7 +34,6 @@ import Calculator from '../general/calculator/Calculator.vue'
   position: relative;
 
   .structure {
-    width: 63.5%;
     padding-top: 10rem;
     position: relative;
   }
@@ -83,8 +82,7 @@ import Calculator from '../general/calculator/Calculator.vue'
 }
 
 .calc {
-  width: 440px;
-  height: 513px;
+  width: 27rem;
 }
 
 

@@ -15,7 +15,7 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
             Пн-Вс. 8:00–22:00
           </p>
           <div class="whatsapp">
-            <WhatsappLogo></WhatsappLogo>
+            <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
             <div class="contacts">
               <p class="number">8 (960) 687-76-87</p>
               <button class="contact">Написать в WhatsApp</button>
@@ -64,6 +64,9 @@ header {
 }
 .whatsapp {
   margin-right: 5.6rem;
+  .whatsapp-logo{
+    height: 3rem;
+  }
 }
 
 .time {

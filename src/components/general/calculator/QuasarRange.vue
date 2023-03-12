@@ -35,8 +35,8 @@ const value = computed({
         :min="min"
         :max="max"
         color="calculator"
-        thumb-size="18px"
-        track-size="5px"
+        thumb-size="1.125rem"
+        track-size="0.375rem"
         marker-labels
         label-always
         switch-label-side>
@@ -44,13 +44,13 @@ const value = computed({
             <p
                 class="marker min"
                 :class="scope.markerMap[min].classes"
-                :style="scope.markerMap[min].style">
+                :style="scope.markerMap[min].style.all">
                 {{ min }}
             </p>
             <p
                 class="marker max"
                 :class="scope.markerMap[max].classes"
-                :style="scope.markerMap[max].style">
+                :style="scope.markerMap[max].style.all">
                 {{ max }}
             </p>
         </template>

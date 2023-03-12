@@ -59,8 +59,7 @@ import example_img from "@/assets/images/reviews/review_example.png";
     padding-top: 6rem;
 
     .structure {
-        width: 80%;
-        padding-top: 6rem;
+        padding-top: 8rem;
         padding-bottom: 6rem;
     }
 
@@ -91,9 +90,11 @@ import example_img from "@/assets/images/reviews/review_example.png";
         column-gap: 2rem; //min gap. main gap made by justify
         justify-content: space-between;
         justify-items: center;
+        width: fit-content;
+        margin: 0 auto;
 
         .review {
-            width: 33rem;
+            width: 24rem;
         }
     }
 }
