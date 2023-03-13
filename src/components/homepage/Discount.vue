@@ -13,20 +13,27 @@
 
 .discount {
     position: relative;
+    margin-top: 2.5rem;
 }
 .brush {
-    margin-left: -2.2rem;
+    margin-left: -2.5rem;
     user-select: none;
+    position: absolute;
+    width: 70%;
+    top: -1.8rem;
+    z-index: 0;
+
 }
     .discount-slogan {
+        position: relative;
         font-style: normal;
         font-weight: 500;
         font-size: 0.95rem;
         line-height: 1rem;
         text-transform: uppercase;
-        position: absolute;
-        top: 40%;
-        left: 4.5%;
+        z-index: 1;
+        margin-left: 1rem;
+        
         .fat {
             font-weight: 700;
         }

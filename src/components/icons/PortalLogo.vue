@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="logo">
@@ -13,19 +11,23 @@
 </template>
 
 <style scoped lang="scss">
-  .logo {
+.logo {
     user-select: none;
     display: flex;
     align-items: center;
     .logo-symbol {
       margin-right: 1rem;
+      height: 100%;
     }
   }
   .logo-slogans {
     display:flex;
     flex-direction: column;
+    height: 2.5rem;
+    width: 8rem;
     .logo-text {
       margin-left: -0.5rem;
+      height: 100%;
     }
     .logo-add_text {
       margin-left: -1rem;

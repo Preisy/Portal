@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 
-import PrettyRange from "./PrettyRange.vue";
 import Button from "@/components/general/button/Button.vue";
-import CalculatorRangeDeclarative from "@/components/general/calculator/CalculatorRangeDeclarative.vue";
 import QuasarRange from "./QuasarRange.vue";
 
 import type { Nullable } from "@/types/types";
@@ -73,7 +71,7 @@ const lightVal = ref(0);
 </template>
 
 <style scoped lang="scss">
-$calculator-width: 440px;
+$calculator-width: 37.5rem;
 .calculator-holder {
     background: var(--color-white);
     width: $calculator-width;
@@ -85,7 +83,7 @@ $calculator-width: 440px;
 
     border-radius: 0.9rem;
 
-    padding: 0px $calculator-width / 10;
+    padding: 0 calc( $calculator-width / 10 );
 }
 
 .head {
@@ -107,7 +105,7 @@ $calculator-width: 440px;
         width: $size;
         height: $size;
         transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
-        top: -50%;
+        top: calc( -1 * $size / 2 );
         user-select: none;
     }
 }

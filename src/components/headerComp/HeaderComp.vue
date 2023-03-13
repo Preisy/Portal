@@ -23,14 +23,14 @@ root.value?.getBoundingClientRect().height;
     <div class="structure">
       <div class="header-items">
         <div class="left-items">
-          <PortalLogo></PortalLogo>
+          <PortalLogo class="portal-logo"></PortalLogo>
         </div>
         <div class="right-items">
           <p class="time">
             Пн-Вс. 8:00–22:00
           </p>
           <div class="whatsapp">
-            <WhatsappLogo></WhatsappLogo>
+            <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
             <div class="contacts">
               <p class="number">8 (960) 687-76-87</p>
               <button class="contact">Написать в WhatsApp</button>
@@ -52,6 +52,7 @@ root.value?.getBoundingClientRect().height;
   .structure {
     padding-top: 2.6rem;
     padding-bottom: 3rem;
+    transition: 0.3s ease-in-out;
   }
 }
 
@@ -77,8 +78,14 @@ float: left;
   display: flex;
   align-items: center;
 }
+.portal-logo {
+  height: 4rem;
+}
 .whatsapp {
   margin-right: 5.6rem;
+  .whatsapp-logo{
+    height: 3rem;
+  }
 }
 
 .time {

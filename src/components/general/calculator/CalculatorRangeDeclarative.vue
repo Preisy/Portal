@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, ref, watch} from "vue";
-import type {Nullable} from "@/types/Types";
+import type {Nullable} from "@/types/types";
 
 const props = defineProps({
   min: {

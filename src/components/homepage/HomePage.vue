@@ -2,10 +2,22 @@
 import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 import Discount from './Discount.vue'
 import Calculator from '../general/calculator/Calculator.vue'
+import { ref } from 'vue';
+import { computed } from '@vue/reactivity';
+import type { Nullable } from '@/types/types';
+const root = ref<Nullable<HTMLElement>>();
+const currentScroll = ref(window.scrollY);
+window.addEventListener("scroll", () => {currentScroll.value = window.scrollY});
+const onScroll = computed(
+  ()=>{
+    return `background-position-y:${currentScroll.value*0.5}px`
+  }
+)
+
 </script>
 
 <template>
-  <div class="homepage-wrapper" id="homepage">
+  <div ref="root" class="homepage-wrapper" v-bind:style="onScroll" id="homepage">
       <div class="shadow"></div>
       <div class="structure">
         <div class="homepage-items">
@@ -32,16 +44,12 @@ import Calculator from '../general/calculator/Calculator.vue'
   background: url(../../assets/images/homepage/background.png);
   background-repeat: no-repeat;
   background-size: cover;
-
   .structure {
-    width: 63.5%;
     padding-top: 10rem;
     position: relative;
   }
 }
-.background-wrapper {
-  position: absolute;
-}
+
 .shadow {
   position: absolute;
   bottom: 0;
@@ -86,8 +94,7 @@ import Calculator from '../general/calculator/Calculator.vue'
 }
 
 .calc {
-  width: 440px;
-  height: 513px;
+  width: 27rem;
 }
 
 

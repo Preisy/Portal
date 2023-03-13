@@ -31,7 +31,7 @@ const props = defineProps({
                 </h4>
             </div>
             <div class="review-content">
-                <p> <slot></slot> </p>
+                <p><slot></slot></p>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@ const props = defineProps({
     .rate {
         margin-bottom: 1.25rem;
     }
-    
+
     // .review-content {
     //     font-size: 0.95rem;
     //     line-height: 1.375rem;
@@ -73,6 +73,11 @@ const props = defineProps({
         font-size: 1.25rem;
 
         margin-bottom: 0.75rem;
+    }
+    .review-content {
+        p {
+            font-size: 1.2rem;
+        }
     }
 
     margin-bottom: 3rem;

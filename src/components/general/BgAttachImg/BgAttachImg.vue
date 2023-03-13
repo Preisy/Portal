@@ -34,7 +34,6 @@ window.addEventListener("scroll", () => {
 
 <style scoped lang="scss">
 .bg_img {
-    transition: all ease-in-out 0.5s;
     opacity: 0.95;
     filter: blur(3.5px);
     user-select: none;
