@@ -2,42 +2,45 @@
 import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
 import Discount from './Discount.vue'
 import Calculator from '../general/calculator/Calculator.vue'
-
 </script>
 
 <template>
   <div class="homepage-wrapper" id="homepage">
-    <div class="shadow"></div>
-    <div class="structure">
-      <div class="homepage-items">
-        <div class="slogans">
-          <h1 class="main-slogan">
-            Установим лучший натяжной потолок <span class="another-color">в Москве и МО</span>
-          </h1>
-          <p class="add-slogan">
-            Используем только качественные, проверенные <br> временем материалы. Сотрудничаем с лучшими <br>
-            производителями натяжных потолков.
-          </p>
-          <Discount></Discount>
+      <div class="shadow"></div>
+      <div class="structure">
+        <div class="homepage-items">
+          <div class="slogans">
+            <h1 class="main-slogan">
+              Установим лучший натяжной потолок <span class="another-color">в Москве и МО</span>
+            </h1>
+            <p class="add-slogan">
+              Используем только качественные, проверенные <br> временем материалы. Сотрудничаем с лучшими <br>
+              производителями натяжных потолков.
+            </p>
+            <Discount></Discount>
+          </div>
+          <Calculator class="calc"></Calculator>
         </div>
-        <Calculator class="calc"></Calculator>
+        <GuaranteeBlock />
       </div>
-      <GuaranteeBlock />
-    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .homepage-wrapper {
-  background: url(../../assets/images/homepage/background.png) no-repeat;
-  background-size: cover;
   position: relative;
+  background: url(../../assets/images/homepage/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .structure {
     width: 63.5%;
     padding-top: 10rem;
     position: relative;
   }
+}
+.background-wrapper {
+  position: absolute;
 }
 .shadow {
   position: absolute;

@@ -1,10 +1,25 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import type { Nullable } from '@/types/types';
 import PortalLogo from '../icons/PortalLogo.vue';
 import WhatsappLogo from '../icons/WhatsappLogo.vue';
+import { computed } from '@vue/reactivity';
+const root = ref<Nullable<HTMLElement>>();
+const currentScroll = ref(window.scrollY);
+window.addEventListener("scroll", () => {currentScroll.value = window.scrollY});
+const onScroll = computed(
+  ()=>{
+    let headerHeight = root.value?.getBoundingClientRect().height;
+    if (headerHeight)
+    return (currentScroll.value > headerHeight)?'prettyHeader':''
+  }  
+)
+root.value?.getBoundingClientRect().height;
+
 </script>
 
 <template>
-  <header>
+  <header ref="root" :class="onScroll" class="header">
     <div class="structure">
       <div class="header-items">
         <div class="left-items">
@@ -28,10 +43,11 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
 </template>
 
 <style scoped lang="scss">
-header {
+.header {
   position: fixed;
   width: 100%;
   z-index: 5;
+  transition: 0.3s ease-in-out;
 
   .structure {
     padding-top: 2.6rem;
@@ -54,8 +70,7 @@ header {
 }
 
 .left-items {
-  display: flex;
-  align-items: center;
+float: left;
 }
 
 .right-items {
@@ -85,5 +100,13 @@ header {
   text-decoration: underline;
   color: #FFFFFF;
   margin-left: 1rem;
+}
+.prettyHeader {
+  background-color: rgba(0, 0, 0, 0.5);
+  .structure {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
 }
 </style>

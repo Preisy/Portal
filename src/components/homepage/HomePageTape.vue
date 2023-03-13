@@ -10,6 +10,7 @@
 
 <style scoped lang="scss">
 .tape {
+  width: 12.5rem;
   user-select: none;
 }
 
