@@ -32,7 +32,7 @@ root.value?.getBoundingClientRect().height;
           <div class="whatsapp">
             <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
             <div class="contacts">
-              <p class="number">8 (960) 687-76-87</p>
+              <p class="number">8 (960) <span class="white-text">687-76-87</span></p>
               <button class="contact">Написать в WhatsApp</button>
             </div>
           </div>
@@ -52,7 +52,7 @@ root.value?.getBoundingClientRect().height;
   .structure {
     padding-top: 2.6rem;
     padding-bottom: 3rem;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s 0.1s ease-in-out;
   }
 }
 
@@ -67,6 +67,13 @@ root.value?.getBoundingClientRect().height;
     font-size: 0.8rem;
     line-height: 1rem;
     color: #FFFFFF;
+  }
+  .number {
+    color: #BDBDBD;
+    .white-text {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
   }
 }
 
