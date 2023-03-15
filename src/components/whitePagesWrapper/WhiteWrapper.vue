@@ -6,7 +6,7 @@ import BgAttachImg from "../general/BgAttachImg/BgAttachImg.vue";
 
 import tapee from "@/assets/images/general/bg_img/tapee.png";
 import drill from "@/assets/images/general/bg_img/drill.png";
-import screw from "@/assets/images/general/bg_img/screw.png";
+import screw from "@/assets/images/general/bg_img/screw1.png";
 
 const bgPivot = ref<HTMLElement>();
 </script>
@@ -20,7 +20,7 @@ const bgPivot = ref<HTMLElement>();
         <Clouds class="clouds upside"></Clouds>
         <div ref="bgPivot" class="bg-attachments">
             <BgAttachImg
-                class="tapee"
+                class="tapee anim"
                 :img_src="tapee"
                 :ref_element="bgPivot"></BgAttachImg>
             <BgAttachImg
@@ -28,7 +28,11 @@ const bgPivot = ref<HTMLElement>();
                 :img_src="drill"
                 :ref_element="bgPivot"></BgAttachImg>
             <BgAttachImg
-                class="screw"
+                class="screw anim"
+                :img_src="screw"
+                :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg
+                class="screw anim second"
                 :img_src="screw"
                 :ref_element="bgPivot"></BgAttachImg>
         </div>
@@ -40,7 +44,7 @@ $screen-sm: 400px;
 $screen-lg: 1440px;
 $screen-xl: 1920px;
 
-.content{
+.content {
     position: relative;
     z-index: 1;
 }
@@ -73,6 +77,17 @@ $screen-xl: 1920px;
         position: absolute;
         top: 10rem;
         height: 20rem;
+        z-index: 2;
+        &.second {
+            height: 18rem;
+            top: 11rem;
+            left: -1rem;
+            rotate: -15deg;
+            z-index: 1;
+            animation-delay: -1.56s;
+            filter: blur(0.25rem);
+        }
+
         @media (max-width: $screen-sm) {
             left: -5rem;
             top: 2rem;
@@ -84,6 +99,8 @@ $screen-xl: 1920px;
         top: 30rem;
         right: 0.7rem;
         height: 29rem;
+
+        animation-duration: 3.5s;
         @media (max-width: $screen-sm) {
             top: 50rem;
             right: -8rem;
@@ -93,8 +110,25 @@ $screen-xl: 1920px;
         position: absolute;
         height: 20rem;
         top: 62rem;
+
+        animation: drill-anim linear infinite 3.5s;
+
         @media (max-width: $screen-sm) {
             display: none;
+        }
+
+        $dx: 0.5rem;
+        $dy: 0.26rem;
+        @keyframes drill-anim {
+            0% {
+                transform: translateX($dx) translateY(-$dy);
+            }
+            50% {
+                transform: translateX(-$dx) translateY($dy);
+            }
+            100% {
+                transform: translateX($dx) translateY(-$dy);
+            }
         }
     }
 }
@@ -102,6 +136,26 @@ $screen-xl: 1920px;
 @media (max-width: 400px) {
     .clouds {
         display: none;
+    }
+}
+
+.anim {
+    $dx: 0.15rem;
+    $dy: 0.3rem;
+    $d_angle: 3deg;
+
+    animation: anim ease-in-out infinite 5s;
+
+    @keyframes anim {
+        0% {
+            transform: translateX($dx) translateY(0) rotateZ($d_angle);
+        }
+        50% {
+            transform: translateX(0) translateY($dy) rotateZ(0);
+        }
+        100% {
+            transform: translateX($dx) translateY(0) rotateZ($d_angle);
+        }
     }
 }
 </style>

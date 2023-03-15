@@ -63,7 +63,7 @@ const onScroll = computed(() => {
         bottom: 0;
         left: 0;
         right: 0;
-        height: 125px;
+        height: 8rem;
         background: linear-gradient(
             180deg,
             rgba(27, 27, 27, 0) 27%,
