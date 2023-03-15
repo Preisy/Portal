@@ -7,6 +7,9 @@ import PlusesPage from "./advantagesAndPluses/PlusesPage.vue";
 import ReviewsPage from "./reviews/ReviewsPage.vue";
 import WhiteWrapper from "./whitePagesWrapper/WhiteWrapper.vue";
 import DoneWorks from "./doneWorks/doneWorks.vue";
+import Results from "./results/Results.vue";
+import FinalBlock from "./final-block/FinalBlock.vue";
+import Footer from "./footer/Footer.vue";
 </script>
 
 <template>
@@ -19,7 +22,9 @@ import DoneWorks from "./doneWorks/doneWorks.vue";
         <PlusesPage></PlusesPage>
     </WhiteWrapper>
     <ReviewsPage></ReviewsPage>
+    <Results></Results>
+    <FinalBlock></FinalBlock>
+    <Footer></Footer>
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
