@@ -14,7 +14,7 @@ const bgPivot = ref<HTMLElement>();
 <template>
     <div class="white-bg">
         <div class="content">
-            <slot> </slot>
+            <slot></slot>
         </div>
         <Clouds class="clouds"></Clouds>
         <Clouds class="clouds upside"></Clouds>
@@ -36,6 +36,10 @@ const bgPivot = ref<HTMLElement>();
 </template>
 
 <style scoped lang="scss">
+$screen-sm: 400px;
+$screen-lg: 1440px;
+$screen-xl: 1920px;
+
 .content{
     position: relative;
     z-index: 1;
@@ -54,7 +58,7 @@ const bgPivot = ref<HTMLElement>();
 
 .clouds.upside {
     top: unset;
-    bottom: -16rem;
+    bottom: -15.5rem;
     transform: rotateZ(180deg);
     filter: contrast(0.83);
 }
@@ -65,20 +69,33 @@ const bgPivot = ref<HTMLElement>();
     left: 0;
     right: 0;
 
+    .screw {
+        position: absolute;
+        top: 10rem;
+        height: 20rem;
+        @media (max-width: $screen-sm) {
+            left: -5rem;
+            top: 2rem;
+        }
+    }
+
     .tapee {
         position: absolute;
-        top: 20rem;
+        top: 30rem;
         right: 0.7rem;
         height: 29rem;
+        @media (max-width: $screen-sm) {
+            top: 50rem;
+            right: -8rem;
+        }
     }
     .drill {
         position: absolute;
-        height: 25rem;
-        top: 45rem;
-    }
-    .screw {
-        position: absolute;
-        height: 25rem;
+        height: 20rem;
+        top: 62rem;
+        @media (max-width: $screen-sm) {
+            display: none;
+        }
     }
 }
 

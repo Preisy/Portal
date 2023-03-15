@@ -1,31 +1,20 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
+import { ref } from "vue";
 import Card from "./Card.vue";
-import Clouds from "../general/cloud/Clouds.vue";
-import Button from "../general/button/Button.vue";
 
 import type { Nullable } from "@/types/types";
 
-import heart from "@/assets/images/pluses_page/heart.png";
-import clock from "@/assets/images/pluses_page/clock.png";
-import handshake from "@/assets/images/pluses_page/handshake.png";
-import like from "@/assets/images/pluses_page/like.png";
-import ruler from "@/assets/images/pluses_page/ruler.png";
-import question from "@/assets/images/pluses_page/question.png";
-import Slider from "./Slider.vue";
+import heart from "@/assets/images/plusesPage/heart.png";
+import clock from "@/assets/images/plusesPage/clock.png";
+import handshake from "@/assets/images/plusesPage/handshake.png";
+import like from "@/assets/images/plusesPage/like.png";
+import ruler from "@/assets/images/plusesPage/ruler.png";
+import question from "@/assets/images/plusesPage/question.png";
 import Shared from "./Shared.vue";
 
-const root = ref<Nullable<HTMLElement>>();
+const root = ref<HTMLElement>();
 
 const current = ref(0);
-const style_index = (index: number) => {
-    const cards = root.value?.querySelectorAll(".card");
-    const max = cards?.length;
-    if (!max) return 0;
-
-    const result = (index + Math.abs(current.value)) % max;
-    return `z-index:${result}`;
-};
 </script>
 
 <template>
@@ -113,8 +102,12 @@ const style_index = (index: number) => {
         color: #515151;
     }
 
-    .black-text{
+    .black-text {
         color: black;
+
+        &::selection {
+            color: white;
+        }
     }
 
     .yellow-highlight {
@@ -124,6 +117,11 @@ const style_index = (index: number) => {
         background-clip: text;
 
         font-style: italic;
+        
+        &::selection {
+            -webkit-text-fill-color: #fff;
+        }
     }
+    
 }
 </style>

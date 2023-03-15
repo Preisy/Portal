@@ -5,7 +5,7 @@ import Button from "@/components/general/button/Button.vue";
 import QuasarRange from "./QuasarRange.vue";
 
 import type { Nullable } from "@/types/types";
-const inputEl = ref<Nullable<HTMLInputElement>>();
+const inputEl = ref<HTMLInputElement>();
 const inputVal = ref("");
 watch(inputVal, (newVal, oldVal) => {
     inputVal.value = inputVal.value.replace(/\D/, "");

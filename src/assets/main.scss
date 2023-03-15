@@ -2,12 +2,20 @@
 @import './base.css';
 @import './quasar-custom-colors.css';
 
+$screen-sm: 400px;
+$screen-lg: 1440px;
+$screen-xl: 1920px;
+
 .structure {
     width: 63.5%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 4rem;
     padding-bottom: 4.25rem;
+
+    @media (max-width: $screen-sm) {
+        width: 90%;
+    }
 }
 
 h1 {
