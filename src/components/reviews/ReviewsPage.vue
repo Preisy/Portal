@@ -66,6 +66,9 @@ import example_img from "@/assets/images/reviews/review_example.png";
     .description {
         color: #fff;
         margin-bottom: 3.5rem;
+        position: relative;
+        z-index: 1;
+
         .highlighted {
             background: linear-gradient(
                 86.98deg,

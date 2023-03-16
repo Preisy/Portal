@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import Button from "../general/button/Button.vue";
+import { QCarousel } from "quasar";
 
 import type { Nullable } from "@/types/types";
-const root = ref<Nullable<HTMLElement>>();
-const current = ref(0);
+const root = ref<HTMLElement>();
+const slide = ref(1);
+
+watch(slide, (newVal) => {
+    console.log(slide.value);
+});
 </script>
 
 <template>
@@ -21,21 +26,21 @@ const current = ref(0);
 
             <div class="adaptive-controls">
                 <Button
-                    v-model="current"
+                    v-model="slide"
                     :redirect="false"
                     :delta="-1"
                     class="button left">
                     <img
-                        src="@/assets/images/advantages_page/left_arrow.svg"
+                        src="@/assets/images/advantagesPage/left_arrow.svg"
                         alt="←" />
                 </Button>
                 <Button
-                    v-model="current"
+                    v-model="slide"
                     :redirect="false"
                     :delta="1"
                     class="button right">
                     <img
-                        src="@/assets/images/advantages_page/left_arrow.svg"
+                        src="@/assets/images/advantagesPage/left_arrow.svg"
                         alt="→" />
                 </Button>
             </div>
@@ -83,10 +88,12 @@ const current = ref(0);
 }
 
 @media (max-width: 400px) {
-    .cards {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        width: auto;
+    .cards-holder {
+        .cards {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            width: auto;
+        }
     }
     .description {
         h2 {

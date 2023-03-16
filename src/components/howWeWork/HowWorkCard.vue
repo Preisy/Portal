@@ -25,13 +25,13 @@ defineProps({
     position: relative;
 
     .circle-num {
-        --size: 5rem;
-        --outline-size: 1rem;
+        --size: 4rem;
+        --outline-size: 0.675rem;
 
         position: absolute;
         z-index: 1;
         top: calc(var(--size) / 2 * -1);
-        left: calc(var(--size) / 2 * -1);
+        left: calc(var(--size) / 2 * -1 + 0.5rem);
 
         width: calc(var(--size) - var(--outline-size));
         height: calc(var(--size) - var(--outline-size));
@@ -40,20 +40,24 @@ defineProps({
         line-height: calc(var(--size) - var(--outline-size));
         text-align: center;
 
-        border: 2px solid #feda82;
+        border: 0.125rem solid #feda82;
         outline: var(--outline-size) solid #fff;
         background: #fff;
 
         font-size: 1.75rem;
         font-weight: 600;
+
+        box-shadow: 0 0 1.125rem 0 #000;
+
+        @media (max-width: 400px) {
+            left: calc(50% - var(--size) / 2);
+        }
     }
     .card-body {
-        height: 100%;
         position: relative;
         .image-holder {
-            height: 100%;
             img {
-                height: 100%;
+                height: 28rem;
             }
         }
         .description {

@@ -1,33 +1,28 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { computed } from "@vue/reactivity";
-
+ 
+/**
+ *  @param href - отвечает за ссылку перехода
+ *  @param volumetric - включает/выключает тень
+ *  @param redirect - включает/выключает переход по ссылке
+ */ 
 const props = defineProps({
     href: String,
     volumetric: {
         type: Boolean,
         default: true,
     },
-    delta: { type: Number, default: 0 },
-    modelValue: Number,
     redirect: {
         type: Boolean,
         default: true
     }
 });
 
-const emit = defineEmits(["update:modelValue"]);
-const val = ref(props.modelValue);
 function click(e: Event) {
     if(!props.redirect) 
     e.preventDefault();
-    
-    if (val.value === undefined) return;
-
-    val.value += props.delta;
-    emit("update:modelValue", val.value);
 }
-
 </script>
 
 <template>
@@ -45,13 +40,14 @@ $base-shadow: 0px 0.1875rem 0px 0px $shadow-color;
 $height: 3.75rem;
 
 .button {
+    display: inline-block;
     box-sizing: border-box;
     padding: calc($height / 2) 3.25rem;
     text-align: center;
-    height: $height;
+    // height: $height;
     width: max-content;
 
-    border-radius: 14px;
+    border-radius: 0.875rem;
     box-shadow: $base-shadow;
     background: $base-gradient;
 
