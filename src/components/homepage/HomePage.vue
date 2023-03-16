@@ -1,20 +1,4 @@
 <script setup lang="ts">
-<<<<<<< HEAD
-import GuaranteeBlock from '@/components/homepage/GuaranteeBlock.vue'
-import Discount from './Discount.vue'
-import Calculator from '../general/calculator/Calculator.vue'
-import { ref } from 'vue';
-import { computed } from '@vue/reactivity';
-import type { Nullable } from '@/types/types';
-const root = ref<Nullable<HTMLElement>>();
-const currentScroll = ref(window.scrollY);
-window.addEventListener("scroll", () => {currentScroll.value = window.scrollY});
-const onScroll = computed(
-  ()=>{
-    return `background-position-y:${currentScroll.value*0.5}px`
-  }
-)
-=======
 import GuaranteeBlock from "@/components/homepage/GuaranteeBlock.vue";
 import Discount from "./Discount.vue";
 import Calculator from "../general/calculator/Calculator.vue";
@@ -28,7 +12,6 @@ window.addEventListener("scroll", () => {
 const onScroll = computed(() => {
     return `background-position-y:${currentScroll.value * 0.5}px`;
 });
->>>>>>> 2e123205fdadea674f35a73801297b9d28fe1919
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { computed } from "@vue/reactivity";
-import isVisible from "@/scripts/utils";
+import isVisible from "@/utils/isVisible";
 
 const props = defineProps({
     img_src: { type: String, required: true },

@@ -16,7 +16,7 @@ import Button from '../general/button/Button.vue';
             <div class="circle">
               <p class="number">1</p>
             </div>
-            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее <br> решение</span> по цене и
+            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее  решение</span> по цене и
               качеству.</p>
           </div>
           <div class="results-block-item">
@@ -34,10 +34,10 @@ import Button from '../general/button/Button.vue';
           </div>
         </div>
         <div class="results-button-block">
-          <div class="helmet">
-            <Helmet></Helmet>
-          </div>
+          <div class="img-wrapper">
+            <Helmet class="helmet"></Helmet>
             <Button :redirect="false" class='result-cost'>Рассчитать стоимость</Button>
+          </div>
           <Arrow class="arrow"></Arrow>
         </div>
       </div>
@@ -47,9 +47,8 @@ import Button from '../general/button/Button.vue';
 
 <style scoped lang="scss">
 .results-bg {
-  background: url(../../assets/images/results/results-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+    background: url(../../assets/images/results/results-bg.png) no-repeat;
+    background-size: cover;
 }
 
 .structure {
@@ -70,6 +69,10 @@ import Button from '../general/button/Button.vue';
 
 .results-main-content {
   display: flex;
+  column-gap: 2rem;
+}
+.results-main-content > div {
+  flex: 1;
 }
 
 .results-block {
@@ -77,7 +80,6 @@ import Button from '../general/button/Button.vue';
   background: #FFFFFF;
   box-shadow: 0px 4px 48px -3px rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
-  margin-right: 8rem;
 }
 
 .results-block-item {
@@ -120,34 +122,24 @@ import Button from '../general/button/Button.vue';
 
 .results-button-block {
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  align-items: flex-end;
 }
-.helmet {
-  width: 27rem;
-  height: 27rem;
-  position: absolute;
-  bottom: 1%;
-  right: 9%;
+.img-wrapper {
+  position: relative;
+  font-size: 0;
+  text-align: center;
+}
+.result-cost {
+  margin: -2rem 0 0;
 }
 
-.result-cost {
-  position: relative;
-  padding: 1.45rem 3rem;
-  border-radius: 1.2rem;
-  font-weight: 600;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #302C23;
-  text-shadow: 0px 1px 0px rgba(254, 225, 154, 0.7);
+.helmet {
+    display: inline-block;
+    width: 100%;
 }
 
 .arrow {
   width: 10.5rem;
-  position: absolute;
-  bottom: 12%;
-  right: 2%;
+  margin-left: -3.5rem;
 }
 </style>

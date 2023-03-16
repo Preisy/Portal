@@ -6,7 +6,7 @@ import HowWeWorkPage from "./howWeWork/HowWeWorkPage.vue";
 import PlusesPage from "./advantagesAndPluses/PlusesPage.vue";
 import ReviewsPage from "./reviews/ReviewsPage.vue";
 import WhiteWrapper from "./whitePagesWrapper/WhiteWrapper.vue";
-import DoneWorks from "./doneWorks/doneWorks.vue";
+import DoneWorks from "./doneWorks/DoneWorks.vue";
 import Results from "./results/Results.vue";
 import FinalBlock from "./finalBlock/FinalBlock.vue";
 import Footer from "./footer/Footer.vue";
