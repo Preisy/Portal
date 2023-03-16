@@ -17,7 +17,7 @@
     align-items: center;
     .logo-symbol {
       margin-right: 1rem;
-      height: 100%;
+      height: 4rem;
     }
   }
   .logo-slogans {

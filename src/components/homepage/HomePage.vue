@@ -13,7 +13,6 @@ const onScroll = computed(
     return `background-position-y:${currentScroll.value*0.5}px`
   }
 )
-
 </script>
 
 <template>
