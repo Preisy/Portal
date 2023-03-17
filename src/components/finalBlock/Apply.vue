@@ -4,20 +4,37 @@ import Application from './Application.vue';
 </script>
 
 <template>
-  <div class="circle">
-    <div class="add-circle">
-      <p class="circle-text">Скорее <br> заполняй <br> заявку!</p>
+  <div class="apply-block">
+    <div class="apply-container">
+      <div class="circle">
+        <div class="add-circle">
+          <p class="circle-text">Скорее <br> заполняй <br> заявку!</p>
+        </div>
+      </div>
+      <div class="application-block">
+        <Application class="application"></Application>
+      </div>
+    </div>
+    <div class="arrow-block">
+      <Arrow class="arrow"></Arrow>
     </div>
   </div>
-  <div class="application-block">
-    <Application class="application"></Application>
-  </div>
-  <Arrow class="arrow"></Arrow>
 </template>
 
 <style scoped lang="scss">
+.apply-block {
+  display: flex;
+}
+.apply-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .circle {
   position: relative;
+  top: 8.5rem;
+  left: 2rem;
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
@@ -25,9 +42,6 @@ import Application from './Application.vue';
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 8rem;
-  right: -2.5rem;
-  z-index: 1;
 
   .add-circle {
     width: 7.5rem;
@@ -48,21 +62,16 @@ import Application from './Application.vue';
 }
 
 .application {
-  position: absolute;
-  top: 45%;
-  left: 1%;
   width: 13rem;
   height: 13rem;
   user-select: none;
-
+  margin-top: 6.6rem;
 }
 
 .arrow {
-  position: absolute;
-  bottom: 10%;
   width: 10.5rem;
-  transform: scale(-1,1) rotate(20deg);
-  top: 67%;
-  right: 58%;
+  transform: scale(-1, 1) rotate(20deg);
+  margin-top: 23rem;
+  margin-left: -1.5rem;
 }
 </style>

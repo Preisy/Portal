@@ -3,10 +3,12 @@ import PortalLogo from '../icons/PortalLogo.vue';
 import WhatsappLogo from '../icons/WhatsappLogo.vue';
 
 
+
+
 </script>
 
 <template>
-  <div class="bg-wrapper">
+  <div class="bg-footer-wrapper">
     <div class="structure">
       <div class="footer-block">
         <PortalLogo class="logo"></PortalLogo>
@@ -24,7 +26,7 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
   </div>
 </template>
 <style scoped lang="scss">
-.bg-wrapper {
+.bg-footer-wrapper {
   background-color: #1C1C1C;
 
   .structure {
@@ -32,8 +34,10 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
     padding-bottom: 0.6rem;
   }
 }
+
 .footer-block {
-  margin: 0 17rem;
+  width: 60%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +45,7 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
 
 .whatsapp {
   display: flex;
-  align-items: center ;
+  align-items: center;
 
 
   .whatsapp-logo {
@@ -60,11 +64,12 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
     font-weight: 600;
   }
 }
+
 .text {
   color: #A1A1A1;
   font-size: 0.7rem;
 }
+
 .logo {
-  scale: 0.5;
-}
-</style>
+  transform: scale(0.5);
+}</style>
