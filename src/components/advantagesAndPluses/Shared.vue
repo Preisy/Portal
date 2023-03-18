@@ -76,7 +76,7 @@ watch(slide, (newVal) => {
         grid-template-rows: 1fr 1fr;
         justify-content: center;
         column-gap: 1rem;
-        row-gap: 2rem;
+        row-gap: 1rem;
 
         width: 85%;
 

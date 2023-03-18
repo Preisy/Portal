@@ -3,6 +3,7 @@ import { ref } from "vue";
 import type { Nullable } from "@/types/types";
 import { QCarouselSlide } from "quasar";
 import Shared from "./Shared.vue";
+import SharedQuasar from "./SharedQuasar.vue";
 
 import Card from "./Card.vue";
 
@@ -19,13 +20,14 @@ const current = ref(0);
 
 <template>
     <div ref="root" class="advantages-page">
-        <Shared>
+        <SharedQuasar>
             <template #description>
                 Почему натяжной потолок
                 <span class="yellow-highlight"> идеальное решение </span> ?
             </template>
 
-            <template #cards>
+            <template #body>
+                <QCarouselSlide class="slide" name="0">
                     <Card class="card black" :img-src="flat">
                         <template #short>Не крадет пространство</template>
                         <template #long>
@@ -33,6 +35,8 @@ const current = ref(0);
                             потолкам требуется совсем немного пространства.
                         </template>
                     </Card>
+                </QCarouselSlide>
+                <QCarouselSlide class="slide" name="1">
                     <Card class="card black" :img-src="money">
                         <template #short>Экономит деньги</template>
                         <template #long>
@@ -40,6 +44,8 @@ const current = ref(0);
                             потолка.
                         </template>
                     </Card>
+                </QCarouselSlide>
+                <QCarouselSlide class="slide" name="2">
                     <Card class="card black" :img-src="man">
                         <template #short>Не впитывает запахи</template>
                         <template #long>
@@ -47,6 +53,8 @@ const current = ref(0);
                             родных:)
                         </template>
                     </Card>
+                </QCarouselSlide>
+                <QCarouselSlide class="slide" name="3">
                     <Card class="card black" :img-src="lens">
                         <template #short>Любые эксперименты</template>
                         <template #long>
@@ -54,6 +62,8 @@ const current = ref(0);
                             текстурный… Какой только пожелаете!
                         </template>
                     </Card>
+                </QCarouselSlide>
+                <QCarouselSlide class="slide" name="4">
                     <Card class="card black" :img-src="sofa">
                         <template #short>Эстетично выглядит</template>
                         <template #long>
@@ -61,6 +71,8 @@ const current = ref(0);
                             натяжной — самый стойкий!
                         </template>
                     </Card>
+                </QCarouselSlide>
+                <QCarouselSlide class="slide" name="5">
                     <Card class="card black" :img-src="helmet">
                         <template #short>Идеально ровный</template>
                         <template #long>
@@ -68,8 +80,9 @@ const current = ref(0);
                             чихать от побелки. Идеально ровный потолок. Всегда!
                         </template>
                     </Card>
+                </QCarouselSlide>
             </template>
-        </Shared>
+        </SharedQuasar>
     </div>
 </template>
 
@@ -80,6 +93,11 @@ const current = ref(0);
     text-align: center;
     background: linear-gradient(180deg, #141414 0%, #212121 100%);
     padding-bottom: 8rem;
+
+    @media (max-width: 400px) {
+        padding-bottom: 0;
+    }
+
     .black {
         background: #2b2b2b;
         color: #fff;
@@ -95,6 +113,13 @@ const current = ref(0);
 
     .yellow-highlight::selection {
         -webkit-text-fill-color: #fff;
+    }
+    .slide {
+        padding: 0 !important;
+
+        .card {
+            height: 100%;
+        }
     }
 }
 </style>

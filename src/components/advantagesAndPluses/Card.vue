@@ -95,6 +95,13 @@ defineProps({
         .long-desc {
             font-size: 0.75rem;
         }
+
+        &:hover {
+        transform: unset;
+        img {
+            transform: unset;
+        }
+    }
     }
 }
 </style>

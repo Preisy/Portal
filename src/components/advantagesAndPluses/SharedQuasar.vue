@@ -4,9 +4,9 @@ import Button from "../general/button/Button.vue";
 import { QCarousel, QBtn, QCarouselControl, Screen } from "quasar";
 
 const slider = ref<QCarousel>();
-const slide = ref(1);
-const isMobile = computed(()=>{
-    console.log(Screen)
+const slide = ref('0');
+const isMobile = computed(() => {
+    console.log(Screen);
     return Screen.lt.sm;
 });
 
@@ -26,29 +26,42 @@ watch(slide, (newVal) => {
             <QCarousel
                 v-if="isMobile"
                 swipeable
+                class="q-slider"
                 ref="slider"
                 transition-prev="fade"
                 transition-next="fade"
                 animated
                 v-model="slide">
+                    
                 <slot name="body"></slot>
+                
 
-                <!-- <template #control>
-                    <QCarouselControl class="adaptive-controls">
+                <template #control>
+                    <QCarouselControl
+                        class="slider-controls"
+                        position="bottom-right">
                         <QBtn
-                            @click="slider?.previous()"
-                            class="button left"
-                            icon="arrow_left">
-                        </QBtn>
+                            push
+                            round
+                            dense
+                            color="orange"
+                            text-color="black"
+                            icon="arrow_right_alt"
+                            class="custom-button left"
+                            @click="slider?.previous()"></QBtn>
                         <QBtn
-                            @click="slider?.next()"
-                            class="button right"
-                            icon="arrow_right">
-                        </QBtn>
+                            push
+                            round
+                            dense
+                            color="orange"
+                            text-color="black"
+                            icon="arrow_right_alt"
+                            class="custom-button"
+                            @click="slider?.next()"></QBtn>
                     </QCarouselControl>
-                </template> -->
+                </template>
             </QCarousel>
-        
+
             <div v-if="!isMobile" class="cards">
                 <slot name="body"></slot>
             </div>
@@ -67,10 +80,6 @@ watch(slide, (newVal) => {
 .description {
     color: #fff;
     margin-bottom: 2.4rem;
-}
-
-.adaptive-controls {
-    display: none;
 }
 
 .cards-holder {
@@ -93,6 +102,39 @@ watch(slide, (newVal) => {
         margin-bottom: 2rem;
         justify-items: center;
     }
+    .q-slider{
+        height: fit-content !important;
+        width: 18rem;
+        background: unset;
+        margin: 0 auto;
+
+        overflow: unset;
+    }
+    .slider-controls {
+        --button-size: 2.0rem;
+        --text-size: 1rem;
+        --margin: -1rem;
+
+
+        margin: 0 !important;
+        height: fit-content !important;
+        width: calc(
+            100% + 2 * var(--button-size) + 2 * var(--margin)
+        ) !important;
+        display: flex !important;
+        top: calc(50% - var(--button-size)/2) !important;
+        left: calc(-1 * (var(--button-size) + var(--margin))) !important;
+        justify-content: space-between !important;
+        z-index: 2;
+
+        .custom-button {
+            background: linear-gradient(
+                180deg,
+                #feda82 0%,
+                #fec338 100%
+            ) !important;
+        }
+    }
 }
 
 @media (max-width: 400px) {
@@ -106,40 +148,13 @@ watch(slide, (newVal) => {
             font-size: 1.125rem;
         }
     }
-    .adaptive-controls {
-        position: absolute;
-        top: 50%;
-        left: -5%;
-        width: 110%;
-        z-index: 10;
+}
+</style>
 
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-
-        .button {
-            --size: 2rem;
-            --padding: 0.5rem;
-            border-radius: 100%;
-            padding: 0;
-            width: var(--size);
-            height: var(--size);
-            img {
-                // margin-left: calc(-1 * var(--padding));
-                margin-top: calc(0.5 * var(--padding));
-                width: calc(var(--size) - var(--padding));
-                height: calc(var(--size) - var(--padding));
-                user-select: none;
-            }
-            &.right {
-                img {
-                    transform: rotateZ(180deg);
-                }
-            }
-            // TODO: можно добавить в Button prop "volume: boolean", отключающий объемность
-            box-shadow: none;
-        }
+<style lang="scss">
+.q-slider{
+    .q-panel.scroll{
+        overflow: hidden;
     }
 }
 </style>
