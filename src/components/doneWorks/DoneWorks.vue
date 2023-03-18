@@ -2,10 +2,11 @@
 import { QCarousel, QCarouselControl, QBtn } from "quasar";
 import { ref } from "vue";
 
-import DoneWorksCard from "./DoneWorksCard.vue";
+import WorkCard from "./WorkCard.vue";
 
-import img from "@/assets/images/reviews/review_example.png";
+import img from "@/assets/images/reviews/review_1.png";
 
+const carousel = ref<QCarousel>();
 const slide = ref("0");
 </script>
 
@@ -17,10 +18,11 @@ const slide = ref("0");
             </div>
             <div class="slider-wrapper">
                 <QCarousel
+                    ref="carousel"
                     swipeable
                     animated
+                    infinite
                     navigation
-                    arrows
                     transition-prev="jump-right"
                     transition-next="jump-left"
                     v-model="slide"
@@ -48,7 +50,7 @@ const slide = ref("0");
                     </template>
 
                     <template #default>
-                        <DoneWorksCard :img_src="img" name="0">
+                        <WorkCard :img_src="img" name="0">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -58,8 +60,8 @@ const slide = ref("0");
                                 установлен в гостиной и делает ее уютной и
                                 нежной.
                             </template>
-                        </DoneWorksCard>
-                        <DoneWorksCard :img_src="img" name="1">
+                        </WorkCard>
+                        <WorkCard :img_src="img" name="1">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -69,8 +71,8 @@ const slide = ref("0");
                                 установлен в гостиной и делает ее уютной и
                                 нежной.
                             </template>
-                        </DoneWorksCard>
-                        <DoneWorksCard :img_src="img" name="2">
+                        </WorkCard>
+                        <WorkCard :img_src="img" name="2">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -80,8 +82,8 @@ const slide = ref("0");
                                 установлен в гостиной и делает ее уютной и
                                 нежной.
                             </template>
-                        </DoneWorksCard>
-                        <DoneWorksCard :img_src="img" name="3">
+                        </WorkCard>
+                        <WorkCard :img_src="img" name="3">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -91,14 +93,33 @@ const slide = ref("0");
                                 установлен в гостиной и делает ее уютной и
                                 нежной.
                             </template>
-                        </DoneWorksCard>
+                        </WorkCard>
                     </template>
-                    <!-- <template #control>
-                        <QCarouselControl>
-                            <QBtn></QBtn>
-                            <QBtn></QBtn>
+
+                    <template #control>
+                        <QCarouselControl
+                            class="slider-controls"
+                            position="bottom-right">
+                            <QBtn
+                                push
+                                round
+                                dense
+                                color="orange"
+                                text-color="black"
+                                icon="arrow_right_alt"
+                                class="custom-button left"
+                                @click="carousel?.previous()"></QBtn>
+                            <QBtn
+                                push
+                                round
+                                dense
+                                color="orange"
+                                text-color="black"
+                                icon="arrow_right_alt"
+                                class="custom-button"
+                                @click="carousel?.next()"></QBtn>
                         </QCarouselControl>
-                    </template> -->
+                    </template>
                 </QCarousel>
             </div>
         </div>
@@ -140,6 +161,30 @@ const slide = ref("0");
 
         overflow: unset !important;
     }
+    .slider-controls {
+        --button-size: 3.75rem;
+        --text-size: 0.8rem;
+
+        --margin: 2.5rem;
+
+        margin: 0 !important;
+        height: fit-content !important;
+        width: calc(
+            100% + 2 * var(--button-size) + 2 * var(--margin)
+        ) !important;
+        display: flex !important;
+        top: calc(50% - var(--button-size)/2) !important;
+        left: calc(-1 * (var(--button-size) + var(--margin))) !important;
+        justify-content: space-between !important;
+
+        .custom-button {
+            background: linear-gradient(
+                180deg,
+                #feda82 0%,
+                #fec338 100%
+            ) !important;
+        }
+    }
 }
 </style>
 
@@ -148,5 +193,39 @@ const slide = ref("0");
     position: absolute !important;
     height: 2rem !important;
     bottom: -4rem !important;
+}
+
+.q-carousel__slides-container {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-button.left i {
+    transform: rotateZ(180deg);
+}
+
+.slider-controls {
+    --button-size: 3.75rem;
+    --text-size: 0.8rem;
+
+    --margin: 2.5rem;
+
+    .q-btn::before {
+        box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2),
+            0 0.125rem 0.125rem rgba(0, 0, 0, 0.14),
+            0 0.1875rem 0.0625rem -0.125rem rgba(0, 0, 0, 0.12);
+    }
+    .q-btn--push:before {
+        border-bottom: 0.1875rem solid rgba(0, 0, 0, 0.15);
+    }
+    .q-btn {
+        font-size: var(--text-size) !important;
+    }
+    .q-btn--dense.q-btn--round {
+        min-height: var(--button-size);
+        min-width: var(--button-size);
+        width: var(--button-size);
+        height: var(--button-size);
+    }
 }
 </style>

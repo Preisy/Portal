@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, computed } from "vue";
+import { ref, watch, computed, type StyleValue } from "vue";
 import { QSlider } from "quasar";
 
 const props = defineProps({
@@ -44,13 +44,13 @@ const value = computed({
             <p
                 class="marker min"
                 :class="scope.markerMap[min].classes"
-                :style="scope.markerMap[min].style">
+                :style="scope.markerMap[min].style as StyleValue">
                 {{ min }}
             </p>
             <p
                 class="marker max"
                 :class="scope.markerMap[max].classes"
-                :style="scope.markerMap[max].style">
+                :style="scope.markerMap[max].style as StyleValue">
                 {{ max }}
             </p>
         </template>

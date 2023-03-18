@@ -24,7 +24,7 @@ window.addEventListener("scroll", () => {
 });
 
 const onScroll = computed(() => {
-    console.log(footerHeight.value);
+    // console.log(footerHeight.value);
     if (backgroundHeight.value && footerHeight.value)
         return `background-position-y:${(window.innerHeight - backgroundHeight.value?.bottom - 1.2*(footerHeight.value)) * 0.3}px`;
 

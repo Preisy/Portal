@@ -12,10 +12,6 @@ $screen-xl: 1920px;
     margin-right: auto;
     padding-top: 4rem;
     padding-bottom: 4.25rem;
-
-    @media (max-width: $screen-sm) {
-        width: 90%;
-    }
 }
 
 h1 {
