@@ -2,10 +2,14 @@
 import Helmet from './Helmet.vue'
 import Arrow from '../icons/Arrow.vue'
 import Button from '../general/button/Button.vue';
+import BackgroundImg from './Background-img.vue';
 </script>
 
 <template>
   <div class="results-bg">
+    <div class="results-img-block">
+      <BackgroundImg class="result-img"></BackgroundImg>
+    </div>
     <div class="structure">
       <div class="results-main-teg">
         <h2 class="results-teg">Итоги</h2>
@@ -16,7 +20,7 @@ import Button from '../general/button/Button.vue';
             <div class="circle">
               <p class="number">1</p>
             </div>
-            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее  решение</span> по цене и
+            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее <br> решение</span> по цене и
               качеству.</p>
           </div>
           <div class="results-block-item">
@@ -47,13 +51,51 @@ import Button from '../general/button/Button.vue';
 
 <style scoped lang="scss">
 .results-bg {
-    background: url(../../assets/images/results/results-bg.png) no-repeat;
-    background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background: url(../../assets/images/results/results-bg.png) no-repeat;
+  background-size: cover;
+  animation: main-bg-slide 5s ease-in-out infinite;
+
 }
+
+@keyframes slide {
+  0% {
+    top: 0;
+    left: -3%;
+  }
+
+  50% {
+    top: 10%;
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: -3%;
+  }
+}
+@keyframes main-bg-slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 20%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.results-img-block {
+  position: absolute;
+  animation: slide 15s ease-in-out infinite;
+}
+
 
 .structure {
   position: relative;
 }
+
 .results-main-teg {
   margin-bottom: 2rem;
 }
@@ -71,7 +113,8 @@ import Button from '../general/button/Button.vue';
   display: flex;
   column-gap: 2rem;
 }
-.results-main-content > div {
+
+.results-main-content>div {
   flex: 1;
 }
 
@@ -124,22 +167,23 @@ import Button from '../general/button/Button.vue';
   display: flex;
   align-items: flex-end;
 }
+
 .img-wrapper {
   position: relative;
   font-size: 0;
   text-align: center;
 }
+
 .result-cost {
   margin: -2rem 0 0;
 }
 
 .helmet {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 .arrow {
   width: 10.5rem;
   margin-left: -3.5rem;
-}
-</style>
+}</style>
