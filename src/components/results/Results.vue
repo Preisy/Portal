@@ -7,38 +7,38 @@ import Button from '../general/button/Button.vue';
 <template>
   <div class="results-bg">
     <div class="structure">
-      <div class="results-container">
+      <div class="results-main-teg">
         <h2 class="results-teg">Итоги</h2>
-        <div class="results-main-content">
-          <div class="results-block">
-            <div class="results-block-item">
-              <div class="circle">
-                <p class="number">1</p>
-              </div>
-              <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее <br> решение</span> по цене и
-                качеству.</p>
+      </div>
+      <div class="results-main-content">
+        <div class="results-block">
+          <div class="results-block-item">
+            <div class="circle">
+              <p class="number">1</p>
             </div>
-            <div class="results-block-item">
-              <div class="circle">
-                <p class="number">2</p>
-              </div>
-              <p class="result-text-block">Мы <span class="fat-text">знаем все</span> о натяжных <br>потолках.</p>
-            </div>
-            <div class="results-block-item">
-              <div class="circle">
-                <p class="number">3</p>
-              </div>
-              <p class="result-text-block">Не теряйте времени, <span class="fat-text">свяжитесь <br>с нами</span> в
-                WhatsApp.</p>
-            </div>
+            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее  решение</span> по цене и
+              качеству.</p>
           </div>
-          <div class="results-button-block">
-            <div class="helmet">
-              <Helmet></Helmet>
+          <div class="results-block-item">
+            <div class="circle">
+              <p class="number">2</p>
             </div>
-            <Button :redirect="false" class = 'result-cost'>Рассчитать стоимость</Button>
-            <Arrow class="arrow"></Arrow>
+            <p class="result-text-block">Мы <span class="fat-text">знаем все</span> о натяжных <br>потолках.</p>
           </div>
+          <div class="results-block-item">
+            <div class="circle">
+              <p class="number">3</p>
+            </div>
+            <p class="result-text-block">Не теряйте времени, <span class="fat-text">свяжитесь <br>с нами</span> в
+              WhatsApp.</p>
+          </div>
+        </div>
+        <div class="results-button-block">
+          <div class="img-wrapper">
+            <Helmet class="helmet"></Helmet>
+            <Button :redirect="false" class='result-cost'>Рассчитать стоимость</Button>
+          </div>
+          <Arrow class="arrow"></Arrow>
         </div>
       </div>
     </div>
@@ -47,9 +47,15 @@ import Button from '../general/button/Button.vue';
 
 <style scoped lang="scss">
 .results-bg {
-  background: url(../../assets/images/results/results-bg.png);
-  background-repeat: no-repeat;
-  background-size: 100% 120%;
+    background: url(../../assets/images/results/results-bg.png) no-repeat;
+    background-size: cover;
+}
+
+.structure {
+  position: relative;
+}
+.results-main-teg {
+  margin-bottom: 2rem;
 }
 
 .results-teg {
@@ -59,11 +65,14 @@ import Button from '../general/button/Button.vue';
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-align: center;
-  margin-bottom: 2rem;
 }
+
 .results-main-content {
   display: flex;
-  position: relative;
+  column-gap: 2rem;
+}
+.results-main-content > div {
+  flex: 1;
 }
 
 .results-block {
@@ -71,7 +80,6 @@ import Button from '../general/button/Button.vue';
   background: #FFFFFF;
   box-shadow: 0px 4px 48px -3px rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
-  margin-right: 8.5rem;
 }
 
 .results-block-item {
@@ -111,33 +119,27 @@ import Button from '../general/button/Button.vue';
     font-weight: 700;
   }
 }
-.helmet {
-  width: 27rem;
-  height: 27rem;
-  position: absolute;
-  left: 38%;
-  bottom: -7%;
+
+.results-button-block {
+  display: flex;
+  align-items: flex-end;
+}
+.img-wrapper {
+  position: relative;
+  font-size: 0;
+  text-align: center;
 }
 .result-cost {
-  position: absolute;
-  border: none;
-  background: linear-gradient(180deg, #FEDA82 0%, #FEC338 100%);
-  padding: 1.45rem 3rem;
-  border-radius: 1.2rem;
-  font-weight: 600;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #302C23;
-  text-shadow: 0px 1px 0px rgba(254, 225, 154, 0.7);
-  bottom: 0;
+  margin: -2rem 0 0;
 }
+
+.helmet {
+    display: inline-block;
+    width: 100%;
+}
+
 .arrow {
-  position: absolute;
-  bottom: 0;
-  left: 84%;
   width: 10.5rem;
+  margin-left: -3.5rem;
 }
 </style>

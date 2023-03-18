@@ -1,13 +1,9 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <img src="../../assets/svg/result-arrow.svg" alt="" class="arrow">
 </template>
 
 <style scoped lang="scss">
-.arrow {
+img {
     user-select: none;
 }
 </style>

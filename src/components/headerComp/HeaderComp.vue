@@ -14,7 +14,6 @@ const onScroll = computed(
     return (currentScroll.value > headerHeight)?'prettyHeader':''
   }  
 )
-root.value?.getBoundingClientRect().height;
 
 </script>
 

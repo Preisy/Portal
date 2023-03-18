@@ -8,7 +8,7 @@ import ReviewsPage from "./reviews/ReviewsPage.vue";
 import WhiteWrapper from "./whitePagesWrapper/WhiteWrapper.vue";
 import DoneWorks from "./doneWorks/DoneWorks.vue";
 import Results from "./results/Results.vue";
-import FinalBlock from "./final-block/FinalBlock.vue";
+import FinalBlock from "./finalBlock/FinalBlock.vue";
 import Footer from "./footer/Footer.vue";
 
 

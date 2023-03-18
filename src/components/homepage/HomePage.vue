@@ -15,11 +15,7 @@ const onScroll = computed(() => {
 </script>
 
 <template>
-    <div
-        ref="root"
-        class="homepage-wrapper"
-        v-bind:style="onScroll"
-        id="homepage">
+    <div ref="root" class="homepage-wrapper" v-bind:style="onScroll" id="homepage">
         <div class="shadow"></div>
         <div class="structure">
             <div class="homepage-items">
@@ -48,6 +44,7 @@ const onScroll = computed(() => {
     background: url(../../assets/images/homepage/background.png);
     background-repeat: no-repeat;
     background-size: cover;
+
     .structure {
         padding-top: 10rem;
         position: relative;
@@ -64,11 +61,9 @@ const onScroll = computed(() => {
         left: 0;
         right: 0;
         height: 8rem;
-        background: linear-gradient(
-            180deg,
-            rgba(27, 27, 27, 0) 27%,
-            #151515 57%
-        );
+        background: linear-gradient(180deg,
+                rgba(27, 27, 27, 0) 27%,
+                #151515 57%);
     }
 
     .homepage-items {
@@ -78,11 +73,9 @@ const onScroll = computed(() => {
         .main-slogan {
             font-style: italic;
             line-height: 2.9rem;
-            background: linear-gradient(
-                86.98deg,
-                #feda82 22.54%,
-                #fec338 105.96%
-            );
+            background: linear-gradient(86.98deg,
+                    #feda82 22.54%,
+                    #fec338 105.96%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -99,10 +92,12 @@ const onScroll = computed(() => {
                     -webkit-text-fill-color: #fff;
                 }
             }
+
             &::selection {
                 -webkit-text-fill-color: #fff;
             }
         }
+
         .add-slogan {
             font-style: normal;
             font-weight: 500;
