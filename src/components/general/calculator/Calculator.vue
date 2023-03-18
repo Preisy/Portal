@@ -177,7 +177,7 @@ $calculator-width: 37.5rem;
         width: 100%;
 
         background: #f6f6f6;
-        border: 1px solid #e5e5e5;
+        border: 0.0625rem solid #e5e5e5;
         border-radius: 0.9rem;
         box-sizing: border-box;
         padding: 1rem;

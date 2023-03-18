@@ -6,12 +6,8 @@ import { QCarousel, QBtn, QCarouselControl, Screen } from "quasar";
 const slider = ref<QCarousel>();
 const slide = ref('0');
 const isMobile = computed(() => {
-    console.log(Screen);
+    // console.log(Screen);
     return Screen.lt.sm;
-});
-
-watch(slide, (newVal) => {
-    // TODO:
 });
 </script>
 
@@ -26,6 +22,7 @@ watch(slide, (newVal) => {
             <QCarousel
                 v-if="isMobile"
                 swipeable
+                infinite
                 class="q-slider"
                 ref="slider"
                 transition-prev="fade"

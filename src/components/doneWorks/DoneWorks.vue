@@ -21,6 +21,7 @@ const slide = ref("0");
                     ref="carousel"
                     swipeable
                     animated
+                    infinite
                     navigation
                     transition-prev="jump-right"
                     transition-next="jump-left"

@@ -89,8 +89,8 @@ $screen-xl: 1920px;
         }
 
         @media (max-width: $screen-sm) {
-            left: -5rem;
-            top: 2rem;
+            left: 0rem;
+            top: 10rem;
         }
     }
 
@@ -123,13 +123,13 @@ $screen-xl: 1920px;
         $dy: 0.26rem;
         @keyframes drill-anim {
             0% {
-                translate: $dx $dy;
+                translate: $dx (-$dy);
             }
             50% {
-                translate: -$dx -$dy;
+                translate: -$dx ($dy);
             }
             100% {
-                translate: $dx $dy;
+                translate: $dx (-$dy);
             }
         }
     }
@@ -154,11 +154,11 @@ $screen-xl: 1920px;
             rotate: 0 0 $d_angle;
         }
         50% {
-            translate: 0 $dy; 
+            translate: 0 $dy;
             rotate: 0 0 0;
         }
         100% {
-            translate: $dx 0; 
+            translate: $dx 0;
             rotate: 0 0 $d_angle;
         }
     }
