@@ -1,8 +1,8 @@
 <script setup lang="ts">
-defineProps({
-    num: Number,
-    img_src: String,
-});
+defineProps<{
+    num: number,
+    img_src: string,
+}>();
 </script>
 
 <template>

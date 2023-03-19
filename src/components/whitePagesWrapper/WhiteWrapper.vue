@@ -22,19 +22,19 @@ const bgPivot = ref<HTMLElement>();
             <BgAttachImg
                 class="tapee anim"
                 :img_src="tapee"
-                :ref_element="bgPivot"></BgAttachImg>
+                :ref_element="bgPivot!!"></BgAttachImg>
             <BgAttachImg
                 class="drill"
                 :img_src="drill"
-                :ref_element="bgPivot"></BgAttachImg>
+                :ref_element="bgPivot!!"></BgAttachImg>
             <BgAttachImg
                 class="screw anim"
                 :img_src="screw"
-                :ref_element="bgPivot"></BgAttachImg>
+                :ref_element="bgPivot!!"></BgAttachImg>
             <BgAttachImg
                 class="screw anim second"
                 :img_src="screw"
-                :ref_element="bgPivot"></BgAttachImg>
+                :ref_element="bgPivot!!"></BgAttachImg>
         </div>
     </div>
 </template>

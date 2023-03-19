@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import Button from "@/components/general/button/Button.vue";
 import { QCarouselSlide } from "quasar";
-const props = defineProps({
-    name: {
-        type: String,
-        required: true,
-    },
-    img_src: {
-        type: String,
-        required: true,
-    },
-});
+const props = defineProps<{
+    name: string,
+    img_src: string
+}>();
 </script>
 
 <template>
@@ -30,7 +24,7 @@ const props = defineProps({
                 </p>
             </div>
             <div class="btn-holder">
-                <Button class="btn">Хочу такой же!</Button>
+                <Button class="btn" href="#">Хочу такой же!</Button>
             </div>
         </div>
     </QCarouselSlide>

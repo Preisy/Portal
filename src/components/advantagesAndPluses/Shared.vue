@@ -29,7 +29,8 @@ watch(slide, (newVal) => {
                     v-model="slide"
                     :redirect="false"
                     :delta="-1"
-                    class="button left">
+                    class="button left"
+                    href="#">
                     <img
                         src="@/assets/images/advantagesPage/left_arrow.svg"
                         alt="←" />
@@ -38,7 +39,8 @@ watch(slide, (newVal) => {
                     v-model="slide"
                     :redirect="false"
                     :delta="1"
-                    class="button right">
+                    class="button right"
+                    href="#">
                     <img
                         src="@/assets/images/advantagesPage/left_arrow.svg"
                         alt="→" />

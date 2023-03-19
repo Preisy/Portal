@@ -1,10 +1,7 @@
 <script setup lang="ts">
-defineProps({
-  rate: {
-    type: Number,
-    required: true,
-  },
-});
+defineProps<{
+  rate: number
+}>();
 </script>
 
 <template>
@@ -13,7 +10,7 @@ defineProps({
       <img
           v-for="index in rate"
           :key="index"
-          src="@/assets/images/reviews/star.svg"/>
+          src="@/assets/images/reviews/star.svg" alt=""/>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 export interface ReviewCard {
-    imgSrc: String,
+    imgSrc: string,
     rate: number,
-    header: String,
-    message: String
+    header: string,
+    message: string
 }

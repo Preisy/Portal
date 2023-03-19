@@ -1,21 +1,13 @@
 <script setup lang="ts">
-import { ref, watch, computed, type StyleValue } from "vue";
+import { computed} from "vue";
+import type { StyleValue } from "vue";
 import { QSlider } from "quasar";
 
-const props = defineProps({
-    modelValue: {
-        type: Number,
-        required: true,
-    },
-    min: {
-        type: Number,
-        required: true,
-    },
-    max: {
-        type: Number,
-        required: true,
-    },
-});
+const props = defineProps<{
+    modelValue: number,
+    min: number,
+    max: number,
+}>();
 const emit = defineEmits(["update:modelValue"]);
 
 const value = computed({

@@ -40,7 +40,7 @@ import BackgroundImg from './Background-img.vue';
         <div class="results-button-block">
           <div class="img-wrapper">
             <Helmet class="helmet"></Helmet>
-            <Button :redirect="false" class='result-cost'>Рассчитать стоимость</Button>
+            <Button :redirect="false" class='result-cost' href="#">Рассчитать стоимость</Button>
           </div>
           <Arrow class="arrow"></Arrow>
         </div>

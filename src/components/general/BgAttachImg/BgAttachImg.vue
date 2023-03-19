@@ -3,17 +3,11 @@ import { ref } from "vue";
 import { computed } from "@vue/reactivity";
 import isVisible from "@/utils/isVisible";
 
-const props = defineProps({
-    img_src: { type: String, required: true },
-    ref_element: {
-        type: HTMLElement,
-        default: document.body,
-    },
-    modifier: {
-        type: Number,
-        default: 0.25,
-    },
-});
+const props = defineProps<{
+    img_src: string,
+    ref_element: HTMLElement,
+    modifier?: number,
+}>();
 
 const currentScroll = ref(window.scrollY);
 const parallax = computed(() => {

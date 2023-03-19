@@ -5,12 +5,9 @@ import {PlacesFactory} from "@/components/reviews/PlacesFactory";
 import {reviewCardsData} from "./ReviewCardsData"
 import type {Nullable} from "@/types/types";
 
-const props = defineProps({
-  index: {
-    type: Number,
-    require: true
-  }
-})
+const props = defineProps<{
+  index: number
+}>()
 
 const placeholder = ref<HTMLDivElement>();
 let reviews = ref<NodeListOf<HTMLDivElement>>();
@@ -45,6 +42,7 @@ function position(num: number) {
     <div class="phantom" ref="phantoms" v-for="_ in 4"></div>
 
     <ReviewCard
+        :rate="5"
         v-for="(card, i) in reviewCardsData"
         ref="reviews"
         :style="position(i)"

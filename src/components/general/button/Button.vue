@@ -7,17 +7,11 @@ import { computed } from "@vue/reactivity";
  *  @param volumetric - включает/выключает тень
  *  @param redirect - включает/выключает переход по ссылке
  */ 
-const props = defineProps({
-    href: String,
-    volumetric: {
-        type: Boolean,
-        default: true,
-    },
-    redirect: {
-        type: Boolean,
-        default: true
-    }
-});
+const props = defineProps<{
+    href: string,
+    volumetric?: boolean,
+    redirect?: boolean
+}>();
 
 function click(e: Event) {
     if(!props.redirect) 
