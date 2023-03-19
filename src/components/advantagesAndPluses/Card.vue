@@ -27,7 +27,9 @@ defineProps({
     --transition: transform ease-in-out 0.2s;
     --img-height: 7rem;
 
-    width: 23rem;
+    //width: 23rem;
+    width: 100%;
+    aspect-ratio: 264 / 206;
     box-sizing: border-box;
     padding: 1.2rem 3.5rem;
     border-radius: 1.4rem;

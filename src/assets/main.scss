@@ -13,6 +13,33 @@ $screen-xl: 1920px;
     padding-top: 4rem;
     padding-bottom: 4.25rem;
 }
+:root {
+    font-size: 0.83vw;
+}
+
+// + 1 for wide screen
+
+@media (max-width: 1300px) {
+    .structure {
+        width: 80%;
+    }
+    :root {
+        font-size: 1vw;
+    }
+}
+
+//@media (max-width: 900px) {
+@media (max-aspect-ratio: 900 / 760) {
+    .structure {
+        width: 95%;
+    }
+    :root {
+        font-size: 1.5vw;
+    }
+}
+
+// + 1 на мобилку
+
 
 h1 {
     font-weight: 800;
