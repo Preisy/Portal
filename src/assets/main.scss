@@ -1,0 +1,35 @@
+@import './reset.css';
+@import './base.css';
+@import './quasar-custom-colors.css';
+
+$screen-sm: 400px;
+$screen-lg: 1440px;
+$screen-xl: 1920px;
+
+.structure {
+    width: 63.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem;
+    padding-bottom: 4.25rem;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h4{
+    font-size: 1.625rem;
+    font-weight: 700;
+}
