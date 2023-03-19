@@ -8,7 +8,7 @@ const root = ref<HTMLElement>();
 const slide = ref(1);
 
 watch(slide, (newVal) => {
-    console.log(slide.value);
+    // console.log(slide.value);
 });
 </script>
 
