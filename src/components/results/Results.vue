@@ -3,6 +3,7 @@ import Helmet from './Helmet.vue'
 import Arrow from '../icons/Arrow.vue'
 import Button from '../general/button/Button.vue';
 import BackgroundImg from './Background-img.vue';
+import ResultTextBlock from './ResultTextBlock.vue'
 </script>
 
 <template>
@@ -16,26 +17,7 @@ import BackgroundImg from './Background-img.vue';
       </div>
       <div class="results-main-content">
         <div class="results-block">
-          <div class="results-block-item">
-            <div class="circle">
-              <p class="number">1</p>
-            </div>
-            <p class="result-text-block">Натяжной потолок — <span class="fat-text">лучшее <br> решение</span> по цене и
-              качеству.</p>
-          </div>
-          <div class="results-block-item">
-            <div class="circle">
-              <p class="number">2</p>
-            </div>
-            <p class="result-text-block">Мы <span class="fat-text">знаем все</span> о натяжных <br>потолках.</p>
-          </div>
-          <div class="results-block-item">
-            <div class="circle">
-              <p class="number">3</p>
-            </div>
-            <p class="result-text-block">Не теряйте времени, <span class="fat-text">свяжитесь <br>с нами</span> в
-              WhatsApp.</p>
-          </div>
+          <ResultTextBlock></ResultTextBlock>
         </div>
         <div class="results-button-block">
           <div class="img-wrapper">
@@ -75,17 +57,21 @@ import BackgroundImg from './Background-img.vue';
     left: -3%;
   }
 }
+
 @keyframes main-bg-slide {
   0% {
     background-position: 0% 0%;
   }
+
   50% {
     background-position: 0% 20%;
   }
+
   100% {
     background-position: 0% 0%;
   }
 }
+
 .results-img-block {
   position: absolute;
   animation: slide 15s ease-in-out infinite;
@@ -125,44 +111,6 @@ import BackgroundImg from './Background-img.vue';
   border-radius: 1rem;
 }
 
-.results-block-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2.3rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.circle {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
-  border: 0.1rem solid #FEC338;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 2.2rem;
-}
-
-.number {
-  font-weight: 600;
-  font-size: 1.8rem;
-  line-height: 2rem;
-}
-
-.result-text-block {
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 125%;
-  color: #515151;
-
-  .fat-text {
-    font-weight: 700;
-  }
-}
-
 .results-button-block {
   display: flex;
   align-items: flex-end;
@@ -186,4 +134,18 @@ import BackgroundImg from './Background-img.vue';
 .arrow {
   width: 10.5rem;
   margin-left: -3.5rem;
+}
+
+@media (max-aspect-ratio: 320 / 937) {
+  .results-main-content {
+    flex-direction: column;
+  }
+  .results-block {
+    width: 35rem;
+    padding: 1rem 1rem;
+    align-self: center;
+  }
+  .arrow {
+    display: none;
+  }
 }</style>

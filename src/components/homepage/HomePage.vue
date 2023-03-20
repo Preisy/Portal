@@ -25,15 +25,15 @@ const onScroll = computed(() => {
                         <span class="another-color">в Москве и МО</span>
                     </h1>
                     <p class="add-slogan">
-                        Используем только качественные, проверенные <br />
-                        временем материалы. Сотрудничаем с лучшими <br />
+                        Используем только качественные, проверенные
+                        временем материалы. Сотрудничаем с лучшими
                         производителями натяжных потолков.
                     </p>
                     <Discount></Discount>
                 </div>
                 <Calculator class="calc"></Calculator>
             </div>
-            <GuaranteeBlock />
+            <GuaranteeBlock class="guarantee" />
         </div>
     </div>
 </template>
@@ -79,7 +79,6 @@ const onScroll = computed(() => {
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-right: 4rem;
             margin-bottom: 1.75rem;
 
             .another-color {
@@ -104,7 +103,8 @@ const onScroll = computed(() => {
             font-size: 1.35rem;
             line-height: 1.75rem;
             color: #ffffff;
-            margin-bottom: 1rem;
+
+            width: 80%;
         }
     }
 
@@ -116,4 +116,30 @@ const onScroll = computed(() => {
         width: 27rem;
     }
 }
-</style>
+
+
+@media (max-aspect-ratio: 320 / 937) {
+    .homepage-items {
+        flex-direction: column;
+        row-gap: 5rem;
+    }
+
+    .main-slogan {
+        text-align: center;
+        width: 27rem;
+    }
+    .slogans {
+        
+    }
+
+    .add-slogan {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .guarantee {
+        display: none;
+    }
+
+
+}</style>

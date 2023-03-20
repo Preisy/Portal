@@ -72,4 +72,13 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
 
 .logo {
   transform: scale(0.5);
-}</style>
+}
+@media (max-aspect-ratio: 320 / 937) {
+  .footer-block {
+    flex-direction: column;
+  }
+  .whatsapp {
+    margin-bottom: 1rem;
+  }
+}
+</style>

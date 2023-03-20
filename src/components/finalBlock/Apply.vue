@@ -74,4 +74,16 @@ import Application from './Application.vue';
   margin-top: 23rem;
   margin-left: -1.5rem;
 }
+@media (max-aspect-ratio: 320 / 937) {
+  .circle {
+    left: 0;
+  }
+  .application {
+    margin-left: -2rem;
+  }
+  .arrow {
+    transform: scale(-1, 1) rotate(100deg);
+    margin-top: 10rem;
+  }
+}
 </style>

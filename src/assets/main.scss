@@ -17,9 +17,9 @@ $screen-xl: 1920px;
     font-size: 0.83vw;
 }
 
-// + 1 for wide screen
 
-@media (max-width: 1300px) {
+
+@media (max-aspect-ratio: 1300 / 937) {
     .structure {
         width: 80%;
     }
@@ -28,8 +28,7 @@ $screen-xl: 1920px;
     }
 }
 
-//@media (max-width: 900px) {
-@media (max-aspect-ratio: 900 / 760) {
+@media (max-aspect-ratio: 900 / 937) {
     .structure {
         width: 95%;
     }
@@ -37,9 +36,14 @@ $screen-xl: 1920px;
         font-size: 1.5vw;
     }
 }
-
-// + 1 на мобилку
-
+@media (max-aspect-ratio: 320 / 937) {
+    :root {
+        font-size: 2.6vw;
+    }
+    .structure {
+        width: 65%;
+    }
+}
 
 h1 {
     font-weight: 800;

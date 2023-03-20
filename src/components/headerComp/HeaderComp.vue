@@ -122,4 +122,16 @@ float: left;
   }
 
 }
+@media (max-aspect-ratio: 320 / 937) {
+
+    .structure {
+        width: 115%;
+    }
+    .time {
+      display: none;
+    }
+    .portal-logo {
+      transform: scale(0.8);
+    }
+}
 </style>
