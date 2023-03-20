@@ -59,8 +59,8 @@ const onScroll = computed(
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
-  p {
+  
+  .time {
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
@@ -68,7 +68,13 @@ const onScroll = computed(
     color: #FFFFFF;
   }
   .number {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: #FFFFFF;
     color: #BDBDBD;
+    text-align: center;
     .white-text {
       color: #FFFFFF;
       font-weight: 700;
@@ -100,9 +106,7 @@ float: left;
 .contacts {
   float: right;
 }
-.number {
-  text-align: center;
-}
+
 .contact {
   background: none;
   border: none;
@@ -122,16 +126,25 @@ float: left;
   }
 
 }
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
 
     .structure {
-        width: 115%;
+        width: 90%;
+    }
+    .whatsapp {
+      margin-right: 0;
     }
     .time {
       display: none;
     }
     .portal-logo {
-      transform: scale(0.8);
+      transform: scale(0.85);
     }
+    .contact {
+      font-size: 1rem;
+    }
+
+    
+
 }
 </style>

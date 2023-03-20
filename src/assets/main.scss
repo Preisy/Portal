@@ -3,6 +3,7 @@
 @import './quasar-custom-colors.css';
 
 $screen-sm: 400px;
+$screen-md: 900px;
 $screen-lg: 1440px;
 $screen-xl: 1920px;
 
@@ -19,16 +20,9 @@ $screen-xl: 1920px;
 
 
 
-@media (max-aspect-ratio: 1300 / 937) {
-    .structure {
-        width: 80%;
-    }
-    :root {
-        font-size: 1vw;
-    }
-}
 
-@media (max-aspect-ratio: 900 / 937) {
+
+@media (max-width: 900px ) {
     .structure {
         width: 95%;
     }
@@ -36,12 +30,12 @@ $screen-xl: 1920px;
         font-size: 1.5vw;
     }
 }
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
     :root {
         font-size: 2.6vw;
     }
     .structure {
-        width: 65%;
+        width: 90%;
     }
 }
 

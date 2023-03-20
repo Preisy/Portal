@@ -13,7 +13,7 @@ import ResultTextBlock from './ResultTextBlock.vue'
     </div>
     <div class="structure">
       <div class="results-main-teg">
-        <h2 class="results-teg">Итоги</h2>
+        <h2 class="results-teg">Подведем <span class="gold-text">итоги</span></h2>
       </div>
       <div class="results-main-content">
         <div class="results-block">
@@ -87,12 +87,14 @@ import ResultTextBlock from './ResultTextBlock.vue'
 }
 
 .results-teg {
+  text-align: center;
+}
+.gold-text {
   font-style: italic;
   background: linear-gradient(86.98deg, #FEDA82 22.54%, #FEC338 105.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-align: center;
 }
 
 .results-main-content {
@@ -107,7 +109,7 @@ import ResultTextBlock from './ResultTextBlock.vue'
 .results-block {
   padding: 3rem 3.4rem;
   background: #FFFFFF;
-  box-shadow: 0px 4px 48px -3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 48px -3px rgba(0, 0, 0, 0.582);
   border-radius: 1rem;
 }
 
@@ -136,16 +138,21 @@ import ResultTextBlock from './ResultTextBlock.vue'
   margin-left: -3.5rem;
 }
 
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
   .results-main-content {
     flex-direction: column;
   }
   .results-block {
-    width: 35rem;
     padding: 1rem 1rem;
     align-self: center;
   }
   .arrow {
     display: none;
+  }
+  .helmet {
+    width: 65%;
+  }
+  .result-cost {
+    font-size: 1.1rem;
   }
 }</style>

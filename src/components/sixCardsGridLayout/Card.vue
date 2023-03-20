@@ -75,7 +75,6 @@ defineProps({
         font-weight: 600;
         margin-bottom: 1.1rem;
 
-        white-space: nowrap;
     }
     .long-desc {
         font-size: 1rem;
@@ -92,10 +91,10 @@ defineProps({
         grid-row: 1/1;
 
         .short-desc {
-            font-size: 0.875rem;
+            font-size: 1.2rem;
         }
         .long-desc {
-            font-size: 0.75rem;
+            font-size: 1.15rem;
         }
 
         &:hover {

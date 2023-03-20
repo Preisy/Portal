@@ -117,20 +117,24 @@ const onScroll = computed(() => {
     }
 }
 
+@media (max-width: 900px) {
+    .homepage-items {
+        align-items: flex-start;
+        
+    }
+}
 
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
     .homepage-items {
         flex-direction: column;
         row-gap: 5rem;
+        
     }
 
     .main-slogan {
         text-align: center;
-        width: 27rem;
     }
-    .slogans {
-        
-    }
+    
 
     .add-slogan {
         text-align: center;
@@ -140,6 +144,6 @@ const onScroll = computed(() => {
     .guarantee {
         display: none;
     }
+}
 
-
-}</style>
+</style>

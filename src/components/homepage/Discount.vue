@@ -40,22 +40,22 @@
     }
 }
 
-@media (max-aspect-ratio: 900 / 937) {
+@media (max-width: 900px) {
     .brush {
         width: 90%;
     }
 }
 
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
     .discount-slogan {
         text-align: center;
         font-size: 1.6rem;
         line-height: 1.4rem;
+        
     }
     .brush {
-        margin-left: -0.7rem;
-        top: -0.5rem;
-        width: 30rem;
+        width: 37rem;
+        margin-top: 0.82rem;
     }
 }
 </style>

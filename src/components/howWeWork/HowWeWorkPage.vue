@@ -72,12 +72,12 @@ $screen-xl: 1920px;
         align-items: center;
         justify-content: center;
 
-        @media (max-width: $screen-sm) {
+        @media (max-width: 400px) {
             flex-direction: column;
         }
         .card {
             margin: 0 3rem;
-            @media (max-width: $screen-sm) {
+            @media (max-width: 400px) {
                 margin-bottom: 5rem;
             }
         }

@@ -88,7 +88,7 @@ $screen-xl: 1920px;
             filter: blur(0.25rem);
         }
 
-        @media (max-width: $screen-sm) {
+        @media (max-width: 400px) {
             left: 0rem;
             top: 10rem;
         }
@@ -101,7 +101,7 @@ $screen-xl: 1920px;
         height: 29rem;
 
         animation-duration: 3.5s;
-        @media (max-width: $screen-sm) {
+        @media (max-width: 400px) {
             top: 50rem;
             right: -8rem;
         }
@@ -115,7 +115,7 @@ $screen-xl: 1920px;
 
         animation: drill-anim linear infinite 3.5s;
 
-        @media (max-width: $screen-sm) {
+        @media (max-width: 400px) {
             display: none;
         }
 

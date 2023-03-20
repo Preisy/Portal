@@ -142,7 +142,7 @@ const isMobile = computed(() => {
     }
     .description {
         h2 {
-            font-size: 1.125rem;
+            font-size: 2rem;
         }
     }
 }

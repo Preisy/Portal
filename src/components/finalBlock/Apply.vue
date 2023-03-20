@@ -74,7 +74,7 @@ import Application from './Application.vue';
   margin-top: 23rem;
   margin-left: -1.5rem;
 }
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
   .circle {
     left: 0;
   }
@@ -85,5 +85,8 @@ import Application from './Application.vue';
     transform: scale(-1, 1) rotate(100deg);
     margin-top: 10rem;
   }
+  .apply-block {
+  margin-top: -5rem;
+}
 }
 </style>

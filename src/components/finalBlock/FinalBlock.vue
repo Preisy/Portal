@@ -68,7 +68,7 @@ const onScroll = computed(() => {
 .calc {
     width: 27rem;
 }
-@media (max-aspect-ratio: 320 / 937) {
+@media (max-width: 400px) {
     .second-calc-section {
         flex-direction: column-reverse;
         align-items: center;
