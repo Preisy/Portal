@@ -2,10 +2,9 @@
 import { ref } from "vue";
 import type { Nullable } from "@/types/types";
 import { QCarouselSlide } from "quasar";
-import Shared from "./Shared.vue";
-import SharedQuasar from "./SharedQuasar.vue";
+import SharedQuasar from "../sixCardsGridLayout/SharedQuasar.vue";
 
-import Card from "./Card.vue";
+import Card from "../sixCardsGridLayout/Card.vue";
 
 import flat from "@/assets/images/advantagesPage/flat.png";
 import helmet from "@/assets/images/advantagesPage/helmet2.png";

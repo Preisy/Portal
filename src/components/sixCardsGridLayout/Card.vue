@@ -30,8 +30,8 @@ defineProps({
     //width: 23rem;
     width: 100%;
     aspect-ratio: 264 / 206;
-    box-sizing: border-box;
-    padding: 1.2rem 3.5rem;
+    box-sizing: border-box; 
+    padding: 1.2rem 1.5rem;
     border-radius: 1.4rem;
     text-align: center;
     transition: var(--transition);

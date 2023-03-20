@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AdvantagesPage from "./advantagesAndPluses/AdvantagesPage.vue";
+import AdvantagesPage from "./advantages/AdvantagesPage.vue";
 import HomePage from "./homepage/HomePage.vue";
 import HeaderComp from "./headerComp/HeaderComp.vue";
 import HowWeWorkPage from "./howWeWork/HowWeWorkPage.vue";
-import PlusesPage from "./advantagesAndPluses/PlusesPage.vue";
+import PlusesPage from "./pluses/PlusesPage.vue";
 import ReviewsPage from "./reviews/ReviewsPage.vue";
 import WhiteWrapper from "./whitePagesWrapper/WhiteWrapper.vue";
 import DoneWorks from "./doneWorks/DoneWorks.vue";
@@ -11,9 +11,6 @@ import Results from "./results/Results.vue";
 import FinalBlock from "./finalBlock/FinalBlock.vue";
 import Footer from "./footer/Footer.vue";
 
-
-import SharedQuasar from "./advantagesAndPluses/SharedQuasar.vue";
-import { QCarouselSlide } from "quasar";
 </script>
 
 <template>
