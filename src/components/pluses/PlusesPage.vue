@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Card from "./Card.vue";
+import Card from "../sixCardsGridLayout/Card.vue";
 
 import heart from "@/assets/images/plusesPage/heart.png";
 import clock from "@/assets/images/plusesPage/clock.png";
@@ -8,10 +8,9 @@ import handshake from "@/assets/images/plusesPage/handshake.png";
 import like from "@/assets/images/plusesPage/like.png";
 import ruler from "@/assets/images/plusesPage/ruler.png";
 import question from "@/assets/images/plusesPage/question.png";
-import Shared from "./Shared.vue";
 
 import { QCarouselSlide } from "quasar";
-import SharedQuasar from "./SharedQuasar.vue";
+import SharedQuasar from "../sixCardsGridLayout/SharedQuasar.vue";
 
 const root = ref<HTMLElement>();
 
