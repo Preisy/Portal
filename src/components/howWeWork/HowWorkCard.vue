@@ -71,6 +71,10 @@ defineProps({
                 font-size: 1rem;
                 font-weight: 500;
                 line-height: 1.225rem;
+                @media (max-width:400px) {
+                    font-size: 1.15rem;
+                    text-align: center;
+                }
             }
         }
     }

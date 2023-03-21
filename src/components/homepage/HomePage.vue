@@ -69,6 +69,9 @@ const onScroll = computed(() => {
     .homepage-items {
         display: flex;
         align-items: center;
+        @media (max-width: 900px) {
+            align-items: flex-start;
+        }
 
         .main-slogan {
             font-style: italic;
@@ -117,12 +120,7 @@ const onScroll = computed(() => {
     }
 }
 
-@media (max-width: 900px) {
-    .homepage-items {
-        align-items: flex-start;
-        
-    }
-}
+
 
 @media (max-width: 400px) {
     .homepage-items {
@@ -144,6 +142,10 @@ const onScroll = computed(() => {
     .guarantee {
         display: none;
     }
+    .calc {
+        margin: 0 auto;
+    }
+
 }
 
 </style>

@@ -80,6 +80,11 @@ const onScroll = computed(
       font-weight: 700;
     }
   }
+  @media (max-width:400px) {
+    .number {
+      font-size: 1rem;
+    }
+  }
 }
 
 .left-items {
@@ -143,8 +148,5 @@ float: left;
     .contact {
       font-size: 1rem;
     }
-
-    
-
 }
 </style>
