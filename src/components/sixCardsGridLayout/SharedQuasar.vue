@@ -104,11 +104,13 @@ const isMobile = computed(() => {
         width: 18rem;
         background: unset;
         margin: 0 auto;
-
         overflow: unset;
+        @media (max-width:400px) {
+            width: 21rem;            
+        }
     }
     .slider-controls {
-        --button-size: 2.0rem;
+        --button-size: 3.0rem;
         --text-size: 1rem;
         --margin: -1rem;
 

@@ -82,7 +82,8 @@ const onScroll = computed(
   }
   @media (max-width:400px) {
     .number {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
     }
   }
 }

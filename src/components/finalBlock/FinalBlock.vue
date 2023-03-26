@@ -63,6 +63,7 @@ const onScroll = computed(() => {
     justify-content: space-between;
     width: 65%;
     margin: 0 auto;
+    column-gap: 1rem;
 }
 
 .calc {
@@ -70,6 +71,7 @@ const onScroll = computed(() => {
 }
 @media (max-width: 400px) {
     .second-calc-section {
+        padding-top: 5rem;
         flex-direction: column-reverse;
         align-items: center;
     }

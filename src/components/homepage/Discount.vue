@@ -47,15 +47,22 @@
 }
 
 @media (max-width: 400px) {
+
     .discount-slogan {
         text-align: center;
         font-size: 1.6rem;
         line-height: 1.4rem;
+        width: 25rem;
+        margin: 0 auto;
+        
         
     }
     .brush {
-        width: 37rem;
+        width: 30rem;
+        transform: scaleY(1.8);
         margin-top: 0.82rem;
+        right: 5%;
+        top: -35%;
     }
 }
 </style>

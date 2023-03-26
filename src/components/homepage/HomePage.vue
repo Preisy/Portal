@@ -83,6 +83,7 @@ const onScroll = computed(() => {
             background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1.75rem;
+            
 
             .another-color {
                 font-style: normal;

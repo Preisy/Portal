@@ -29,7 +29,7 @@ defineProps({
 
     //width: 23rem;
     width: 100%;
-    aspect-ratio: 264 / 206;
+    aspect-ratio: 264 / 264;
     box-sizing: border-box; 
     padding: 1.2rem 1.5rem;
     border-radius: 1.4rem;
@@ -79,6 +79,7 @@ defineProps({
     .long-desc {
         font-size: 1rem;
         line-height: 1.25rem;
+        padding-bottom: 2rem;
     }
 
     @media (max-width: 400px) {

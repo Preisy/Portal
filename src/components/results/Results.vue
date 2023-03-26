@@ -88,13 +88,22 @@ import ResultTextBlock from './ResultTextBlock.vue'
 
 .results-teg {
   text-align: center;
+
+  &::selection {
+    -webkit-text-fill-color: #fff;
+  }
 }
+
 .gold-text {
   font-style: italic;
   background: linear-gradient(86.98deg, #FEDA82 22.54%, #FEC338 105.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  &::selection {
+    -webkit-text-fill-color: #fff;
+  }
 }
 
 .results-main-content {
@@ -136,23 +145,35 @@ import ResultTextBlock from './ResultTextBlock.vue'
 .arrow {
   width: 10.5rem;
   margin-left: -3.5rem;
+  @media (max-width: 900px) {
+    margin-left: -3rem;
+  }
 }
 
 @media (max-width: 400px) {
   .results-main-content {
     flex-direction: column;
+    row-gap: 4.5rem;
   }
+  .results-main-teg {
+    padding: 1.5rem 0 1.5rem 0;
+  }
+
   .results-block {
-    padding: 1rem 1rem;
+    padding: 2rem 2rem;
     align-self: center;
   }
+
   .arrow {
     display: none;
   }
+
   .helmet {
     width: 65%;
   }
+
   .result-cost {
     font-size: 1.1rem;
   }
-}</style>
+}
+</style>

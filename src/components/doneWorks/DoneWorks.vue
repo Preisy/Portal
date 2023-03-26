@@ -156,7 +156,7 @@ const slide = ref("0");
         box-shadow: 0px 29px 55px -13px rgba(0, 0, 0, 0.11);
         box-sizing: border-box;
         height: auto !important;
-        width: 90%;
+        width: 85%;
         margin: 0 auto;
 
         overflow: unset !important;
