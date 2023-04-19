@@ -49,7 +49,7 @@ defineProps({
 
         box-shadow: 0 0 1.125rem 0 #000;
 
-        @media (max-width: 400px) {
+        @media (max-width: $screen-sm) {
             left: calc(50% - var(--size) / 2);
         }
     }

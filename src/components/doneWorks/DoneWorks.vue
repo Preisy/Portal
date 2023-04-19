@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { QCarousel, QCarouselControl, QBtn } from "quasar";
 import { ref } from "vue";
-
 import WorkCard from "./WorkCard.vue";
 
 import img from "@/assets/images/reviews/review_1.png";
@@ -129,6 +128,8 @@ const slide = ref("0");
 <style scoped lang="scss">
 .doneWorks {
     text-align: center;
+    overflow: hidden;
+
 
     .btn {
         border-radius: 100%;
@@ -160,6 +161,16 @@ const slide = ref("0");
         margin: 0 auto;
 
         overflow: unset !important;
+
+        @media (max-width: 730px) {
+            width: 75%;
+            max-width: 38rem;
+        }
+        @media (max-width: $screen-sm) {
+            width: 100%;
+            max-width: unset;
+        }
+
     }
     .slider-controls {
         --button-size: 3.75rem;

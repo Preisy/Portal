@@ -118,12 +118,18 @@ const onScroll = computed(() => {
 
     .calc {
         width: 27rem;
+
     }
 }
+// @media (max-width: $screen-md) {
+//     .homepage-items {
+//         flex-direction: column;
+//         row-gap: 5rem;
+        
+//     }
+// }
 
-
-
-@media (max-width: 400px) {
+@media (max-width: $screen-md) {
     .homepage-items {
         flex-direction: column;
         row-gap: 5rem;

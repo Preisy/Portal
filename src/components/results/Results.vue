@@ -150,7 +150,7 @@ import ResultTextBlock from './ResultTextBlock.vue'
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: $screen-md) {
   .results-main-content {
     flex-direction: column;
     row-gap: 4.5rem;

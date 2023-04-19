@@ -13,13 +13,14 @@
 .discount {
     position: relative;
     margin-top: 2.5rem;
+    width: fit-content;
 }
 
 .brush {
     margin-left: -2.5rem;
     user-select: none;
     position: absolute;
-    width: 70%;
+    width: 120%;
     top: -1.8rem;
     z-index: 0;
 
@@ -41,12 +42,16 @@
 }
 
 @media (max-width: 900px) {
-    .brush {
-        width: 90%;
-    }
+    // .brush {
+        // width: 90%;
+    // }
 }
 
-@media (max-width: 400px) {
+@media (max-width: $screen-md) {
+    .discount {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .discount-slogan {
         text-align: center;
@@ -61,7 +66,7 @@
         width: 30rem;
         transform: scaleY(1.8);
         margin-top: 0.82rem;
-        right: 5%;
+        // right: 5%;
         top: -35%;
     }
 }

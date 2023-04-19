@@ -23,7 +23,7 @@ const current = ref('0');
             <template #description>
                 <span class="black-text">
                     Почему стоит работать
-                    <span class="yellow-highlight"> именно с нами </span> ?
+                    <span class="yellow-highlight"> именно с нами</span>&nbsp;?
                 </span>
             </template>
 
@@ -135,6 +135,7 @@ const current = ref('0');
             -webkit-text-fill-color: #fff;
         }
     }
+
     .slide {
         padding: 0 !important;
 

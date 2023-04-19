@@ -73,7 +73,7 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
 .logo {
   transform: scale(0.5);
 }
-@media (max-width: 400px) {
+@media (max-width: $screen-sm) {
   .footer-block {
     flex-direction: column;
   }

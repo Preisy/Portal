@@ -1,20 +1,14 @@
 <script setup lang="ts">
 import Rate from "./Rate.vue";
+interface ReviewCardProps {
+  img_src: string,
+  rate?: number,
+  header: string
+}
 
-const props = defineProps({
-  img_src: {
-    type: String,
-    required: true,
-  },
-  rate: {
-    type: Number,
-    default: 5,
-  },
-  header: {
-    type: String,
-    required: true,
-  },
-});
+const props = withDefaults(defineProps<ReviewCardProps>(), {
+  rate: 5
+})
 </script>
 
 <template>
@@ -61,6 +55,11 @@ const props = defineProps({
     //height: 14rem;
     img {
       width: 100%;
+      pointer-events: none;
+
+      @media (max-width: 670px) {
+        width: 23rem;
+      }
     }
   }
 

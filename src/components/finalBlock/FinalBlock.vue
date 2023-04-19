@@ -69,7 +69,7 @@ const onScroll = computed(() => {
 .calc {
     width: 27rem;
 }
-@media (max-width: 400px) {
+@media (max-width: $screen-md) {
     .second-calc-section {
         padding-top: 5rem;
         flex-direction: column-reverse;

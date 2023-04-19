@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import Button from "@/components/general/button/Button.vue";
 import { QCarouselSlide } from "quasar";
-const props = defineProps({
-    name: {
-        type: String,
-        required: true,
-    },
-    img_src: {
-        type: String,
-        required: true,
-    },
-});
+const props = defineProps<{
+    name: string,
+    img_src: string,
+}>();
 </script>
 
 <template>
@@ -46,12 +40,28 @@ const props = defineProps({
     border: 0.0625rem solid #ececec;
     border-radius: 1.25rem;
 
+    @media (max-width: 730px) {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    @media (max-width: $screen-sm) {
+        width: 100%;
+    }
+
     .img-holder {
         img {
             user-select: none;
             width: 32rem;
+            pointer-events: none;
+
+            @media (max-width: 730px) {
+                width: 100%;
+            }
         }
     }
+
     .details {
         box-sizing: border-box;
         padding: 0 2rem;
@@ -59,13 +69,31 @@ const props = defineProps({
 
         text-align: left;
 
+        @media (max-width: 730px) {
+            padding: 0;
+        }
+
         .head {
             margin-bottom: 0.5rem;
+            @media (max-width: 730px) {
+                h3 {
+                    font-size: 2rem;
+                    margin-bottom: 1.2rem;
+                }
+            }
         }
-        .btn-holder{
+
+        .btn-holder {
             position: absolute;
             bottom: 0;
-            .btn{
+
+            @media (max-width: 730px) {
+                position: unset;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .btn {
                 padding: 1.4rem 3.5rem;
             }
         }

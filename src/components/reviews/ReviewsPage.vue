@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import ReviewsPageControls from "@/components/reviews/ReviewsPageControls.vue";
 import ReviewCards from "@/components/reviews/ReviewCards.vue";
 import {reviewCardsData} from "./ReviewCardsData"
+import ReviewsCardsMobile from "./ReviewsCardsMobile.vue";
 
 let index = ref(0)
 
@@ -12,9 +13,7 @@ function change(num: -1 | 1) {
   index.value = (index.value + num) % reviewCardsData.length;
   if (wait) return;
   wait = true;
-  setTimeout(() => {
-    wait = false
-  }, 3000)
+  setTimeout(() => wait = false, 3000)
 }
 
 setInterval(() => {
@@ -22,6 +21,11 @@ setInterval(() => {
     index.value += 1
 }, 3000)
 
+let isMobile = ref(false)
+const resizeHandler = () => isMobile.value = window.innerWidth <= 670
+resizeHandler()
+onMounted(() => window.addEventListener('resize', resizeHandler))
+onUnmounted(() => window.removeEventListener('resize', resizeHandler))
 </script>
 
 <template>
@@ -30,8 +34,9 @@ setInterval(() => {
       <div class="description">
         <h3><span class="highlighted">Отзывы</span> клиентов</h3>
       </div>
-
-      <ReviewCards :index="index"></ReviewCards>
+      
+      <ReviewCards v-if="!isMobile" :index="index"/>
+      <ReviewsCardsMobile v-else :index="index"/>
 
       <ReviewsPageControls @click:left="change(-1)" @click:right="change(1)"/>
     </div>
@@ -48,6 +53,10 @@ setInterval(() => {
   .structure {
     padding-top: 8rem;
     padding-bottom: 6rem;
+
+    @media (max-width: 730px) {
+      min-height: 54rem;
+    }
   }
 
   .description {

@@ -18,46 +18,36 @@ const bgPivot = ref<HTMLElement>();
         </div>
         <Clouds class="clouds"></Clouds>
         <Clouds class="clouds upside"></Clouds>
-        <div ref="bgPivot" class="bg-attachments">
-            <BgAttachImg
-                class="tapee anim"
-                :img_src="tapee"
-                :ref_element="bgPivot"></BgAttachImg>
-            <BgAttachImg
-                class="drill"
-                :img_src="drill"
-                :ref_element="bgPivot"></BgAttachImg>
-            <BgAttachImg
-                class="screw anim"
-                :img_src="screw"
-                :ref_element="bgPivot"></BgAttachImg>
-            <BgAttachImg
-                class="screw anim second"
-                :img_src="screw"
-                :ref_element="bgPivot"></BgAttachImg>
+        <div class="bg-attach-wrapper">
+            <BgAttachImg class="tapee anim" :img_src="tapee" :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg class="drill" :img_src="drill" :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg class="screw anim" :img_src="screw" :ref_element="bgPivot"></BgAttachImg>
+            <BgAttachImg class="screw anim second" :img_src="screw" :ref_element="bgPivot"></BgAttachImg>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
-$screen-sm: 400px;
-$screen-lg: 1440px;
-$screen-xl: 1920px;
-
 .content {
     position: relative;
     z-index: 1;
 }
+
 .white-bg {
     background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 98.96%);
     position: relative;
 }
+
 .clouds {
     position: absolute;
     left: 0;
     right: 0;
     top: -16rem;
     bottom: unset;
+
+    @media (max-width: $screen-md) {
+        margin-right: -5rem;
+    }
 }
 
 .clouds.upside {
@@ -67,78 +57,104 @@ $screen-xl: 1920px;
     filter: contrast(0.83);
 }
 
-.bg-attachments {
+
+.bg-attach-wrapper {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    overflow: hidden;
+}
 
-    .screw {
-        position: absolute;
+.screw {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    top: 0;
+    top: 85rem;
+    height: 20rem;
+    z-index: 0;
+    filter: none !important;
+
+    &.second {
+        height: 18rem;
+        top: 92rem;
+        // top: -75rem;
+        left: 15rem;
+        rotate: -15deg;
+        z-index: 0;
+        animation-delay: -1.56s;
+        filter: blur(0.175rem) !important;
+    }
+
+    @media (max-width: $screen-sm) {
+        left: 0rem;
         top: 10rem;
-        height: 20rem;
-        z-index: 2;
-        &.second {
-            height: 18rem;
-            top: 11rem;
-            left: -1rem;
-            rotate: -15deg;
-            z-index: 1;
-            animation-delay: -1.56s;
-            filter: blur(0.25rem);
-        }
-
-        @media (max-width: 400px) {
-            left: 0rem;
-            top: 10rem;
-        }
-    }
-
-    .tapee {
-        position: absolute;
-        top: 30rem;
-        right: 0.7rem;
-        height: 29rem;
-
-        animation-duration: 3.5s;
-        @media (max-width: 400px) {
-            top: 50rem;
-            right: -8rem;
-        }
-    }
-    .drill {
-        position: absolute;
-        height: 20rem;
-        top: 62rem;
-        left: -4rem;
-        scale: -1 1;
-
-        animation: drill-anim linear infinite 3.5s;
-
-        @media (max-width: 400px) {
-            display: none;
-        }
-
-        $dx: 0.5rem;
-        $dy: 0.26rem;
-        @keyframes drill-anim {
-            0% {
-                translate: $dx (-$dy);
-            }
-            50% {
-                translate: -$dx ($dy);
-            }
-            100% {
-                translate: $dx (-$dy);
-            }
-        }
     }
 }
 
-@media (max-width: 400px) {
-    .clouds {
-        display: none;
+.tapee {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+
+    top: 120rem;
+    // top: -50rem;
+    right: 0.7rem;
+    height: 29rem;
+
+    animation-duration: 3.5s;
+
+    @media (max-width: $screen-sm) {
+        top: 50rem;
+        right: -8rem;
     }
+}
+
+.drill {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+
+    top: 240rem;
+    height: 20rem;
+    // top: 62rem;
+    // top: -25rem;
+    left: -4rem;
+    scale: -1 1;
+
+    animation: drill-anim linear infinite 3.5s;
+
+    // @media (max-width: $screen-sm) {
+    //     display: none;
+    // }
+
+    $dx: 0.5rem;
+    $dy: 0.26rem;
+
+    @keyframes drill-anim {
+        0% {
+            translate: $dx (
+                -$dy
+            );
+    }
+
+    50% {
+        translate: -$dx (
+            $dy
+        );
+}
+
+100% {
+    translate: $dx (
+        -$dy
+    );
+}
+}
+}
+
+@media (max-width: $screen-sm) {
+    // .clouds {
+    //     display: none;
+    // }
 }
 
 .anim {
@@ -153,10 +169,12 @@ $screen-xl: 1920px;
             translate: $dx 0;
             rotate: 0 0 $d_angle;
         }
+
         50% {
             translate: 0 $dy;
             rotate: 0 0 0;
         }
+
         100% {
             translate: $dx 0;
             rotate: 0 0 $d_angle;

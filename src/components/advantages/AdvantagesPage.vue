@@ -92,9 +92,10 @@ const current = ref(0);
     text-align: center;
     background: linear-gradient(180deg, #141414 0%, #212121 100%);
     padding-bottom: 8rem;
-
-    @media (max-width: 400px) {
-        padding-bottom: 0;
+    
+    @media (max-width: $screen-md) {
+        padding-bottom: 10rem;
+        // padding-bottom: 0;
     }
 
     .black {

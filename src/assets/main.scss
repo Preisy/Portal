@@ -1,11 +1,7 @@
 @import './reset.css';
 @import './base.css';
 @import './quasar-custom-colors.css';
-
-$screen-sm: 400px;
-$screen-md: 900px;
-$screen-lg: 1440px;
-$screen-xl: 1920px;
+@import './app-variables.scss';
 
 .structure {
     width: 63.5%;
@@ -22,16 +18,16 @@ $screen-xl: 1920px;
 
 
 
-@media (max-width: 900px ) {
+@media (max-width: $screen-lg ) {
     .structure {
         width: 95%;
-
     }
     :root {
-        font-size: 1.4vw;
+        // font-size: 1.4vw;
+        font-size: 10px;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: $screen-sm) {
     :root {
         font-size: 2.6vw;
     }

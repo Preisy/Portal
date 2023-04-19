@@ -41,6 +41,7 @@ $animation-amplitude-y: 0.2rem;
     height: 16rem;
     overflow: hidden;
     user-select: none;
+    width: 100%;
 
 
     .clouds {

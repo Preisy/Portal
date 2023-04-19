@@ -22,6 +22,10 @@ defineEmits(['click:left', "click:right"])
   margin: 0 auto;
   justify-content: flex-end;
 
+  @media (max-width: 670px) {
+    display: none;
+  }
+
   .btn {
     width: var(--btn-size);
     height: var(--btn-size);

@@ -48,9 +48,6 @@ const flat = computed(() => {
 </template>
 
 <style scoped lang="scss">
-$screen-sm: 400px;
-$screen-lg: 1440px;
-$screen-xl: 1920px;
 
 .how-we-do-it {
     text-align: center;
@@ -72,12 +69,12 @@ $screen-xl: 1920px;
         align-items: center;
         justify-content: center;
 
-        @media (max-width: 400px) {
+        @media (max-width: $screen-md) {
             flex-direction: column;
         }
         .card {
             margin: 0 3rem;
-            @media (max-width: 400px) {
+            @media (max-width: $screen-md) {
                 margin-bottom: 5rem;
             }
         }

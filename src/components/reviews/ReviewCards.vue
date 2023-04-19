@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import ReviewCard from "@/components/reviews/ReviewCard.vue";
-import {onMounted, ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import {PlacesFactory} from "@/components/reviews/PlacesFactory";
 import {reviewCardsData} from "./ReviewCardsData"
 import type {Nullable} from "@/types/types";
 
-const props = defineProps({
-  index: {
-    type: Number,
-    require: true
-  }
-})
+const props = defineProps<{
+  index: number
+}>()
 
 const placeholder = ref<HTMLDivElement>();
 let reviews = ref<NodeListOf<HTMLDivElement>>();
@@ -22,9 +19,10 @@ onMounted(() => {
   placesFactory = new PlacesFactory(placeholder.value!!, phantoms.value!!);
   places.value = placesFactory.getPlaces()
 })
-window.addEventListener("resize", () => {
-  places.value = placesFactory!!.getPlaces()
-})
+const resizeHandler = () => places.value = placesFactory!!.getPlaces()
+
+onMounted(() => window.addEventListener("resize", resizeHandler))
+onUnmounted(() => window.removeEventListener("resize", resizeHandler))
 
 function position(num: number) {
   if (!placeholder.value) return '';

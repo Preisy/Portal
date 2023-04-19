@@ -82,7 +82,7 @@ defineProps({
         padding-bottom: 2rem;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: $screen-sm) {
         --img-height: 5rem;
 
         min-width: 15rem;

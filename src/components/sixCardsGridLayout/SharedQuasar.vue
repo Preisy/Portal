@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import Button from "../general/button/Button.vue";
 import { QCarousel, QBtn, QCarouselControl, Screen } from "quasar";
 
 const slider = ref<QCarousel>();
 const slide = ref('0');
-const isMobile = computed(() => {
-    // console.log(Screen);
-    return Screen.lt.sm;
-});
+const isMobile = ref(false)
+const resizeHolder = () => isMobile.value = window.innerWidth <= 600
+resizeHolder()
+onMounted(() => window.addEventListener('resize', resizeHolder))
+onUnmounted(() => window.removeEventListener('resize', resizeHolder))
 </script>
 
 <template>
@@ -136,7 +137,7 @@ const isMobile = computed(() => {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: $screen-sm) {
     .cards {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
