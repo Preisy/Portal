@@ -32,7 +32,7 @@ const onScroll = computed(
             <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
             <div class="contacts">
               <p class="number">8 (960) <span class="white-text">687-76-87</span></p>
-              <button class="contact">Написать в WhatsApp</button>
+              <a href="https://wa.me/89606877687" target="_blank" class="contact">Написать в WhatsApp</a>
             </div>
           </div>
         </div>

@@ -3,7 +3,10 @@ import { QCarousel, QCarouselControl, QBtn } from "quasar";
 import { ref } from "vue";
 import WorkCard from "./WorkCard.vue";
 
-import img from "@/assets/images/reviews/review_1.png";
+import img0 from "@/assets/images/reviews/review_1.png";
+import img1 from "@/assets/images/reviews/review_2.png";
+import img2 from "@/assets/images/reviews/review_3.png";
+import img3 from "@/assets/images/reviews/review_5.png";
 
 const carousel = ref<QCarousel>();
 const slide = ref("0");
@@ -49,7 +52,7 @@ const slide = ref("0");
                     </template>
 
                     <template #default>
-                        <WorkCard :img_src="img" name="0">
+                        <WorkCard :img_src="img0" name="0">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -60,7 +63,7 @@ const slide = ref("0");
                                 нежной.
                             </template>
                         </WorkCard>
-                        <WorkCard :img_src="img" name="1">
+                        <WorkCard :img_src="img1" name="1">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -71,7 +74,7 @@ const slide = ref("0");
                                 нежной.
                             </template>
                         </WorkCard>
-                        <WorkCard :img_src="img" name="2">
+                        <WorkCard :img_src="img2" name="2">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
@@ -82,7 +85,7 @@ const slide = ref("0");
                                 нежной.
                             </template>
                         </WorkCard>
-                        <WorkCard :img_src="img" name="3">
+                        <WorkCard :img_src="img3" name="3">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>

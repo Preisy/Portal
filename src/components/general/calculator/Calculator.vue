@@ -2,6 +2,7 @@
 import { ref, watch } from "vue";
 
 import Button from "@/components/general/button/Button.vue";
+import { QInput } from "quasar";
 import QuasarRange from "./QuasarRange.vue";
 
 import type { Nullable } from "@/types/types";
@@ -14,7 +15,6 @@ watch(inputVal, (newVal, oldVal) => {
 const ceilVal = ref(0);
 const cornerVal = ref(0);
 const lightVal = ref(0);
-
 </script>
 
 <template>
@@ -55,16 +55,15 @@ const lightVal = ref(0);
             </span>
         </div>
         <div class="contact">
-            <!-- TODO: pattern-matching для инпута -->
-            <input
+            <QInput
                 v-model="inputVal"
                 ref="inputEl"
                 placeholder="Ваш номер телефона"
-                type="tel" />
-            <img
-                class="phone"
-                src="@/assets/images/calculator/phone.svg"
-                alt="" />
+                mask="# (###) ###-##-##">
+                <template v-slot:prepend>
+                    <q-icon name="phone" />
+                </template>
+            </QInput>
         </div>
         <Button class="button" href="#">отправить заявку</Button>
     </div>
@@ -83,7 +82,7 @@ $calculator-width: 37.5rem;
 
     border-radius: 0.9rem;
 
-    padding: 0 calc( $calculator-width / 10 );
+    padding: 0 calc($calculator-width / 10);
 }
 
 .head {
@@ -105,7 +104,7 @@ $calculator-width: 37.5rem;
         width: $size;
         height: $size;
         transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
-        top: calc( -1 * $size / 2 );
+        top: calc(-1 * $size / 2);
         user-select: none;
     }
 }
@@ -151,7 +150,7 @@ $calculator-width: 37.5rem;
             font-size: 1.25rem;
         }
 
-        .highlight{
+        .highlight {
             position: absolute;
             width: 9.5rem;
             height: 4.5rem;

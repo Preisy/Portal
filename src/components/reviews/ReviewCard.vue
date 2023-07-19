@@ -55,6 +55,7 @@ const props = withDefaults(defineProps<ReviewCardProps>(), {
     //height: 14rem;
     img {
       width: 100%;
+      max-height: 17rem;
       pointer-events: none;
 
       @media (max-width: 670px) {

@@ -6,7 +6,6 @@ import {reviewCardsData} from "./ReviewCardsData"
 import ReviewsCardsMobile from "./ReviewsCardsMobile.vue";
 
 let index = ref(0)
-
 let wait = false;
 
 function change(num: -1 | 1) {
