@@ -4,9 +4,10 @@ import { ref } from "vue";
 import WorkCard from "./WorkCard.vue";
 
 import img0 from "@/assets/images/reviews/review_1.png";
-import img1 from "@/assets/images/reviews/review_2.png";
-import img2 from "@/assets/images/reviews/review_3.png";
-import img3 from "@/assets/images/reviews/review_5.png";
+import img1 from "@/assets/images/reviews/review_5.png";
+import img2 from "@/assets/images/reviews/review_6.png";
+import img3 from "@/assets/images/reviews/review_7.png";
+import img4 from "@/assets/images/reviews/review_8.jpg";
 
 const carousel = ref<QCarousel>();
 const slide = ref("0");
@@ -25,6 +26,7 @@ const slide = ref("0");
                     animated
                     infinite
                     navigation
+                    keep-alive
                     transition-prev="jump-right"
                     transition-next="jump-left"
                     v-model="slide"
@@ -86,6 +88,17 @@ const slide = ref("0");
                             </template>
                         </WorkCard>
                         <WorkCard :img_src="img3" name="3">
+                            <template #head>
+                                Натяжной потолок в гостиной
+                            </template>
+                            <template #body>
+                                Наши натяжные потолки отличаются замечательным
+                                качеством и долговечностью. Этот потолок
+                                установлен в гостиной и делает ее уютной и
+                                нежной.
+                            </template>
+                        </WorkCard>
+                        <WorkCard :img_src="img4" name="4">
                             <template #head>
                                 Натяжной потолок в гостиной
                             </template>
