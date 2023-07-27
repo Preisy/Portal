@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
-
+import { ref } from "vue";
 import Button from "@/components/general/button/Button.vue";
-import { QInput } from "quasar";
+import { QInput, QBtn } from "quasar";
 import QuasarRange from "./QuasarRange.vue";
-
-import type { Nullable } from "@/types/types";
 import { sendData } from "@/services/calculator.service";
-const inputEl = ref<HTMLInputElement>();
-const inputVal = ref("");
-watch(inputVal, (newVal, oldVal) => {
-    inputVal.value = inputVal.value.replace(/\D/, "");
-});
 
-const ceilVal = ref(0);
-const cornerVal = ref(0);
-const lightVal = ref(0);
+const phoneNumber = ref("");
+const ceilArea = ref(0);
+const cornersCount = ref(0);
+const lightersCount = ref(0);
 
+const isButtonDisabled = ref<boolean>(false);
+const buttonCooldownInMs = 5000;
 const onclick = () => {
+    if(isButtonDisabled.value) return;
+
+    isButtonDisabled.value = true;
+    setTimeout(()=>isButtonDisabled.value = false, buttonCooldownInMs);
+
     sendData({
-        ceilArea: ceilVal.value,
-        cornersCount: cornerVal.value,
-        lightersCount: lightVal.value,
-        phonenumber: inputVal.value
+        ceilArea: ceilArea.value,
+        cornersCount: cornersCount.value,
+        lightersCount: lightersCount.value,
+        phonenumber: phoneNumber.value
     });
 };
 </script>
@@ -38,21 +38,21 @@ const onclick = () => {
                 <span class="description">Площадь потолка</span>
                 <!-- <CalculatorRangeDeclarative :min="0" :max="200"></CalculatorRangeDeclarative> -->
                 <QuasarRange
-                    v-model="ceilVal"
+                    v-model="ceilArea"
                     :min="0"
                     :max="200"></QuasarRange>
             </div>
             <div class="setting-line">
                 <span class="description">Количество углов</span>
                 <QuasarRange
-                    v-model="cornerVal"
+                    v-model="cornersCount"
                     :min="0"
                     :max="10"></QuasarRange>
             </div>
             <div class="setting-line">
                 <span class="description">Количество светильников</span>
                 <QuasarRange
-                    v-model="lightVal"
+                    v-model="lightersCount"
                     :min="0"
                     :max="10"></QuasarRange>
             </div>
@@ -66,7 +66,9 @@ const onclick = () => {
         </div>
         <div class="contact">
             <QInput
-                v-model="inputVal"
+                dense
+                class="input"
+                v-model="phoneNumber"
                 ref="inputEl"
                 placeholder="Ваш номер телефона"
                 mask="# (###) ###-##-##">
@@ -75,7 +77,7 @@ const onclick = () => {
                 </template>
             </QInput>
         </div>
-        <Button class="button" :redirect="false" @click="onclick">
+        <Button class="button" @click="onclick" :loading="isButtonDisabled">
             отправить заявку
         </Button>
     </div>
@@ -83,6 +85,7 @@ const onclick = () => {
 
 <style scoped lang="scss">
 $calculator-width: 37.5rem;
+
 .calculator-holder {
     background: var(--color-white);
     width: $calculator-width;
@@ -95,6 +98,10 @@ $calculator-width: 37.5rem;
     border-radius: 0.9rem;
 
     padding: 0 calc($calculator-width / 10);
+}
+
+.input {
+    font-size: 1rem;
 }
 
 .head {

@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { computed } from "@vue/reactivity";
+import { QBtn } from 'quasar';
 
-/**
+/** ****************************************************************************
  *  @param href - отвечает за ссылку перехода
  *  @param volumetric - включает/выключает тень
  *  @param redirect - включает/выключает переход по ссылке
- */
+ ******************************************************************************/
 const props = defineProps({
     href: String,
     volumetric: {
@@ -17,6 +16,10 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    loading: {
+        type: Boolean,
+        default: false
+    }
 });
 
 const emits = defineEmits<{
@@ -30,9 +33,9 @@ function click(e: Event) {
 </script>
 
 <template>
-    <a @click="click" :href="props.href ?? '#'" class="button">
+    <QBtn @click="click" :href="props.href ?? '#'" class="button">
         <slot />
-    </a>
+    </QBtn>
 </template>
 
 <style scoped lang="scss">
