@@ -9,16 +9,12 @@ export class WhatsappController {
   @Post()
   async sendWhatsappMessage(@Body() request: WhatsappRequest) {
     try {
-      console.log(request);
-      const chat = await getChatWithNumber(whatsAppClient, '79215654388');
+      const number = process.env.PHONE_NUMBER;
+      const chat = await getChatWithNumber(whatsAppClient, number);
 
-      console.log(
-        `serializedChatId: ${chat.id._serialized}; 
-       emulatedId: ${chatIdFromNumber('79215654388')}`,
-      );
-
+      const id = chat ? chat.id._serialized : chatIdFromNumber(number);
       whatsAppClient.sendMessage(
-        chat.id._serialized,
+        id,
         `
         Площадь потолка: ${request.ceilArea}
         Количество углов: ${request.cornersCount}

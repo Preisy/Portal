@@ -18,4 +18,10 @@ async function clientInit() {
   await whatsAppClient.initialize();
 }
 
+function envVariablesCheck() {
+  if (!process.env.PHONE_NUMBER)
+    throw new Error('No PHONE_NUMBER env variable provided!');
+}
+
+envVariablesCheck();
 clientInit();
