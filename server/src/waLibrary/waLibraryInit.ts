@@ -3,6 +3,9 @@ import { Client, LocalAuth } from 'whatsapp-web.js';
 
 export const whatsAppClient = new Client({
   authStrategy: new LocalAuth(),
+  puppeteer: {
+		args: ['--no-sandbox', '--disable-setuid-sandbox'],
+	}
 });
 
 whatsAppClient.on('qr', (qr) => {
