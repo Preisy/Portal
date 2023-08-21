@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import leftArrow from '@/assets/svg/left_arrow.svg'
+
 defineEmits(['click:left', "click:right"])
 </script>
 
 <template>
   <div class="controls">
     <button class="btn left" @click="$emit('click:left')">
-      <img src="@/assets/svg/left_arrow.svg" alt=""/>
+      <img :src="leftArrow" alt=""/>
     </button>
     <button class="btn right" @click="$emit('click:right')">
-      <img src="@/assets/svg/left_arrow.svg" alt=""/>
+      <img :src="leftArrow" alt=""/>
     </button>
   </div>
 </template>

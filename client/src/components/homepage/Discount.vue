@@ -1,10 +1,10 @@
 <script setup lang="ts">
-
+import brush from '@/assets/svg/brush.svg'
 </script>
 
 <template>
     <div class="discount">
-        <img src="../../assets/svg/brush.svg" alt="" class="brush">
+        <img :src="brush" alt="" class="brush">
         <p class="discount-slogan">Натяжные потолки сегодня <span class="fat">дешевле на 25%</span></p>
     </div>
 </template>

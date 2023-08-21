@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import star from '@/assets/images/reviews/star.svg'
 defineProps({
   rate: {
     type: Number,
@@ -13,7 +14,7 @@ defineProps({
       <img
           v-for="index in rate"
           :key="index"
-          src="@/assets/images/reviews/star.svg"/>
+          :src="star"/>
     </div>
   </div>
 </template>

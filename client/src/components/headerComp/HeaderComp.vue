@@ -4,6 +4,7 @@ import type { Nullable } from '@/types/types';
 import PortalLogo from '../icons/PortalLogo.vue';
 import WhatsappLogo from '../icons/WhatsappLogo.vue';
 import { computed } from '@vue/reactivity';
+
 const root = ref<Nullable<HTMLElement>>();
 const currentScroll = ref(window.scrollY);
 window.addEventListener("scroll", () => {currentScroll.value = window.scrollY});
@@ -14,7 +15,6 @@ const onScroll = computed(
     return (currentScroll.value > headerHeight)?'prettyHeader':''
   }  
 )
-
 </script>
 
 <template>

@@ -1,5 +1,8 @@
+<script setup lang="ts">
+import helmet from '@/assets/svg/results-helmet.svg'
+</script>
 <template>
-  <img src="../../assets/svg/results-helmet.svg" alt="">
+  <img :src="helmet" alt="">
 </template>
 
 <style scoped lang="scss">

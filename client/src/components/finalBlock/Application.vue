@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+import application from '@/assets/svg/application.svg'
 </script>
 
 <template>
-  <img src="../../assets/svg/application.svg" alt="" class="application">
+  <img :src="application" alt="" class="application">
 </template>
 
 <style scoped lang="scss">
