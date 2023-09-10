@@ -1,0 +1,57 @@
+@import './reset.css';
+@import './base.css';
+@import './quasar-custom-colors.css';
+@import './app-variables.scss';
+
+.structure {
+    width: 63.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem;
+    padding-bottom: 4.25rem;
+}
+:root {
+    font-size: 0.83vw;
+}
+
+
+
+
+
+@media (max-width: $screen-lg ) {
+    .structure {
+        width: 95%;
+    }
+    :root {
+        // font-size: 1.4vw;
+        font-size: 10px;
+    }
+}
+@media (max-width: $screen-sm) {
+    :root {
+        font-size: 2.6vw;
+    }
+    .structure {
+        width: 90%;
+    }
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h4{
+    font-size: 1.625rem;
+    font-weight: 700;
+}

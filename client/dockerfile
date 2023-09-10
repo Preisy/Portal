@@ -1,0 +1,16 @@
+#build
+FROM node:16-alpine AS BUILDER
+WORKDIR /client
+COPY . .
+RUN npm ci
+RUN npm run build
+
+#prepare nginx
+FROM nginx:alpine-slim as RUNNER
+WORKDIR /client
+COPY --from=BUILDER /client/dist /var/www/portal/dist
+COPY --from=BUILDER /client/.nginx /etc/nginx/
+
+#run
+EXPOSE 4000
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
