@@ -13,7 +13,7 @@ export class MailService {
 Количество светильников: ${req.lightersCount}
 Контакт для связи: ${req.phonenumber}`;
     await this.mailerService.sendMail({
-      to: 'jacobzzzzz572@gmail.com',
+      to: `${process.env.OWNER_MAIL_ADRESS}`,
       // from: '"Support Team" <support@example.com>',
       subject: "У вас новый заказ!",
       text: text,
