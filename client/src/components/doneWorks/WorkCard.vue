@@ -40,6 +40,8 @@ const props = defineProps<{
     border: 0.0625rem solid #ececec;
     border-radius: 1.25rem;
 
+    min-height: 200px;
+
     @media (max-width: 730px) {
         flex-direction: column;
         gap: 2rem;

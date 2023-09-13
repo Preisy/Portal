@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import Button from "@/components/general/button/Button.vue";
 import { QInput, QBtn } from "quasar";
 import QuasarRange from "./QuasarRange.vue";
@@ -12,17 +12,22 @@ const lightersCount = ref(0);
 
 const isButtonDisabled = ref<boolean>(false);
 const buttonCooldownInMs = 5000;
+
+const calculatedPrice = computed(
+    () => ceilArea.value * (100 + cornersCount.value*10 + 20 * lightersCount.value)
+);
+
 const onclick = () => {
-    if(isButtonDisabled.value) return;
+    if (isButtonDisabled.value) return;
 
     isButtonDisabled.value = true;
-    setTimeout(()=>isButtonDisabled.value = false, buttonCooldownInMs);
+    setTimeout(() => (isButtonDisabled.value = false), buttonCooldownInMs);
 
     sendData({
         ceilArea: ceilArea.value,
         cornersCount: cornersCount.value,
         lightersCount: lightersCount.value,
-        phonenumber: phoneNumber.value
+        phonenumber: phoneNumber.value,
     });
 };
 </script>
@@ -60,7 +65,7 @@ const onclick = () => {
         <div class="result">
             <span class="description">Цена для вас</span>
             <span class="result-value">
-                12345
+                {{ calculatedPrice }}
                 <div class="highlight" />
             </span>
         </div>
@@ -70,7 +75,7 @@ const onclick = () => {
                 class="input"
                 v-model="phoneNumber"
                 ref="inputEl"
-                placeholder="Ваш номер телефона"
+                placeholder="8 (987) 654-32-10"
                 mask="# (###) ###-##-##">
                 <template v-slot:prepend>
                     <q-icon name="phone" />

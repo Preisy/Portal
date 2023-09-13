@@ -9,13 +9,10 @@ const currentScroll = ref(window.scrollY);
 window.addEventListener("scroll", () => {
     currentScroll.value = window.scrollY;
 });
-const onScroll = computed(() => {
-    return `background-position-y:${currentScroll.value * 0.5}px`;
-});
 </script>
 
 <template>
-    <div ref="root" class="homepage-wrapper" v-bind:style="onScroll" id="homepage">
+    <div ref="root" class="homepage-wrapper" id="homepage">
         <div class="shadow"></div>
         <div class="structure">
             <div class="homepage-items">

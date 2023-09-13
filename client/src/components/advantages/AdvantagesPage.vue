@@ -115,6 +115,8 @@ const current = ref(0);
         -webkit-text-fill-color: #fff;
     }
     .slide {
+        min-width: 175px;
+        width: 100%;
         padding: 0 !important;
 
         .card {

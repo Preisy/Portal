@@ -74,7 +74,7 @@ import Application from './Application.vue';
   margin-top: 23rem;
   margin-left: -1.5rem;
 }
-@media (max-width: $screen-sm) {
+@media (max-width: $screen-md) {
   .circle {
     left: 0;
   }

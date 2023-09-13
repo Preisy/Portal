@@ -77,7 +77,7 @@ $animation-amplitude-y: 0.2rem;
                 &.middle:nth-of-type(#{$i}) {
                     @include anim-keyframes($i * 1rem);
                     @include animation-base($i * -21.1313s);
-                    left: $i * -1.52rem;
+                    left: $i * 0.52rem + 1rem;
                 }
             }
             &.right {

@@ -52,6 +52,7 @@ const props = withDefaults(defineProps<ReviewCardProps>(), {
     margin-bottom: 1.25rem;
     overflow: hidden;
     border-radius: 1rem;
+    min-height: 160px;
     //height: 14rem;
     img {
       width: 100%;

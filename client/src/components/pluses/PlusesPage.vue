@@ -137,6 +137,8 @@ const current = ref('0');
     }
 
     .slide {
+        width: 100%;
+        min-width: 175px;
         padding: 0 !important;
 
         .card {
