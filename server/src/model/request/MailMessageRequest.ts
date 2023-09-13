@@ -1,4 +1,4 @@
-export default interface WhatsappRequest {
+export default interface Request {
   ceilArea: number;
   cornersCount: number;
   lightersCount: number;
