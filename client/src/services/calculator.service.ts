@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "http://localhost:3000" });
+const api = axios.create({ baseURL: "/api"});
 
 export interface CalculatorDto {
     ceilArea: number;
@@ -10,6 +10,6 @@ export interface CalculatorDto {
 }
 
 export async function sendData(data: CalculatorDto) {
-    const response = await api.post('/whatsapp', data);
+    const response = await api.post('/mail', data);
     console.log(response);
 }

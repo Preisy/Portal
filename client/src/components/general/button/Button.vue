@@ -8,7 +8,7 @@ import { QBtn } from "quasar";
  */
 const props = withDefaults(
   defineProps<{
-    href: string;
+    href?: string;
     volumetric?: boolean;
     redirect?: boolean;
     loading?: boolean;

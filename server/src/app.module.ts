@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppController } from 'src/app.controller';
-import { AppService } from 'src/app.service';
-import { WhatsappController } from './whatsapp/whatsapp.controller';
+import { MailModule } from './mail/mail.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [ConfigModule.forRoot()],
-  controllers: [AppController, WhatsappController],
-  providers: [AppService],
+  imports: [MailModule, ConfigModule.forRoot({
+    envFilePath: ['src/config/.env'],
+  })],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

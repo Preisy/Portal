@@ -187,6 +187,9 @@ const slide = ref("0");
             max-width: unset;
         }
 
+        &:deep(.scroll) {
+            overflow: hidden;
+        }
     }
     .slider-controls {
         --button-size: 3.75rem;

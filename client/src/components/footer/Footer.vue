@@ -36,7 +36,11 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
 }
 
 .footer-block {
-  width: 60%;
+  width: auto;
+  @media screen and (min-width: 600px) {
+    width: 60%;
+  }
+
   margin: 0 auto;
   display: flex;
   align-items: center;
