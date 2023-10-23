@@ -59,6 +59,10 @@ const props = defineProps<{
             border-radius: 2rem;
             pointer-events: none;
 
+            @media (max-width: 900px) {               
+                width: 25rem;
+            }
+
             @media (max-width: 730px) {
                 width: 100%;
             }
@@ -83,6 +87,14 @@ const props = defineProps<{
                     font-size: 2rem;
                     margin-bottom: 1.2rem;
                 }
+            }
+        }
+
+        .body {
+            margin-bottom: 3.5rem;
+
+            @media (max-width: 730px) {
+                margin-bottom: 0;
             }
         }
 

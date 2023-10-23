@@ -13,8 +13,17 @@ const lightersCount = ref(0);
 const isButtonDisabled = ref<boolean>(false);
 const buttonCooldownInMs = 5000;
 
+
+const calcMultipliers = {
+    ceilArea: 1000,
+    corner: 200,
+    lighter: 600
+};
 const calculatedPrice = computed(
-    () => ceilArea.value * (100 + cornersCount.value*10 + 20 * lightersCount.value)
+    () => 
+    ceilArea.value * calcMultipliers.ceilArea + 
+    cornersCount.value * calcMultipliers.corner + 
+    lightersCount.value * calcMultipliers.lighter
 );
 
 const onclick = () => {

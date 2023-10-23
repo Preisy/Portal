@@ -15,7 +15,7 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
         <div class="whatsapp">
           <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
           <div class="contacts">
-            <p class="number">8 (960) <span class="white-text">687-76-87</span></p>
+            <a href="https://wa.me/89381516149" target="_blank"><p class="number">8 (938) <span class="white-text">151-61-49</span></p></a>
           </div>
         </div>
         <div class="footer-text">
@@ -26,6 +26,10 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
   </div>
 </template>
 <style scoped lang="scss">
+a {
+  text-decoration: none;
+}
+
 .bg-footer-wrapper {
   background-color: #1C1C1C;
 
