@@ -2,7 +2,7 @@
 import ReviewCard from "@/components/reviews/ReviewCard.vue";
 import {onMounted, onUnmounted, ref} from "vue";
 import {PlacesFactory} from "@/components/reviews/PlacesFactory";
-import {reviewCardsData} from "./ReviewCardsData"
+import {cards} from "./ReviewCardsData"
 import type {Nullable} from "@/types/types";
 
 const props = defineProps<{
@@ -44,7 +44,7 @@ function position(num: number) {
 
     <ReviewCard
         :rate="5"
-        v-for="(card, i) in reviewCardsData"
+        v-for="(card, i) in cards"
         ref="reviews"
         :style="position(i)"
         class="review"
@@ -72,10 +72,11 @@ function position(num: number) {
 
   //--review-width: 34.8rem;
   --review-width: 29rem;
+  --review-height: 35rem;
 
   .phantom {
     width: var(--review-width);
-    height: 34rem;
+    height: var(--review-height);
   }
 
   .review {

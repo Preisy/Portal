@@ -2,14 +2,14 @@
 import {onMounted, onUnmounted, ref} from "vue";
 import ReviewsPageControls from "@/components/reviews/ReviewsPageControls.vue";
 import ReviewCards from "@/components/reviews/ReviewCards.vue";
-import {reviewCardsData} from "./ReviewCardsData"
+import {cards} from "./ReviewCardsData"
 import ReviewsCardsMobile from "./ReviewsCardsMobile.vue";
 
 let index = ref(0)
 let wait = false;
 
 function change(num: -1 | 1) {
-  index.value = (index.value + num) % reviewCardsData.length;
+  index.value = (index.value + num) % cards.length;
   if (wait) return;
   wait = true;
   setTimeout(() => wait = false, 3000)

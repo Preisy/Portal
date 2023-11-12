@@ -3,54 +3,55 @@ import { QCarousel, QCarouselControl, QBtn } from "quasar";
 import { ref } from "vue";
 import WorkCard from "./WorkCard.vue";
 
-import img0 from "@/assets/images/reviews/review_1.png";
-import img1 from "@/assets/images/reviews/review_5.png";
-import img2 from "@/assets/images/reviews/review_6.png";
-import img3 from "@/assets/images/reviews/review_7.png";
-import img4 from "@/assets/images/reviews/review_8.jpg";
-import img5 from "@/assets/images/reviews/review_4.jpg";
+import review_1 from "@/assets/images/reviews/_review_1.jpg";
+import review_2 from "@/assets/images/reviews/_review_2.jpg";
+import review_3 from "@/assets/images/reviews/_review_3.jpg";
+import review_4 from "@/assets/images/reviews/_review_4.jpg";
+import review_5 from "@/assets/images/reviews/_review_5.jpg";
+import review_6 from "@/assets/images/reviews/_review_6.jpg";
+
 
 const carousel = ref<QCarousel>();
 const slide = ref("0");
 
 interface Card {
-    img: string
-    headText: string,
-    bodyText: string
+    imgSrc: string
+    header: string,
+    message: string
 }
+
 const cards: Array<Card> = [
     {
-        img: img0, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Всё супер! Решили обновить потолок на кухне, пересмотрев разные решения, стало ясно, что самое быстрое и простое решение - заказать натяжной потолок. С натяжными потолками еще не сталкивались, поэтому обратились в несколько компаний. Мы выбрали Портал и не прогадали. Замерщик доступно все объяснил и предложил адекватную цену, через два дня уже был результат. Я и не знала что так можно. Спасибо! Планируем теперь через время затянуть всю квартиру)))",
+        imgSrc: review_1,
+        header: "Натяжной потолок в душевой",
+        message: "Данный проект в душевой включает в себя теневой профиль EUROKRAAB и световые линии 3см."
     },
     {
-        img: img1, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Отличная работа. Пять звезд. Быстро, недорого, качество на высоте. Всем советую.",
+        imgSrc: review_2,
+        header: "Натяжной потолок в коридоре",
+        message: "Световые линии в коридоре. Отличное решение по выбору освещения, клиенты довольны!"
     },
     {
-        img: img2, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Спасибо!!! Фирму посоветовал коллега. Я остался доволен. Ребята профессионалы.",
+        imgSrc: review_3,
+        header: "Натяжной потолок в гостиной",
+        message: "Порящий тканевый потолок DESCOR PREMIUM. Экологичный материал, такой вид полотна отлично подойдёт для современных интерьеров."
     },
     {
-        img: img3, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Здравствуйте, спасибо за добросовестную работу. Отдельно хочу поблагодарить мастера Сергея, отличный результат!",
+        imgSrc: review_4,
+        header: "Натяжной потолок в гостиной",
+        message: "В данном помещении установлен матовый MSD PREMIUM, в сочетании с теневым и порящим профилеи. Замечательное дизайнерское решение, клиент очень доволен."
     },
     {
-        img: img4, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Сразу видно слаженную работу от менеджера до монтажника, все точно в срок , качественно , без нареканий.",
+        imgSrc: review_5,
+        header: "Натяжной потолок в гостиной",
+        message: "В данном проекте использовался порящий профиль Alteza и встраиваемая трековая система освещения. Прекрасное сочетание, клиент счастлив!!!"
     },
     {
-        img: img5, 
-        headText: "Натяжной потолок в гостиной",
-        bodyText: "Добрый день, у нас случилось ЧП (затопили соседи) , натяжной потолок провис от попавшей на него воды, мы думали что он не выдержит и нашему новому ремонту конец, очень переживали. Обратились в фирму Портал, ребята приехали оперативно, аккуратно слили воду, демонтировали часть полотна, всё просушили, обработали антигрибковым средством и натянули тот же потолок назад. Мы были приятно удивленны и довольны результатом, потопа как и не было. Спасибо!!!",
+        imgSrc: review_6,
+        header: "Натяжной потолок в гостиной",
+        message: "Дизайнерское решение включающее в себе комбинацию разных видов освещения, все гармонично, клиент доволен!!!"
     },
-] 
-
+]
 
 </script>
 
@@ -95,12 +96,12 @@ const cards: Array<Card> = [
                     </template>
 
                     <template #default>
-                        <WorkCard v-for="(card, index) in cards" :key="index" :img_src="card.img" :name="index.toString()">
+                        <WorkCard v-for="(card, index) in cards" :key="index" :img_src="card.imgSrc" :name="index.toString()">
                             <template #head>
-                                {{ card.headText }}
+                                {{ card.header }}
                             </template>
                             <template #body>
-                                {{ card.bodyText }}
+                                {{ card.message }}
                             </template>
                         </WorkCard>
                     </template>

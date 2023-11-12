@@ -56,6 +56,7 @@ const props = defineProps<{
         img {
             user-select: none;
             width: 32rem;
+            max-height: 24rem;
             border-radius: 2rem;
             pointer-events: none;
 

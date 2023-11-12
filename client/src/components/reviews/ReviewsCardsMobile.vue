@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reviewCardsData } from "./ReviewCardsData";
+import { cards } from "./ReviewCardsData";
 import ReviewCard from "./ReviewCard.vue";
 import { QCarousel, QBtn } from "quasar";
 import { ref } from "vue";
@@ -46,7 +46,7 @@ let i = ref("0");
                     class="card"
                     :img_src="card.imgSrc"
                     :header="card.header"
-                    v-for="(card, i) in reviewCardsData"
+                    v-for="(card, i) in cards"
                     :name="`${i}`">
                     {{ card.message }}
                 </ReviewCard>

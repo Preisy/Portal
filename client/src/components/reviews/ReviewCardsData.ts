@@ -1,82 +1,46 @@
 import type {ReviewCard} from "@/components/reviews/ReviewCard";
-import review_1 from "@/assets/images/reviews/review_9.jpg";
-import review_2 from "@/assets/images/reviews/review_12.jpg";
-import review_3 from "@/assets/images/reviews/review_2.jpg";
-import review_5 from "@/assets/images/reviews/review_4.jpg";
-import review_6 from "@/assets/images/reviews/review_10.jpg";
-import review_7 from "@/assets/images/reviews/review_11.jpg";
-import review_8 from "@/assets/images/reviews/review_12.jpg";
-import review_9 from "@/assets/images/reviews/review_13.jpg";
-import review_10 from "@/assets/images/reviews/review_14.jpg";
-import review_11 from "@/assets/images/reviews/review_15.jpg";
-import review_12 from "@/assets/images/reviews/review_16.jpg";
-import review_13 from "@/assets/images/reviews/review_17.jpg";
+import img0 from "@/assets/images/reviews/review_1.png";
+import img1 from "@/assets/images/reviews/review_5.png";
+import img2 from "@/assets/images/reviews/review_6.png";
+import img3 from "@/assets/images/reviews/review_7.png";
+import img4 from "@/assets/images/reviews/review_8.jpg";
+import img5 from "@/assets/images/reviews/review_4.jpg";
 
-export const reviewCardsData: ReviewCard[] = [
+export const cards: Array<ReviewCard> = [
     {
-        imgSrc: review_1,
+        imgSrc: img0, 
         header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        rate:5,
+        message: "Всё супер! Решили обновить потолок на кухне, пересмотрев разные решения, стало ясно, что самое быстрое и простое решение - заказать натяжной потолок. Обратились в Портал и не прогадали, спасибо! Планируем теперь через время затянуть всю квартиру)))",
     },
     {
-        imgSrc: review_2,
+        imgSrc: img1, 
         header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        rate:5,
+        message: "Отличная работа. Пять звезд. Быстро, недорого, качество на высоте. Всем советую.",
     },
     {
-        imgSrc: review_3,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        imgSrc: img2, 
+        header: "Натяжной потолок в спальне",
+        rate:5,
+        message: "Спасибо!!! Фирму посоветовал коллега. Я остался доволен. Ребята профессионалы.",
     },
     {
-        imgSrc: review_6,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        imgSrc: img3, 
+        header: "Натяжной потолок в коридоре",
+        rate:5,
+        message: "Здравствуйте, спасибо за добросовестную работу. Отдельно хочу поблагодарить мастера Сергея, отличный результат!",
     },
     {
-        imgSrc: review_7,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        imgSrc: img4, 
+        header: "Натяжной потолок в коридоре",
+        rate:5,
+        message: "Сразу видно слаженную работу от менеджера до монтажника, все точно в срок , качественно , без нареканий.",
     },
     {
-        imgSrc: review_8,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
+        imgSrc: img5, 
+        header: "Натяжной потолок в спальне",
+        rate:5,
+        message: "Добрый день, у нас случилось ЧП (затопили соседи), натяжной потолок провис от попавшей на него воды, очень переживали. Обратились в фирму Портал, воду оперативно и аккуратно слили, всё просушили. Потопа как и не было! Спасибо!!!",
     },
-    {
-        imgSrc: review_9,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
-    },
-    {
-        imgSrc: review_10,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
-    },
-    {
-        imgSrc: review_11,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
-    },
-    {
-        imgSrc: review_12,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
-    },
-    {
-        imgSrc: review_13,
-        header: "Натяжной потолок в гостиной",
-        rate: 5,
-        message: "Наши натяжные потолки отличаются замечательным качеством и долговечностью. Этот потолок установлен в гостиной и делает ее уютной и нежной."
-    },
-]
+] 
