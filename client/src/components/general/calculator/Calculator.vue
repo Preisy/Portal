@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Button from "@/components/general/button/Button.vue";
-import { QInput, QBtn } from "quasar";
+import { QInput, QDialog } from "quasar";
 import QuasarRange from "./QuasarRange.vue";
 import { sendData } from "@/services/calculator.service";
 
@@ -9,9 +9,10 @@ const phoneNumber = ref("");
 const ceilArea = ref(0);
 const cornersCount = ref(0);
 const lightersCount = ref(0);
+const dialog = ref<InstanceType<typeof QDialog>>();
 
 const isButtonDisabled = ref<boolean>(false);
-const buttonCooldownInMs = 5000;
+const buttonCooldownInMs = 1000;
 
 
 const calcMultipliers = {
@@ -26,18 +27,20 @@ const calculatedPrice = computed(
     lightersCount.value * calcMultipliers.lighter
 );
 
-const onclick = () => {
+const onclick = async () => {
     if (isButtonDisabled.value) return;
-
+    
     isButtonDisabled.value = true;
     setTimeout(() => (isButtonDisabled.value = false), buttonCooldownInMs);
-
-    sendData({
+    
+    const response = await sendData({
         ceilArea: ceilArea.value,
         cornersCount: cornersCount.value,
         lightersCount: lightersCount.value,
         phonenumber: phoneNumber.value,
     });
+    
+    if(response.status === 201) dialog.value?.show();
 };
 </script>
 
@@ -91,9 +94,17 @@ const onclick = () => {
                 </template>
             </QInput>
         </div>
-        <Button class="button" @click="onclick" :loading="isButtonDisabled">
+        <Button class="button" @click="onclick" :disable="isButtonDisabled">
             отправить заявку
         </Button>
+        <QDialog ref="dialog" full-width >
+            <div class="modal" @click="dialog?.hide">
+                <h3>
+                    Вы успешно отправили заявку!
+                </h3>
+                <q-icon name="verified" size="6rem" color="green"/>
+            </div>
+        </QDialog>
     </div>
 </template>
 
@@ -234,5 +245,24 @@ $calculator-width: 37.5rem;
 .button {
     width: 100%;
     margin-bottom: 2.5rem;
+}
+
+.modal {
+    background-color: #ffffff;
+    
+    padding: 3rem 1rem;
+    max-width: 35rem !important;
+    
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+        margin-bottom: 1.5rem;
+    }
 }
 </style>

@@ -10,6 +10,5 @@ export interface CalculatorDto {
 }
 
 export async function sendData(data: CalculatorDto) {
-    const response = await api.post('/mail', data);
-    console.log(response);
+    return await api.post('/mail', data);
 }

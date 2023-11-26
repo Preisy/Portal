@@ -12,11 +12,13 @@ const props = withDefaults(
     volumetric?: boolean;
     redirect?: boolean;
     loading?: boolean;
+    disable?: boolean;
   }>(),
   {
     volumetric: true,
     redirect: true,
     loading: false,
+    disable: false
   }
 );
 
@@ -31,7 +33,7 @@ function click(e: Event) {
 </script>
 
 <template>
-  <QBtn @click="click" :href="props.href ?? '#'" class="button">
+  <QBtn @click="click" :href="props.href ?? '#'" class="button" :disable="disable">
     <slot />
   </QBtn>
 </template>
