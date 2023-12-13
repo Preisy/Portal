@@ -7,6 +7,10 @@ import brush from '@/assets/svg/brush.svg'
         <img :src="brush" alt="" class="brush">
         <p class="discount-slogan">Натяжные потолки сегодня <span class="fat">дешевле на 25%</span></p>
     </div>
+    <div class="discount">
+        <img :src="brush" alt="" class="brush">
+        <p class="discount-slogan">Натяжные потолки сегодня <span class="fat">дешевле на 25%</span></p>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -14,6 +18,11 @@ import brush from '@/assets/svg/brush.svg'
     position: relative;
     margin-top: 2.5rem;
     width: fit-content;
+    zoom: 1.5;
+
+    @media (max-width: $screen-md) {
+        zoom: 1 !important;
+    }
 }
 
 .brush {

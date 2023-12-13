@@ -22,7 +22,7 @@ defineProps<{
 <style scoped lang="scss">
 .card-wrapper {
     --transition: transform ease-in-out 0.2s;
-    --img-height: 7rem;
+    --img-height: 9rem;
 
     //width: 23rem;
     width: 100%;
@@ -68,14 +68,14 @@ defineProps<{
         }
     }
     .short-desc {
-        font-size: 1.125rem;
+        font-size: 1.7rem;
         font-weight: 600;
         margin-bottom: 1.1rem;
 
     }
     .long-desc {
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
         padding-bottom: 2rem;
     }
 

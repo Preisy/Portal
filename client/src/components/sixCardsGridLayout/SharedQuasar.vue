@@ -6,7 +6,7 @@ import { QCarousel, QBtn, QCarouselControl, Screen } from "quasar";
 const slider = ref<QCarousel>();
 const slide = ref('0');
 const isMobile = ref(false)
-const resizeHolder = () => isMobile.value = window.innerWidth <= 600
+const resizeHolder = () => isMobile.value = window.innerWidth <= 800
 resizeHolder()
 onMounted(() => window.addEventListener('resize', resizeHolder))
 onUnmounted(() => window.removeEventListener('resize', resizeHolder))

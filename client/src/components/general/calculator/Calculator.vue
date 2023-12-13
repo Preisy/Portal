@@ -25,10 +25,13 @@ const calcMultipliers = {
     lighter: 600
 };
 const calculatedPrice = computed(
-    () => 
-    ceilArea.value * calcMultipliers.ceilArea + 
-    cornersCount.value * calcMultipliers.corner + 
-    lightersCount.value * calcMultipliers.lighter
+    () => {
+        const a = (
+        ceilArea.value * calcMultipliers.ceilArea + 
+        cornersCount.value * calcMultipliers.corner + 
+        lightersCount.value * calcMultipliers.lighter) * 0.7;
+        return Math.round(a)
+    }
 );
 
 const onclick = async () => {
@@ -61,7 +64,7 @@ const onclick = async () => {
                 <QuasarRange
                     v-model="ceilArea"
                     :min="0"
-                    :max="200"></QuasarRange>
+                    :max="100"></QuasarRange>
             </div>
             <div class="setting-line">
                 <span class="description">Количество углов</span>
@@ -130,7 +133,10 @@ $calculator-width: 37.5rem;
     border-radius: 0.9rem;
 
     padding: 0 calc($calculator-width / 10);
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
+
+    // zoom: 1.3;
+    margin-top: 2rem !important;
 }
 
 .input {
@@ -141,10 +147,12 @@ $calculator-width: 37.5rem;
     $head-height: 4rem;
     position: relative;
     width: 100%;
+    margin-top: 0.4rem;
+    margin-bottom: 1rem;
 
     span {
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         line-height: $head-height;
         vertical-align: middle;
     }
@@ -171,7 +179,7 @@ $calculator-width: 37.5rem;
     }
     .description {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }
 

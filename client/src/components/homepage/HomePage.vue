@@ -18,19 +18,21 @@ window.addEventListener("scroll", () => {
             <div class="homepage-items">
                 <div class="slogans">
                     <h1 class="main-slogan">
-                        Установим лучший натяжной потолок
+                        Премиальные натяжные потолки
                         <span class="another-color">в Москве и МО</span>
                     </h1>
-                    <p class="add-slogan">
+                    <p v-if="$q.screen.lt.md" class="add-slogan">
                         Используем только качественные, проверенные
                         временем материалы. Сотрудничаем с лучшими
                         производителями натяжных потолков.
                     </p>
                     <Discount></Discount>
+                    <q-space></q-space>
+                    <GuaranteeBlock class="guarantee" />
                 </div>
+
                 <Calculator class="calc"></Calculator>
             </div>
-            <GuaranteeBlock class="guarantee" />
         </div>
     </div>
 </template>
@@ -65,14 +67,16 @@ window.addEventListener("scroll", () => {
 
     .homepage-items {
         display: flex;
-        align-items: center;
+        align-items: stretch;
+
         @media (max-width: 900px) {
             align-items: flex-start;
         }
 
         .main-slogan {
             font-style: italic;
-            line-height: 2.9rem;
+            line-height: 4rem;
+            font-size: 4rem;
             background: linear-gradient(86.98deg,
                     #feda82 22.54%,
                     #fec338 105.96%);
@@ -111,10 +115,18 @@ window.addEventListener("scroll", () => {
 
     .slogans {
         flex: 1 0;
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @media (min-width: 600px) {
+            margin-top: 3.75rem;
+        }
     }
 
     .calc {
-        width: 27rem;
+        width: 30rem;
 
     }
 }
@@ -130,6 +142,9 @@ window.addEventListener("scroll", () => {
     .homepage-items {
         flex-direction: column;
         row-gap: 5rem;
+        row-gap: 5rem;
+        
+        row-gap: 5rem;   
         
     }
 
