@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Button from "@/components/general/button/Button.vue";
-import { QInput, QDialog } from "quasar";
+import { QInput, QDialog, QCheckbox } from "quasar";
 import QuasarRange from "./QuasarRange.vue";
 import { sendData } from "@/services/calculator.service";
+import PDFpolitika from "@/assets/politika_v.pdf"
 
 const phoneNumber = ref("");
 const ceilArea = ref(0);
@@ -11,7 +12,10 @@ const cornersCount = ref(0);
 const lightersCount = ref(0);
 const dialog = ref<InstanceType<typeof QDialog>>();
 
-const isButtonDisabled = ref<boolean>(false);
+
+const isCooldown = ref<boolean>(false);
+const isTermsOfUseAccepted = ref<boolean>(false); 
+const isButtonDisabled = computed(()=>isCooldown.value || !isTermsOfUseAccepted.value);
 const buttonCooldownInMs = 1000;
 
 
@@ -30,8 +34,8 @@ const calculatedPrice = computed(
 const onclick = async () => {
     if (isButtonDisabled.value) return;
     
-    isButtonDisabled.value = true;
-    setTimeout(() => (isButtonDisabled.value = false), buttonCooldownInMs);
+    isCooldown.value = true;
+    setTimeout(() => (isCooldown.value = false), buttonCooldownInMs);
     
     const response = await sendData({
         ceilArea: ceilArea.value,
@@ -97,6 +101,9 @@ const onclick = async () => {
         <Button class="button" @click="onclick" :disable="isButtonDisabled">
             отправить заявку
         </Button>
+        <div class="terms_of_use">
+            <QCheckbox color="calculator" v-model="isTermsOfUseAccepted"/> <p>соглашаюсь с <a :href="PDFpolitika">политикой конфиденциальности</a></p>
+        </div>
         <QDialog ref="dialog" full-width >
             <div class="modal" @click="dialog?.hide">
                 <h3>
@@ -123,6 +130,7 @@ $calculator-width: 37.5rem;
     border-radius: 0.9rem;
 
     padding: 0 calc($calculator-width / 10);
+    padding-bottom: 1rem;
 }
 
 .input {
@@ -244,7 +252,7 @@ $calculator-width: 37.5rem;
 
 .button {
     width: 100%;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .modal {
@@ -264,5 +272,11 @@ $calculator-width: 37.5rem;
     h3 {
         margin-bottom: 1.5rem;
     }
+}
+
+.terms_of_use{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 </style>

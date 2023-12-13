@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import PortalLogo from '../icons/PortalLogo.vue';
-import WhatsappLogo from '../icons/WhatsappLogo.vue';
-
-
-
-
+import PortalLogo from "../icons/PortalLogo.vue";
+import WhatsappLogo from "../icons/WhatsappLogo.vue";
+import PDFpolitika from "@/assets/politika_v.pdf";
 </script>
 
 <template>
@@ -15,12 +12,21 @@ import WhatsappLogo from '../icons/WhatsappLogo.vue';
         <div class="whatsapp">
           <WhatsappLogo class="whatsapp-logo"></WhatsappLogo>
           <div class="contacts">
-            <a href="https://wa.me/+79381516149" target="_blank"><p class="number">+7 (938) <span class="white-text">151-61-49</span></p></a>
+            <a href="https://wa.me/+79381516149" target="_blank"
+              ><p class="number">
+                +7 (938) <span class="white-text">151-61-49</span>
+              </p></a
+            >
           </div>
         </div>
+
         <div class="footer-text">
           <p class="text">Copyright © Портал 2023</p>
         </div>
+
+        <a class="terms_of_use" :href="PDFpolitika">
+          Политика конфиденциальности
+        </a>
       </div>
     </div>
   </div>
@@ -31,7 +37,7 @@ a {
 }
 
 .bg-footer-wrapper {
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
 
   .structure {
     padding-top: 0.6rem;
@@ -41,40 +47,54 @@ a {
 
 .footer-block {
   width: auto;
-  @media screen and (min-width: 600px) {
-    width: 60%;
+  gap: 1rem 5rem;
+  @media screen and (max-width: 600px) {
+    gap: 1rem 2rem;
   }
 
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .whatsapp {
   display: flex;
   align-items: center;
 
-
   .whatsapp-logo {
     height: 2rem;
-    margin-right: .6rem;
+    margin-right: 0.6rem;
   }
 }
 
 .number {
-  color: #BDBDBD;
+  color: #bdbdbd;
   font-weight: 400;
   font-size: 0.7rem;
 
   .white-text {
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 600;
   }
 }
 
+a.terms_of_use {
+  color: black;
+  border-radius: 1rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  background-color: #ffffff88;
+  transition: background-color 200ms;
+
+  &:hover {
+    background-color: #ffffffcc;
+  }
+}
+
 .text {
-  color: #A1A1A1;
+  color: #a1a1a1;
   font-size: 0.7rem;
 }
 
