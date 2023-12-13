@@ -80,7 +80,7 @@ $inactive-color: #d9d9d9;
         padding: 0.125rem 0.5rem !important;
         border-radius: 0.25rem !important;
         .q-slider__text {
-            font-size: 0.75rem !important;
+            font-size: 0.9rem !important;
         }
     }
     .q-slider__track-container--h {

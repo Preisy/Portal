@@ -102,7 +102,7 @@ onUnmounted(() => window.removeEventListener('resize', resizeHolder))
     }
     .q-slider{
         height: fit-content !important;
-        width: 18rem;
+        width: 25rem;
         background: unset;
         margin: 0 auto;
         overflow: unset;

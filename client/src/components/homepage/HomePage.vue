@@ -120,7 +120,7 @@ window.addEventListener("scroll", () => {
         flex-direction: column;
         justify-content: space-between;
         
-        @media (min-width: 600px) {
+        @media (min-width: $screen-md) {
             margin-top: 3.75rem;
         }
     }
@@ -128,6 +128,13 @@ window.addEventListener("scroll", () => {
     .calc {
         width: 30rem;
 
+    }
+
+    @media (max-width: 900px) {
+        .guarantee {
+            top: 2rem;
+        }
+        
     }
 }
 // @media (max-width: $screen-md) {

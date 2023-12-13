@@ -5,11 +5,11 @@ import brush from '@/assets/svg/brush.svg'
 <template>
     <div class="discount">
         <img :src="brush" alt="" class="brush">
-        <p class="discount-slogan">Натяжные потолки сегодня <span class="fat">дешевле на 25%</span></p>
+        <p class="discount-slogan">До нового года <span class="fat">дешевле на 25%</span></p>
     </div>
-    <div class="discount">
+    <div class="discount last">
         <img :src="brush" alt="" class="brush">
-        <p class="discount-slogan">Натяжные потолки сегодня <span class="fat">дешевле на 25%</span></p>
+        <p class="discount-slogan">+ <span class="fat">бесплатный</span> замер</p>
     </div>
 </template>
 
@@ -23,14 +23,24 @@ import brush from '@/assets/svg/brush.svg'
     @media (max-width: $screen-md) {
         zoom: 1 !important;
     }
+
+    &.last {
+        .brush {
+            width: 150%;
+            scale: 1 1.4;
+        }
+        .discount-slogan{
+            top:-0.05rem;
+        }
+    }
 }
 
 .brush {
     margin-left: -2.5rem;
     user-select: none;
     position: absolute;
-    width: 120%;
-    top: -1.8rem;
+    width: 135%;
+    top: -1rem;
     z-index: 0;
 
 }
@@ -60,6 +70,15 @@ import brush from '@/assets/svg/brush.svg'
     .discount {
         margin-left: auto;
         margin-right: auto;
+    }
+    .discount.last {
+        .brush{
+            scale: 1;
+            width: 30rem;
+        }
+        .discount-slogan{
+            top: 1.5rem;
+        }
     }
 
     .discount-slogan {

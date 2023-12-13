@@ -261,6 +261,7 @@ $calculator-width: 37.5rem;
 .button {
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 .modal {
